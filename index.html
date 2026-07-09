@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oui Academy — Luyện thi tiếng Pháp DELF · DALF · TCF Canada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141311;
+    --yellow:#F4E600;
+    --yellow-deep:#E4D400;
+    --cream:#FFFDF6;
+    --paper:#FFFFFF;
+    --grey:#6E6B60;
+    --line:#EAE5D2;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Be Vietnam Pro', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.05;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+
+  /* ===== Stamp motif — echoes the official exam-certificate stamp ===== */
+  .stamp{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:var(--yellow);
+    border:2px solid var(--ink);
+    border-radius:50%;
+    transform:rotate(-6deg);
+    text-align:center;
+    line-height:1.1;
+  }
+  .sticky-note{
+    position:absolute;
+    background:var(--yellow);
+    z-index:0;
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,253,246,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo-mark{display:flex; align-items:center; gap:10px;}
+  .logo-mark .sq{width:20px; height:20px; background:var(--yellow); border:2px solid var(--ink); flex-shrink:0;}
+  .logo-mark span{font-family:'Space Grotesk'; font-weight:700; font-size:20px;}
+  .nav-links{display:flex; gap:36px; align-items:center;}
+  .nav-links a{font-size:14.5px; font-weight:500; color:var(--ink); position:relative; padding:4px 0;}
+  .nav-links a:hover{color:var(--grey);}
+  .nav-cta{
+    background:var(--ink); color:var(--cream); padding:10px 20px;
+    font-size:14px; font-weight:600; border-radius:var(--radius);
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:#000;}
+  .burger{display:none;}
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:88px 0 100px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--grey); margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:8px; height:8px; background:var(--yellow); border:1.5px solid var(--ink); display:inline-block;}
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 68px);
+    margin-bottom:24px;
+  }
+  .hero h1 .hl{
+    background:var(--yellow);
+    padding:0 10px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  .hero p.lede{
+    font-size:18px; color:#3a3833; max-width:480px; margin-bottom:36px;
+  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:15px 28px; font-weight:600; font-size:15px;
+    border-radius:var(--radius); border:2px solid var(--ink);
+    transition:all .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--cream);}
+  .btn-primary:hover{background:#000; transform:translateY(-2px);}
+  .btn-secondary{background:transparent; color:var(--ink);}
+  .btn-secondary:hover{background:var(--ink); color:var(--cream);}
+
+  .hero-visual{position:relative; display:flex; align-items:center; justify-content:center; height:100%;}
+  .hero-card{
+    position:relative; background:var(--paper);
+    border:2px solid var(--ink);
+    padding:34px 30px;
+    width:100%; max-width:340px;
+    transform:rotate(2deg);
+  }
+  .hero-card::before{
+    content:'';
+    position:absolute; top:-14px; left:-14px;
+    width:64px; height:64px; background:var(--yellow); border:2px solid var(--ink);
+    transform:rotate(-8deg);
+    z-index:-1;
+  }
+  .hero-card .level-row{display:flex; justify-content:space-between; font-family:'Space Grotesk'; font-weight:700; font-size:15px; margin-bottom:14px; padding-bottom:14px; border-bottom:1px dashed var(--line);}
+  .hero-card .level-row:last-child{border-bottom:none; padding-bottom:0; margin-bottom:0;}
+  .hero-card .lvl-tag{background:var(--ink); color:var(--yellow); font-size:11px; padding:3px 8px; font-weight:700; border-radius:2px;}
+
+  /* ===== Section headers ===== */
+  .section-head{margin-bottom:52px; max-width:620px;}
+  .section-head h2{font-size:clamp(28px, 3.6vw, 40px); margin-bottom:14px;}
+  .section-head p{color:var(--grey); font-size:16.5px;}
+  .kicker{font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--grey); margin-bottom:10px; display:block;}
+
+  /* ===== About ===== */
+  .about{padding:100px 0; border-top:1px solid var(--line);}
+  .about-body{font-size:19px; max-width:700px; color:#2c2a26; margin-bottom:56px;}
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);}
+  .stat{padding:28px 24px; border-right:1px solid var(--ink);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Space Grotesk'; font-weight:700; font-size:26px; margin-bottom:6px;}
+  .stat .label{font-size:14px; color:var(--grey);}
+
+  /* ===== Courses ===== */
+  .courses{padding:100px 0; border-top:1px solid var(--line);}
+  .course-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .course-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:32px 26px; display:flex; flex-direction:column; gap:16px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .course-card:hover{transform:translateY(-4px); box-shadow:6px 6px 0 var(--yellow);}
+  .course-tag{
+    align-self:flex-start; background:var(--yellow); border:2px solid var(--ink);
+    font-family:'Space Grotesk'; font-weight:700; font-size:14px;
+    padding:4px 12px;
+  }
+  .course-card h3{font-size:22px;}
+  .course-card p{color:var(--grey); font-size:15px;}
+
+  /* ===== Teacher ===== */
+  .teacher{padding:100px 0; border-top:1px solid var(--line);}
+  .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
+  .teacher-badge-wrap{display:flex; justify-content:center;}
+  .teacher .stamp{width:220px; height:220px; font-family:'Space Grotesk';}
+  .teacher .stamp .big{font-size:44px; font-weight:700;}
+  .teacher .stamp .mid{font-size:15px; font-weight:700; letter-spacing:0.04em;}
+  .teacher .stamp .small{font-size:12px; font-weight:500; margin-top:2px;}
+  .teacher h2{font-size:clamp(26px,3.2vw,34px); margin-bottom:18px;}
+  .teacher p{color:#2c2a26; font-size:17px; max-width:520px;}
+  .teacher p + p{margin-top:14px;}
+
+  /* ===== Results ===== */
+  .results{padding:100px 0; border-top:1px solid var(--line);}
+  .results-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .result-frame{
+    background:var(--paper); border:2px solid var(--ink); padding:14px;
+  }
+  .result-frame img{border:1px solid var(--line);}
+  .result-cap{display:flex; justify-content:space-between; align-items:baseline; margin-top:14px; padding:0 4px;}
+  .result-cap .name{font-family:'Space Grotesk'; font-weight:700; font-size:15px;}
+  .result-cap .tag{font-size:13px; color:var(--grey);}
+
+  /* ===== CTA ===== */
+  .cta{
+    background:var(--ink); color:var(--cream);
+    padding:110px 0; text-align:center; position:relative; overflow:hidden;
+  }
+  .cta .sticky-note{width:120px; height:120px; top:-40px; right:8%; transform:rotate(12deg); opacity:0.95;}
+  .cta .sticky-note.two{width:70px; height:70px; bottom:-20px; left:6%; top:auto; transform:rotate(-10deg);}
+  .cta h2{color:var(--yellow); font-size:clamp(30px,4.4vw,48px); margin-bottom:20px; position:relative;}
+  .cta p{color:#D8D5C9; font-size:17px; max-width:480px; margin:0 auto 40px; position:relative;}
+  .cta .btn-primary{background:var(--yellow); color:var(--ink); border-color:var(--yellow); position:relative;}
+  .cta .btn-primary:hover{background:#fff; border-color:#fff;}
+
+  /* ===== Footer ===== */
+  footer{padding:44px 0; border-top:1px solid var(--line);}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .foot-links{display:flex; gap:28px; font-size:14px; color:var(--grey);}
+  .foot-links a:hover{color:var(--ink);}
+  .foot-copy{font-size:13px; color:var(--grey);}
+
+  /* ===== Responsive ===== */
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .burger{display:block; font-size:22px; cursor:pointer;}
+    .hero-grid, .teacher-grid, .results-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1; margin-bottom:20px;}
+    .stat-row{grid-template-columns:1fr; border-right:none;}
+    .stat{border-right:none; border-bottom:1px solid var(--ink);}
+    .stat:last-child{border-bottom:none;}
+    .course-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+    .hero{padding:56px 0 70px;}
+    .about,.courses,.teacher,.results{padding:70px 0;}
+    .cta{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo-mark">
+      <span class="sq"></span>
+      <span>Oui Academy</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">Giới thiệu</a>
+      <a href="#courses">Khóa học</a>
+      <a href="#teacher">Giáo viên</a>
+      <a href="#results">Học viên</a>
+      <a href="#contact" class="nav-cta">Đặt lịch tư vấn</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Học viện tiếng Pháp · A0 → C2</span>
+      <h1>Nói <span class="hl">Oui</span> với tiếng Pháp</h1>
+      <p class="lede">Luyện thi DELF, DALF, TCF Canada ở mọi trình độ — học online hoặc trực tiếp tại Paris, cùng lộ trình tập trung vào kỹ năng Nói và Viết.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Đặt lịch tư vấn miễn phí</a>
+        <a href="#courses" class="btn btn-secondary">Xem khóa học</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="level-row"><span>DELF</span><span class="lvl-tag">A1–B2</span></div>
+        <div class="level-row"><span>DALF</span><span class="lvl-tag">C1–C2</span></div>
+        <div class="level-row"><span>TCF Canada</span><span class="lvl-tag">Định cư · Du học</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Giới thiệu</span>
+      <h2>Đồng hành từ buổi học đầu tiên đến ngày thi</h2>
+    </div>
+    <p class="about-body">Oui Academy đồng hành cùng bạn trên hành trình chinh phục tiếng Pháp — từ những buổi học vỡ lòng đến các kỳ thi lấy chứng chỉ quốc tế. Chúng tôi tập trung vào kỹ năng <strong>Nói</strong> và <strong>Viết</strong>, hai phần thi khiến nhiều bạn e ngại nhất, với lộ trình cá nhân hoá theo đúng mục tiêu và trình độ của từng học viên.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">A0 → C2</div><div class="label">Mọi trình độ, mọi mục tiêu</div></div>
+      <div class="stat"><div class="num">Online & Paris</div><div class="label">Học theo lịch của bạn</div></div>
+      <div class="stat"><div class="num">Nói & Viết</div><div class="label">Trọng tâm luyện thi</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Khóa học</span>
+      <h2>Chọn đúng kỳ thi cho mục tiêu của bạn</h2>
+      <p>Ba lộ trình luyện thi, dựng riêng theo format đề thi thật.</p>
+    </div>
+    <div class="course-grid">
+      <div class="course-card">
+        <span class="course-tag">A1 – B2</span>
+        <h3>DELF</h3>
+        <p>Chứng chỉ tiếng Pháp phổ thông — phù hợp học sinh, sinh viên và người mới bắt đầu hành trình chinh phục tiếng Pháp.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-tag">C1 – C2</span>
+        <h3>DALF</h3>
+        <p>Chứng chỉ trình độ cao, dành cho người học lên đại học Pháp hoặc làm việc chuyên môn hoàn toàn bằng tiếng Pháp.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-tag">Định cư · Du học</span>
+        <h3>TCF Canada</h3>
+        <p>Luyện đúng format, đúng thời gian thi — phục vụ hồ sơ định cư và du học Canada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="teacher" id="teacher">
+  <div class="wrap teacher-grid">
+    <div class="teacher-badge-wrap">
+      <div class="stamp">
+        <span class="mid">DALF C2</span>
+        <span class="big">50/50</span>
+        <span class="small">điểm phần Nói</span>
+      </div>
+    </div>
+    <div>
+      <span class="kicker">Giáo viên</span>
+      <h2>Người trực tiếp hướng dẫn bạn: anh Hải</h2>
+      <p>Anh Hải đạt <strong>50/50 điểm phần Nói</strong> trong kỳ thi DALF C2 — một kết quả hiếm gặp ngay cả với người học lâu năm.</p>
+      <p>Với kinh nghiệm luyện thi chuyên sâu, anh trực tiếp hướng dẫn học viên chiến lược làm bài Nói và Viết: từ cách triển khai ý, tổ chức bài thi, đến cách diễn đạt tự nhiên, thuyết phục như người bản xứ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Học viên</span>
+      <h2>Kết quả nói lên tất cả</h2>
+      <p>Một vài gương mặt trong bảng vàng vinh danh của Oui Academy.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-frame">
+        <img src="images/result-thuy.png" alt="Thuỳ P. đạt DELF B2 Public - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Thuỳ P.</span><span class="tag">DELF B2 · Public</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-delf-b2.png" alt="Kết quả thi DELF B2 Junior tại Alliance Française de Toulouse, điểm cuối 73.5/100">
+        <div class="result-cap"><span class="name">DELF B2 Junior</span><span class="tag">Alliance Française Toulouse · 73.5/100</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <span class="sticky-note"></span>
+  <span class="sticky-note two"></span>
+  <div class="wrap">
+    <h2>Sẵn sàng nói Oui<br>với tiếng Pháp?</h2>
+    <p>Đặt lịch tư vấn miễn phí để tìm lộ trình phù hợp với mục tiêu và trình độ của bạn.</p>
+    <a href="mailto:ouiacademy.contact@gmail.com?subject=Đặt%20lịch%20tư%20vấn%20-%20Oui%20Academy" class="btn btn-primary">Đặt lịch tư vấn ngay</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="logo-mark">
+      <span class="sq"></span>
+      <span style="font-size:16px;">Oui Academy</span>
+    </div>
+    <div class="foot-links">
+      <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
+      <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="foot-copy">© 2026 Oui Academy</div>
+  </div>
+</footer>
+
+</body>
+</html>
