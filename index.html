@@ -208,8 +208,26 @@
   .cta .btn-primary{background:var(--yellow); color:var(--ink); border-color:var(--yellow); position:relative;}
   .cta .btn-primary:hover{background:#fff; border-color:#fff;}
 
+  /* ===== Social icons ===== */
+  .social-row{display:flex; gap:10px; align-items:center;}
+  .social-row a{
+    width:36px; height:36px; border:2px solid var(--ink); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink); transition:all .15s ease; flex-shrink:0;
+  }
+  .social-row a svg{width:16px; height:16px;}
+  .social-row a:hover{background:var(--yellow); transform:translateY(-2px);}
+
+  /* ===== CTA follow block ===== */
+  .cta-follow{margin-top:40px; position:relative;}
+  .cta-follow span{display:block; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#B8B4A4; margin-bottom:16px;}
+  .cta-follow .social-row{justify-content:center;}
+  .cta-follow .social-row a{border-color:#4a473e; color:var(--cream);}
+  .cta-follow .social-row a:hover{background:var(--yellow); border-color:var(--yellow); color:var(--ink);}
+
   /* ===== Footer ===== */
   footer{padding:44px 0; border-top:1px solid var(--line);}
+  .footer-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding-bottom:28px; margin-bottom:28px; border-bottom:1px solid var(--line);}
   .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
   .foot-links{display:flex; gap:28px; font-size:14px; color:var(--grey);}
   .foot-links a:hover{color:var(--ink);}
@@ -358,18 +376,57 @@
     <h2>Sẵn sàng nói Oui<br>với tiếng Pháp?</h2>
     <p>Đặt lịch tư vấn miễn phí để tìm lộ trình phù hợp với mục tiêu và trình độ của bạn.</p>
     <a href="mailto:ouiacademy.contact@gmail.com?subject=Đặt%20lịch%20tư%20vấn%20-%20Oui%20Academy" class="btn btn-primary">Đặt lịch tư vấn ngay</a>
+
+    <div class="cta-follow">
+      <span>Theo dõi Oui Academy</span>
+      <div class="social-row">
+        <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ouiacademyspeakfrench/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ouiacademytiengphap" target="_blank" rel="noopener" aria-label="TikTok Tiếng Pháp" title="TikTok · Tiếng Pháp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ouiacademyspeakfrench" target="_blank" rel="noopener" aria-label="TikTok Speak French" title="TikTok · Speak French">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap foot-row">
+  <div class="wrap footer-top">
     <div class="logo-mark">
       <span class="sq"></span>
       <span style="font-size:16px;">Oui Academy</span>
     </div>
+    <div class="social-row">
+      <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ouiacademyspeakfrench/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademytiengphap" target="_blank" rel="noopener" aria-label="TikTok Tiếng Pháp" title="TikTok · Tiếng Pháp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademyspeakfrench" target="_blank" rel="noopener" aria-label="TikTok Speak French" title="TikTok · Speak French">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="wrap foot-row">
     <div class="foot-links">
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
-      <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener">Facebook</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>
   </div>
