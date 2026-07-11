@@ -187,7 +187,7 @@
 
   /* ===== Results ===== */
   .results{padding:100px 0; border-top:1px solid var(--line);}
-  .results-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .results-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:24px;}
   .result-frame{
     background:var(--paper); border:2px solid var(--ink); padding:14px;
   }
@@ -237,7 +237,8 @@
   @media (max-width:860px){
     .nav-links{display:none;}
     .burger{display:block; font-size:22px; cursor:pointer;}
-    .hero-grid, .teacher-grid, .results-grid{grid-template-columns:1fr;}
+    .hero-grid, .teacher-grid{grid-template-columns:1fr;}
+    .results-grid{grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));}
     .hero-visual{order:-1; margin-bottom:20px;}
     .stat-row{grid-template-columns:1fr; border-right:none;}
     .stat{border-right:none; border-bottom:1px solid var(--ink);}
@@ -353,8 +354,8 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">Học viên</span>
-      <h2>Kết quả nói lên tất cả</h2>
-      <p>Một vài gương mặt trong bảng vàng vinh danh của Oui Academy.</p>
+      <h2>Bảng vàng vinh danh</h2>
+      <p>Những gương mặt đã chinh phục kỳ thi cùng Oui Academy.</p>
     </div>
     <div class="results-grid">
       <div class="result-frame">
@@ -362,8 +363,60 @@
         <div class="result-cap"><span class="name">Thuỳ P.</span><span class="tag">DELF B2 · Public</span></div>
       </div>
       <div class="result-frame">
-        <img src="images/result-delf-b2.png" alt="Kết quả thi DELF B2 Junior tại Alliance Française de Toulouse, điểm cuối 73.5/100">
-        <div class="result-cap"><span class="name">DELF B2 Junior</span><span class="tag">Alliance Française Toulouse · 73.5/100</span></div>
+        <img src="images/result-delf-b2.png" alt="Kết quả thi DELF B2 tại Alliance Française de Toulouse, điểm cuối 73.5/100">
+        <div class="result-cap"><span class="name">Thuỳ P. — Bảng điểm</span><span class="tag">73.5/100</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-do.jpg" alt="Đỗ đạt DELF B1 89/100 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Đỗ</span><span class="tag">DELF B1 · 89/100</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-do-detail.jpg" alt="Bảng điểm chi tiết DELF B1 của Đỗ, điểm cuối 89/100 tại Trung tâm Valbonne">
+        <div class="result-cap"><span class="name">Đỗ — Bảng điểm</span><span class="tag">89.0/100</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-haoduong.jpg" alt="Hao Duong đạt TEF C1 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Hao Duong</span><span class="tag">TEF · C1</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-maihuong.jpg" alt="Mai Phương đạt HANU Test C1 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Mai Phương</span><span class="tag">HANU Test · C1</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-hailey.jpg" alt="Hailey đạt DALF C1 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Hailey</span><span class="tag">DALF · C1</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-anon-dalfc1.jpg" alt="Attestation de réussite DALF C1 của Hailey, Alliance française de Vancouver, điểm cuối 60/100">
+        <div class="result-cap"><span class="name">Hailey — Bảng điểm</span><span class="tag">DALF C1 · 60/100</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-khanhphuong.jpg" alt="Khánh Phương đạt DELF B2 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Khánh Phương</span><span class="tag">DELF · B2</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-ducanh.jpg" alt="Đức Anh đạt DELF B2 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Đức Anh</span><span class="tag">DELF · B2</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-anon-delfb2.jpg" alt="Attestation de réussite DELF B2 của Đức Anh, điểm cuối 82/100">
+        <div class="result-cap"><span class="name">Đức Anh — Bảng điểm</span><span class="tag">DELF B2 · 82/100</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-halinh.jpg" alt="Hà Linh đạt DELF B2 Junior - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Hà Linh</span><span class="tag">DELF B2 · Junior</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-halinh-detail.jpg" alt="Bảng điểm chi tiết DELF B2 Junior của Hà Linh">
+        <div class="result-cap"><span class="name">Hà Linh — Bảng điểm</span><span class="tag">Đạt</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-le-h.png" alt="Lê H. đạt TCF Canada B2 - Bảng vàng vinh danh Oui Academy">
+        <div class="result-cap"><span class="name">Lê H.</span><span class="tag">TCF Canada · B2</span></div>
+      </div>
+      <div class="result-frame">
+        <img src="images/result-le-h-detail.png" alt="Bảng điểm chi tiết TCF Canada của Lê H., trình độ C1 phần hiểu, B2 phần diễn đạt">
+        <div class="result-cap"><span class="name">Lê H. — Bảng điểm</span><span class="tag">Hiểu: C1 · Diễn đạt: B2</span></div>
       </div>
     </div>
   </div>
