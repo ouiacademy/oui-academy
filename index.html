@@ -173,6 +173,27 @@
   .course-card h3{font-size:22px;}
   .course-card p{color:var(--grey); font-size:15px;}
 
+  /* ===== Levels (A1-C2 programs) ===== */
+  .levels{padding:100px 0; border-top:1px solid var(--line);}
+  .level-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .level-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:28px 24px; display:flex; flex-direction:column; gap:14px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .level-card:hover{transform:translateY(-4px); box-shadow:6px 6px 0 var(--yellow);}
+  .level-top{display:flex; align-items:center; justify-content:space-between;}
+  .level-code{font-family:'Space Grotesk'; font-weight:700; font-size:26px;}
+  .level-badge{
+    background:var(--yellow); border:2px solid var(--ink);
+    font-family:'Space Grotesk'; font-weight:700; font-size:11px;
+    padding:3px 9px; white-space:nowrap;
+  }
+  .level-meta{font-size:13px; color:var(--grey);}
+  .level-card p.desc{color:#3a3833; font-size:14.5px; flex:1;}
+  .level-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
+  .level-card:hover .level-link{color:var(--grey);}
+
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
   .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
@@ -266,6 +287,7 @@
     .stat{border-right:none; border-bottom:1px solid var(--ink);}
     .stat:last-child{border-bottom:none;}
     .course-grid{grid-template-columns:1fr;}
+    .level-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .hero{padding:56px 0 70px;}
     .about,.courses,.teacher,.results{padding:70px 0;}
@@ -284,6 +306,7 @@
     <nav class="nav-links">
       <a href="#about">Giới thiệu</a>
       <a href="#courses">Khóa học</a>
+      <a href="#programs">Lộ trình A1–C2</a>
       <a href="#teacher">Giáo viên</a>
       <a href="#results">Học viên</a>
       <a href="#contact" class="nav-cta">Đặt lịch tư vấn</a>
@@ -350,6 +373,54 @@
         <h3>TCF Canada</h3>
         <p>Luyện đúng format, đúng thời gian thi — phục vụ hồ sơ định cư và du học Canada.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="levels" id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Chương trình học</span>
+      <h2>Lộ trình Nói theo từng trình độ: A1 → C2</h2>
+      <p>Xem chi tiết từng buổi học — ngữ pháp, ngữ âm và chủ đề luyện nói của mỗi trình độ.</p>
+    </div>
+    <div class="level-grid">
+      <a class="level-card" href="programmes/programme-oral-a1-vi.html">
+        <div class="level-top"><span class="level-code">A1</span><span class="level-badge">Khám phá</span></div>
+        <p class="level-meta">12 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Những bước nói đầu tiên: tự giới thiệu, miêu tả, hỏi và phản ứng trong tình huống thực tế.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
+      <a class="level-card" href="programmes/programme-oral-a2-vi.html">
+        <div class="level-top"><span class="level-code">A2</span><span class="level-badge">Khám phá</span></div>
+        <p class="level-meta">13 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Kể chuyện, so sánh, lập luận đơn giản và kể chuyện ở thì quá khứ.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
+      <a class="level-card" href="programmes/programme-oral-b1-vi.html">
+        <div class="level-top"><span class="level-code">B1</span><span class="level-badge">DELF</span></div>
+        <p class="level-meta">13 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Tranh luận, nêu quan điểm và bảo vệ lập luận của mình.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
+      <a class="level-card" href="programmes/programme-oral-b2-vi.html">
+        <div class="level-top"><span class="level-code">B2</span><span class="level-badge">DELF</span></div>
+        <p class="level-meta">13 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Xây dựng lập luận tinh tế và giữ vững văn phong trang trọng khi bị phản biện.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
+      <a class="level-card" href="programmes/programme-oral-c1-vi.html">
+        <div class="level-top"><span class="level-code">C1</span><span class="level-badge">DALF</span></div>
+        <p class="level-meta">13 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Làm chủ diễn ngôn trừu tượng, hàm ý và tranh cãi về các vấn đề xã hội.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
+      <a class="level-card" href="programmes/programme-oral-c2-vi.html">
+        <div class="level-top"><span class="level-code">C2</span><span class="level-badge">DALF</span></div>
+        <p class="level-meta">16 buổi học · 60–75 phút/buổi</p>
+        <p class="desc">Chuẩn bị cho phần thi nói DALF C2: tóm tắt, phát triển quan điểm cá nhân và tranh luận với ban giám khảo.</p>
+        <span class="level-link">Xem chương trình →</span>
+      </a>
     </div>
   </div>
 </section>
