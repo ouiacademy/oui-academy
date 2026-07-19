@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khóa học Nói A1 — Khám phá | Oui Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#F4EB00;
+    --ink:#111111;
+    --paper:#FFFFFF;
+    --ink-soft:#5B5B62;
+    --ink-faint:#9A9AA1;
+    --hair:#EAEAE4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans', 'Poppins', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media print{
+    .station, .card{ break-inside: avoid; page-break-inside: avoid; }
+    .terminus-strip{ break-inside: avoid; }
+    a.pill, a.lang-toggle{ text-decoration:none; }
+    body{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 100px;}
+
+  /* ---- BRAND HEADER ---- */
+  .brandbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 24px;max-width:820px;margin:0 auto;
+    border-bottom:1px solid var(--hair);
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand-mark{
+    position:relative;
+    font-family:'Plus Jakarta Sans','Poppins',sans-serif;
+    font-weight:800;font-size:19px;letter-spacing:-0.01em;
+    padding:2px 4px;
+  }
+  .brand-mark::before{
+    content:"";
+    position:absolute;
+    right:-6px;top:2px;
+    width:20px;height:20px;
+    background:var(--yellow);
+    z-index:-1;
+  }
+  .brand-sub{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:11px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.05em;
+  }
+  .lang-toggle{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:12px;font-weight:600;
+    text-decoration:none;color:var(--ink);
+    border:1.5px solid var(--ink);
+    padding:5px 10px;
+  }
+  .lang-toggle:hover{background:var(--ink);color:#fff;}
+
+  /* ---- NAV ---- */
+  .topnav{
+    display:flex;gap:6px;flex-wrap:wrap;
+    padding:16px 24px 0;max-width:820px;margin:0 auto;
+  }
+  .pill{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:12.5px;font-weight:600;
+    text-decoration:none;color:var(--ink-soft);
+    border:1.5px solid var(--hair);
+    padding:5px 11px;
+    transition:all .15s ease;
+  }
+  .pill:hover{border-color:var(--ink);color:var(--ink);}
+  .pill.active{background:var(--ink);border-color:var(--ink);color:var(--yellow);}
+
+  /* ---- HERO ---- */
+  .hero{padding:36px 0 44px;}
+  .hero-badge{
+    position:relative;
+    display:inline-block;
+    margin-bottom:22px;
+  }
+  .hero-badge .square{
+    width:104px;height:104px;background:var(--yellow);
+  }
+  .hero-badge .code{
+    position:absolute;left:14px;bottom:10px;
+    font-family:'Plus Jakarta Sans','Poppins',sans-serif;
+    font-weight:800;font-size:40px;color:var(--ink);
+    letter-spacing:-0.02em;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;margin:0 0 8px;
+  }
+  .hero h1{
+    font-family:'Plus Jakarta Sans','Poppins', sans-serif;
+    font-weight:800;
+    font-size:clamp(26px,4vw,34px);
+    line-height:1.15;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .hero .meta{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:13px;color:var(--ink-soft);margin:0 0 12px;
+  }
+  .hero .tagline{
+    font-size:15.5px;color:var(--ink-soft);line-height:1.55;margin:0;max-width:56ch;
+  }
+
+  /* ---- LINE / STATIONS ---- */
+  .line-list{list-style:none;margin:0;padding:0;}
+  .station{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:20px;
+    position:relative;
+  }
+  .track{display:flex;flex-direction:column;align-items:center;}
+  .node{
+    width:32px;height:32px;
+    background:var(--paper);
+    border:2.5px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;z-index:2;
+  }
+  .node em{
+    font-style:normal;
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-weight:600;font-size:12px;color:var(--ink);
+  }
+  .node.terminus{
+    width:38px;height:38px;
+    background:var(--ink);
+  }
+  .node.terminus em{color:var(--yellow);font-size:13px;}
+  .rail{
+    width:3px;flex:1;background:var(--ink);
+    margin-top:-2px;margin-bottom:-2px;
+    min-height:60px;
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--hair);
+    padding:18px 20px 20px;
+    margin-bottom:22px;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{
+    border-color:var(--ink);
+    transform:translateY(-1px);
+    box-shadow:4px 4px 0 0 var(--yellow);
+  }
+  .fr-title{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:11.5px;color:var(--ink-faint);
+    margin:0 0 4px;letter-spacing:.01em;
+  }
+  .card h3{
+    font-family:'Plus Jakarta Sans','Poppins',sans-serif;
+    font-weight:700;
+    font-size:17px;
+    margin:0 0 11px;
+    letter-spacing:-0.01em;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px;}
+  .chip{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:11px;font-weight:500;
+    padding:3px 8px;
+    color:var(--ink-soft);
+  }
+  .chip-lang{background:#FBF9E0;color:#54530f;}
+  .chip-phon{background:#F0EEEA;color:var(--ink-soft);}
+  .card p.sujet{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink);}
+  .sujet-label{
+    font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    font-size:11.5px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.03em;
+    color:var(--ink);
+  }
+  .station:last-child .card{
+    margin-bottom:0;
+    border:2px solid var(--ink);
+    background:linear-gradient(180deg, var(--paper) 60%, var(--yellow) 320%);
+  }
+
+  /* ---- FOOTER STRIP ---- */
+  .terminus-strip{
+    margin-top:38px;
+    display:flex;align-items:center;gap:12px;
+    padding:18px 20px;
+    background:var(--ink);
+    color:var(--yellow);
+  }
+  .terminus-strip .dot{width:10px;height:10px;background:var(--yellow);flex:none;}
+  .terminus-strip p{
+    margin:0;font-size:14px;font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+    letter-spacing:.01em;color:#fff;
+  }
+  .terminus-strip .arrow{color:var(--ink-faint);margin-left:auto;font-family:'IBM Plex Mono','DejaVu Sans Mono',monospace;font-size:13px;}
+
+  @media (max-width:560px){
+    .station{grid-template-columns:32px 1fr;gap:14px;}
+    .hero-badge .square{width:84px;height:84px;}
+    .hero-badge .code{font-size:32px;left:10px;bottom:8px;}
+    .brandbar{padding:18px 20px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="brandbar">
+    <div class="brand">
+      <span class="brand-mark">Oui Academy</span>
+      <span class="brand-sub">Dành cho người học tiếng Pháp</span>
+    </div>
+    <a class="lang-toggle" href="programme-oral-a1-en.html">EN</a>
+  </div>
+
+  <nav class="topnav" aria-label="Các trình độ khóa học">
+<a class="pill active" href="programme-oral-a1-vi.html">A1</a>
+<a class="pill" href="programme-oral-a2-vi.html">A2</a>
+<a class="pill" href="programme-oral-b1-vi.html">B1</a>
+<a class="pill" href="programme-oral-b2-vi.html">B2</a>
+<a class="pill" href="programme-oral-c1-vi.html">C1</a>
+<a class="pill" href="programme-oral-c2-vi.html">C2</a>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-badge">
+        <div class="square"></div>
+        <div class="code">A1</div>
+      </div>
+      <p class="eyebrow">Khóa học nói · Khám phá</p>
+      <h1>Khóa học Nói A1</h1>
+      <p class="meta">12 buổi học · mỗi buổi 60–75 phút</p>
+      <p class="tagline">Những bước nói đầu tiên: tự giới thiệu, miêu tả, hỏi và phản ứng trong tình huống thực tế.</p>
+    </header>
+
+    <ol class="line-list">
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>1</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Bienvenue & Je suis...</p>
+          <h3>Chào mừng & Tôi là...</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: être / avoir / s'appeler, adjectifs de nationalité, quel</span><span class="chip chip-phon">Ngữ âm: Groupes rythmiques, accent tonique, liaisons avec les prépositions</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — “Bạn là ai?” — vòng tự giới thiệu và phỏng vấn chéo</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>2</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Près de moi</p>
+          <h3>Xung quanh tôi</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: aimer/détester, possessifs, articles</span><span class="chip chip-phon">Ngữ âm: Verbes en -er au présent, liaisons avec les déterminants</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Miêu tả gia đình bạn và những điều cả nhà thích làm cùng nhau</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>3</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Qu'est-ce qu'on mange ?</p>
+          <h3>Chúng ta ăn gì?</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: partitifs, quantités, verbes en -ir</span><span class="chip chip-phon">Ngữ âm: Voyelles [i] [y] [u], intonation montante/descendante</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Nhập vai “Ở nhà hàng”, sau đó tranh luận về món ăn ngon nhất</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>4</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">C'est où ?</p>
+          <h3>Nó ở đâu?</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: impératif, connecteurs, transports</span><span class="chip chip-phon">Ngữ âm: Voyelles nasales [ɛ̃] [ɑ̃] [ɔ̃]</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — “Hãy dẫn tôi đến...” — trò chơi đoán đường đi</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>5</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">C'est tendance !</p>
+          <h3>Đang thịnh hành!</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: futur proche, place de l'adjectif, démonstratifs</span><span class="chip chip-phon">Ngữ âm: Consonnes [ʃ] [ʒ], liaisons obligatoires avec l'adjectif</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Miêu tả một bộ trang phục lý tưởng + dự báo thời tiết</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>6</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Qu'est-ce qu'on fait aujourd'hui ?</p>
+          <h3>Hôm nay chúng ta làm gì?</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: verbes pronominaux, fréquence, passé récent</span><span class="chip chip-phon">Ngữ âm: Consonnes [s] [z], voyelles [ø] [œ]</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Thương lượng một kế hoạch đi chơi cuối tuần</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>7</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Chez moi !</p>
+          <h3>Nhà của tôi!</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: passé composé avec avoir, prépositions de lieu, COD</span><span class="chip chip-phon">Ngữ âm: Voyelles [e] [ɛ], e final non prononcé</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Gọi điện cho chủ nhà về một sự cố trong nhà</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>8</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">En forme !</p>
+          <h3>Khỏe mạnh!</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: passé composé avec être, devoir, pronom y</span><span class="chip chip-phon">Ngữ âm: Consonne [ʁ], consonnes [b] [v]</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Khám bệnh + lời khuyên sức khỏe</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>9</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Bonnes vacances !</p>
+          <h3>Kỳ nghỉ vui vẻ!</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: comparaison, passé composé avec être</span><span class="chip chip-phon">Ngữ âm: Consonnes [f] [v], consonnes [k] [g]</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Kể chuyện kỳ nghỉ, sau đó tranh luận núi hay biển</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>10</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Au travail !</p>
+          <h3>Đi làm thôi!</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: pronoms relatifs qui/que, pronoms COD</span><span class="chip chip-phon">Ngữ âm: Consonnes [t] [d], consonnes [p] [b]</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Mô phỏng phỏng vấn xin việc</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>11</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Révision : une journée à Paris</p>
+          <h3>Ôn tập: một ngày ở Paris</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision transversale des unités 1-10</span><span class="chip chip-phon">Ngữ âm: ciblée sur les erreurs récurrentes du groupe</span></div>
+          <p class="sujet"><span class="sujet-label">Chủ đề nói</span> — Mô phỏng liên tục xuyên suốt một ngày</p>
+        </div>
+      </li>
+
+      <li class="station">
+        <div class="track">
+          <span class="node terminus"><em>12</em></span>
+          
+        </div>
+        <div class="card">
+          <p class="fr-title">Bilan oral final</p>
+          <h3>Đánh giá nói cuối khóa</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: synthèse des acquis A1</span></div>
+          <p class="sujet"><span class="sujet-label">Hình thức</span> — Phỏng vấn cá nhân + tổng kết chung cả lớp</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="terminus-strip">
+      <span class="dot"></span>
+      <p>Sẵn sàng lên trình độ A2</p>
+      <span class="arrow">Trình độ tiếp theo → A2</span>
+    </div>
+  </div>
+
+</body>
+</html>
