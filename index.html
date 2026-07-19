@@ -69,9 +69,21 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 0;
   }
-  .logo-mark{display:flex; align-items:center; gap:10px;}
-  .logo-mark .sq{width:20px; height:20px; background:var(--yellow); border:2px solid var(--ink); flex-shrink:0;}
-  .logo-mark span{font-family:'Space Grotesk'; font-weight:700; font-size:20px;}
+  .logo-mark{display:flex; align-items:baseline;}
+  .logo-mark span{
+    position:relative;
+    font-family:'Space Grotesk'; font-weight:700; font-size:20px;
+    letter-spacing:-0.01em;
+    padding:2px 4px;
+  }
+  .logo-mark span::before{
+    content:'';
+    position:absolute;
+    right:-6px; top:2px;
+    width:20px; height:20px;
+    background:var(--yellow);
+    z-index:-1;
+  }
   .nav-links{display:flex; gap:36px; align-items:center;}
   .nav-links a{font-size:14.5px; font-weight:500; color:var(--ink); position:relative; padding:4px 0;}
   .nav-links a:hover{color:var(--grey);}
@@ -300,7 +312,6 @@
 <header>
   <div class="wrap nav">
     <div class="logo-mark">
-      <span class="sq"></span>
       <span>Oui Academy</span>
     </div>
     <nav class="nav-links">
@@ -593,8 +604,7 @@
 <footer>
   <div class="wrap footer-top">
     <div class="logo-mark">
-      <span class="sq"></span>
-      <span style="font-size:16px;">Oui Academy</span>
+      <span>Oui Academy</span>
     </div>
     <div class="social-row">
       <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
