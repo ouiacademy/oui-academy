@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học phí — Oui Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F1E7; --ivory-deep:#EFE7D6; --navy:#1B2A41; --navy-soft:#3A4A63;
+    --yellow:#F4EB00; --yellow-deep:#D6C900; --line:rgba(27,42,65,0.14);
+    --paper:#FFFDF8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory); color:var(--navy); font-family:'Inter',sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  nav.site-nav{position:sticky; top:0; z-index:50; background:rgba(246,241,231,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  nav.site-nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px;}
+  .brand{position:relative; display:inline-block; font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem; letter-spacing:-0.01em; padding:2px 4px;}
+  .brand::before{content:""; position:absolute; right:-6px; top:2px; width:20px; height:20px; background:var(--yellow); z-index:-1;}
+  .nav-links{display:flex; gap:22px; font-size:0.9rem; font-weight:500; flex-wrap:wrap;}
+  .nav-links a{color:var(--navy-soft); position:relative; padding:4px 0;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-links a.active{color:var(--navy); font-weight:700;}
+  .nav-links a.active::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:3px; background:var(--yellow); border-radius:2px;}
+  .nav-cta{background:var(--navy); color:var(--ivory); padding:10px 20px; border-radius:100px; font-size:0.86rem; font-weight:600; white-space:nowrap;}
+
+  /* URGENCY BAR */
+  .urgency-bar{
+    background:var(--navy); color:var(--ivory);
+    font-family:'Space Mono', monospace; font-size:0.82rem;
+    text-align:center; padding:11px 20px;
+  }
+  .urgency-bar strong{color:var(--yellow);}
+  .urgency-bar .countdown{display:inline-flex; gap:6px; margin-left:10px;}
+  .cbox{background:rgba(246,241,231,0.12); border-radius:5px; padding:2px 7px; font-weight:700;}
+
+  .hero{padding:64px 0 44px; border-bottom:1px solid var(--line);}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); background:rgba(244,235,0,0.18); border:1px solid rgba(214,201,0,0.55); padding:6px 14px; border-radius:100px; margin-bottom:22px;}
+  h1.hero-title{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2rem,5vw,3.2rem); line-height:1.08; letter-spacing:-0.015em; max-width:720px;}
+  h1.hero-title em{font-style:italic; color:var(--navy); background:linear-gradient(180deg, transparent 58%, var(--yellow) 58%); padding:0 4px;}
+  .hero-sub{margin-top:18px; font-size:1.05rem; color:var(--navy-soft); max-width:560px;}
+  .hero-links{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-links a.secondary{border:1px solid var(--line); padding:10px 18px; border-radius:100px; font-size:0.88rem; font-weight:600; color:var(--navy);}
+
+  section{padding:58px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-tag{font-family:'Space Mono',monospace; font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); margin-bottom:10px;}
+  h2.section-title{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-0.01em; max-width:640px;}
+  .section-desc{margin-top:14px; color:var(--navy-soft); max-width:580px; font-size:1rem;}
+
+  /* DOORS (goal entry) */
+  .doors-grid{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .door-card{background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, border-color .15s ease;}
+  .door-card:hover{transform:translateY(-3px); border-color:var(--navy);}
+  .door-tag{font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--navy); text-transform:uppercase; letter-spacing:0.06em;}
+  .door-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem;}
+  .door-desc{font-size:0.9rem; color:var(--navy-soft);}
+  .door-cta{margin-top:auto; font-size:0.85rem; font-weight:700; color:var(--navy);}
+  @media (max-width:820px){.doors-grid{grid-template-columns:1fr;}}
+
+  /* ENTRY OFFER */
+  .entry-grid{margin-top:36px; display:grid; grid-template-columns:1.1fr 1fr; gap:20px;}
+  .entry-card{border-radius:18px; padding:30px; display:flex; flex-direction:column; gap:14px;}
+  .entry-card.free{background:var(--yellow); color:var(--navy);}
+  .entry-card.starter{background:var(--paper); border:1px solid var(--line);}
+  .entry-badge{font-family:'Space Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.75;}
+  .entry-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem;}
+  .entry-price{font-family:'Space Mono',monospace; font-weight:700; font-size:1.7rem; margin-top:auto;}
+  .entry-price .unit{font-size:0.85rem; font-weight:400; opacity:0.75;}
+  .entry-note{font-size:0.86rem; opacity:0.85;}
+  .entry-btn{display:inline-block; margin-top:6px; padding:11px 20px; border-radius:100px; font-weight:600; font-size:0.88rem; text-align:center;}
+  .entry-card.free .entry-btn{background:var(--navy); color:var(--ivory);}
+  .entry-card.starter .entry-btn{background:var(--navy); color:var(--ivory);}
+  @media (max-width:760px){.entry-grid{grid-template-columns:1fr;}}
+
+  /* TICKETS */
+  .ticket-row{margin-top:36px; display:flex; flex-direction:column; gap:16px;}
+  .ticket{display:grid; grid-template-columns:110px 1fr auto; align-items:center; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden; position:relative;}
+  .ticket::before{content:""; position:absolute; left:110px; top:0; bottom:0; width:0; border-left:2px dashed rgba(27,42,65,0.22);}
+  .ticket-level{background:var(--navy); color:var(--ivory); height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:18px 8px; text-align:center;}
+  .ticket-level .lvl{font-family:'Fraunces',serif; font-weight:700; font-size:1.7rem; line-height:1;}
+  .ticket-level .lvl-tag{font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.65; margin-top:6px;}
+  .ticket-body{padding:16px 22px;}
+  .ticket-body .sessions{font-size:0.92rem; font-weight:600;}
+  .ticket-body .sessions span{color:var(--navy-soft); font-weight:400;}
+  .ticket-prices{display:flex; gap:24px; margin-top:8px; flex-wrap:wrap;}
+  .price-block{font-size:0.82rem; color:var(--navy-soft);}
+  .price-block .amt{font-family:'Space Mono',monospace; font-weight:700; font-size:1rem; color:var(--navy); display:block;}
+  .price-block.best{background:rgba(244,235,0,0.16); border-radius:8px; padding:4px 10px; margin:-4px -10px;}
+  .price-block.best .amt{color:var(--navy);}
+  .vnd{display:block; font-size:0.7rem; color:var(--navy-soft); opacity:0.75; font-weight:400; margin-top:1px;}
+  .entry-price .vnd, .bundle-price .amt .vnd, .club-plan .price .vnd, .private-card .amt .vnd{display:inline-block; margin-top:0; margin-left:6px;}
+  .ticket-deadline{font-size:0.74rem; margin-top:8px; color:var(--navy); font-weight:600;}
+  .ticket-badge{padding:0 22px; text-align:right;}
+  .save-pill{font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--navy); background:var(--yellow); border:1px solid var(--yellow-deep); padding:6px 12px; border-radius:100px; white-space:nowrap;}
+  @media (max-width:640px){
+    .ticket{grid-template-columns:78px 1fr;}
+    .ticket::before{left:78px;}
+    .ticket-badge{grid-column:1/-1; text-align:left; padding:0 22px 18px;}
+    .ticket-level .lvl{font-size:1.3rem;}
+  }
+
+  /* ESTIMATOR */
+  .estimator{margin-top:36px; background:var(--navy); color:var(--ivory); border-radius:20px; padding:34px; display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .estimator-controls{display:flex; flex-direction:column; gap:18px;}
+  .est-field label{display:block; font-size:0.82rem; opacity:0.75; margin-bottom:6px;}
+  .est-field select{
+    width:100%; padding:11px 14px; border-radius:10px; border:1px solid rgba(246,241,231,0.25);
+    background:rgba(246,241,231,0.08); color:var(--ivory); font-family:'Inter',sans-serif; font-size:0.95rem;
+  }
+  .est-field select option{color:var(--navy);}
+  .pace-toggle{display:flex; gap:8px;}
+  .pace-btn{flex:1; padding:9px; border-radius:8px; border:1px solid rgba(246,241,231,0.25); background:transparent; color:var(--ivory); font-size:0.82rem; cursor:pointer;}
+  .pace-btn.active{background:var(--yellow); border-color:var(--yellow); color:var(--navy); font-weight:700;}
+  .estimator-result{background:rgba(246,241,231,0.06); border-radius:14px; padding:24px; display:flex; flex-direction:column; justify-content:center; gap:10px;}
+  .est-row{display:flex; justify-content:space-between; font-size:0.9rem; opacity:0.85;}
+  .est-total{font-family:'Space Mono',monospace; font-weight:700; font-size:2rem; margin-top:6px;}
+  .est-total .was{font-size:1rem; opacity:0.5; text-decoration:line-through; margin-left:8px; font-weight:400;}
+  .est-finish{font-size:0.82rem; color:var(--yellow); margin-top:4px;}
+  @media (max-width:760px){.estimator{grid-template-columns:1fr;}}
+
+  /* BUNDLES */
+  .bundle-grid{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .bundle-card{background:var(--navy); color:var(--ivory); border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:14px;}
+  .bundle-card.featured{background:var(--yellow); color:var(--navy);}
+  .bundle-route{font-family:'Space Mono',monospace; font-size:0.76rem; letter-spacing:0.05em; opacity:0.75;}
+  .bundle-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem;}
+  .bundle-price{margin-top:auto; padding-top:14px; border-top:1px solid rgba(246,241,231,0.22);}
+  .bundle-card.featured .bundle-price{border-top:1px solid rgba(27,42,65,0.25);}
+  .bundle-price .amt{font-family:'Space Mono',monospace; font-weight:700; font-size:1.8rem;}
+  .bundle-price .was{font-size:0.84rem; opacity:0.6; text-decoration:line-through; margin-left:8px;}
+  .bundle-price .save{font-size:0.8rem; color:var(--yellow); margin-top:6px; font-weight:600;}
+  .bundle-card.featured .save{color:var(--navy);}
+  @media (max-width:820px){.bundle-grid{grid-template-columns:1fr;}}
+
+  /* CLUB */
+  .club-panel{margin-top:36px; background:var(--ivory-deep); border:1px solid var(--line); border-radius:18px; padding:34px; display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .club-headline{font-family:'Fraunces',serif; font-weight:600; font-size:1.35rem; margin-bottom:10px;}
+  .club-note{font-size:0.96rem; color:var(--navy-soft);}
+  .club-note strong{color:var(--navy);}
+  .club-perks{list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:10px;}
+  .club-perks li{display:flex; gap:10px; font-size:0.9rem; align-items:flex-start;}
+  .club-perks li::before{content:"✓"; color:var(--navy); font-weight:700; flex-shrink:0;}
+  .club-perks li.new{color:var(--navy); font-weight:600;}
+  .club-perks li.new::before{content:"★"; color:var(--yellow-deep);}
+  .club-plans{display:flex; flex-direction:column; gap:12px;}
+  .club-plan{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .club-plan .name{font-weight:600; font-size:0.95rem;}
+  .club-plan .sub{font-size:0.8rem; color:var(--navy-soft);}
+  .club-plan .price{font-family:'Space Mono',monospace; font-weight:700; text-align:right;}
+  .club-plan .price .per{display:block; font-size:0.72rem; font-weight:400; color:var(--navy-soft);}
+  .club-plan.best{border-color:var(--yellow-deep); background:rgba(244,235,0,0.09);}
+  .club-plan.best .price{color:var(--navy);}
+  @media (max-width:760px){.club-panel{grid-template-columns:1fr;}}
+
+  /* PRIVATE */
+  .private-row{margin-top:36px; display:flex; gap:20px; flex-wrap:wrap;}
+  .private-card{flex:1; min-width:220px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px;}
+  .private-card .label{font-size:0.85rem; color:var(--navy-soft);}
+  .private-card .amt{font-family:'Space Mono',monospace; font-weight:700; font-size:1.6rem; margin-top:6px;}
+  .private-card .amt small{font-size:0.9rem; font-weight:400; color:var(--navy-soft);}
+  .note-strip{margin-top:22px; font-size:0.88rem; color:var(--navy-soft); border-left:2px solid var(--yellow-deep); padding-left:14px;}
+
+  /* RESULTS / BẢNG VÀNG */
+  .results-grid{margin-top:36px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .result-card{background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .result-photo{width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:var(--ivory-deep);}
+  .result-info{padding:12px 14px 16px;}
+  .result-name{font-weight:600; font-size:0.92rem;}
+  .result-score{margin-top:6px; display:inline-block; font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--navy); background:var(--yellow); border:1px solid var(--yellow-deep); padding:4px 10px; border-radius:100px;}
+  @media (max-width:900px){.results-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.results-grid{grid-template-columns:1fr 1fr;}}
+
+  /* GOAL PAGE LINK BANNER */
+  .goal-banner{margin-top:36px; background:var(--paper); border:1px dashed var(--navy); border-radius:14px; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+  .goal-banner p{font-size:0.94rem; color:var(--navy-soft); max-width:480px;}
+  .goal-banner a{background:var(--navy); color:var(--ivory); padding:11px 20px; border-radius:100px; font-size:0.88rem; font-weight:600; white-space:nowrap;}
+
+  /* CONTACT / LEAD CAPTURE */
+  .contact-panel{margin-top:36px; background:var(--navy); color:var(--ivory); border-radius:20px; padding:36px; display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  .contact-intro h3{font-family:'Fraunces',serif; font-weight:600; font-size:1.4rem; margin-bottom:12px;}
+  .contact-intro p{font-size:0.92rem; opacity:0.8; line-height:1.6;}
+  .advisor-row{display:flex; align-items:center; gap:12px; margin-top:20px;}
+  .advisor-dot{width:38px; height:38px; border-radius:50%; background:var(--yellow); color:var(--navy); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; flex-shrink:0;}
+  .advisor-row .name{font-weight:600; font-size:0.92rem;}
+  .advisor-row .role{font-size:0.78rem; opacity:0.7;}
+  .contact-form{display:flex; flex-direction:column; gap:12px;}
+  .contact-form input{
+    width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(246,241,231,0.25);
+    background:rgba(246,241,231,0.08); color:var(--ivory); font-family:'Inter',sans-serif; font-size:0.92rem;
+  }
+  .contact-form input::placeholder{color:rgba(246,241,231,0.5);}
+  .contact-btn-row{display:flex; gap:10px; margin-top:4px; flex-wrap:wrap;}
+  .contact-btn{flex:1; min-width:150px; text-align:center; padding:12px; border-radius:10px; font-weight:600; font-size:0.88rem; cursor:pointer; border:none;}
+  .contact-btn.email{background:var(--ivory); color:var(--navy);}
+  .contact-btn.zalo{background:var(--yellow); color:var(--navy);}
+  .contact-fine{font-size:0.74rem; opacity:0.6; margin-top:4px;}
+  @media (max-width:760px){.contact-panel{grid-template-columns:1fr;}}
+
+  .cta-final{text-align:center; padding:70px 0;}
+  .cta-final h2{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1.5rem,4vw,2.2rem);}
+  .cta-final p{margin-top:12px; color:var(--navy-soft);}
+  .cta-btn{display:inline-block; margin-top:24px; background:var(--navy); color:var(--ivory); padding:14px 30px; border-radius:100px; font-weight:600; font-size:0.95rem;}
+  footer{border-top:1px solid var(--line); padding:26px 0; font-size:0.82rem; color:var(--navy-soft); text-align:center;}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="brand">Oui Academy</a>
+    <div class="nav-links">
+      <a href="/#about">Giới thiệu</a>
+      <a href="/#courses">Khóa học</a>
+      <a href="/#programs">Lộ trình A1–C2</a>
+      <a href="/hoc-phi.html" class="active">Học phí</a>
+      <a href="/muc-tieu.html">Theo mục tiêu</a>
+      <a href="/#teacher">Giáo viên</a>
+      <a href="/#results">Học viên</a>
+    </div>
+    <a href="/#contact" class="nav-cta">Đặt lịch tư vấn</a>
+  </div>
+</nav>
+
+<div class="urgency-bar">
+  ⏳ Giá trọn gói hiện tại áp dụng cho học viên đăng ký lộ trình <strong>trước 10/08/2026</strong> — khoá tiếp theo khai giảng <strong>15/08/2026</strong>, sau đó học phí trở lại giá theo buổi.
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Học phí · Cập nhật 2026</div>
+    <h1 class="hero-title">Mỗi buổi <em>10€</em>. Không có giá ẩn phía sau.</h1>
+    <p class="hero-sub">Đóng theo buổi, theo trình độ, hay trọn lộ trình A1 → C2 — bạn chọn nhịp độ, chúng tôi giữ giá minh bạch suốt hành trình.</p>
+    <div class="hero-links">
+      <a href="#doors" class="secondary">Tôi chưa biết bắt đầu từ đâu →</a>
+      <a href="#estimator" class="secondary">Ước tính học phí của tôi →</a>
+    </div>
+  </div>
+</header>
+
+<!-- 3 DOORS -->
+<section id="doors">
+  <div class="wrap">
+    <div class="section-tag">Bắt đầu ở đây</div>
+    <h2 class="section-title">Bạn đang ở đâu trên hành trình?</h2>
+    <p class="section-desc">Cùng một lộ trình A1 → C2 — chỉ khác cách bạn bước vào. Chọn đúng cửa, chúng tôi dẫn bạn tới đúng lộ trình.</p>
+
+    <div class="doors-grid">
+      <a href="#entry" class="door-card">
+        <div class="door-tag">Mới bắt đầu</div>
+        <div class="door-title">"Tôi mới bắt đầu"</div>
+        <div class="door-desc">Chưa từng học tiếng Pháp, hoặc học lâu rồi quên hết. Bắt đầu nhẹ nhàng, không áp lực.</div>
+        <div class="door-cta">Xem buổi học thử →</div>
+      </a>
+      <a href="#levels" class="door-card">
+        <div class="door-tag">Có mục tiêu thi</div>
+        <div class="door-title">"Tôi cần thi DELF/DALF"</div>
+        <div class="door-desc">Đã có nền tảng, cần lộ trình sát đề thi thật, đúng thời hạn.</div>
+        <div class="door-cta">Xem học phí theo trình độ →</div>
+      </a>
+      <a href="#club" class="door-card">
+        <div class="door-tag">Cần tự tin hơn</div>
+        <div class="door-title">"Tôi sợ nói"</div>
+        <div class="door-desc">Hiểu nhưng không dám mở miệng. Cần một nơi luyện nói đều đặn, áp lực thấp.</div>
+        <div class="door-cta">Xem Câu Lạc Bộ →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ENTRY OFFER -->
+<section id="entry">
+  <div class="wrap">
+    <div class="section-tag">01 · Bước vào không rủi ro</div>
+    <h2 class="section-title">Trước khi cam kết cả trình độ, hãy thử trước</h2>
+    <p class="section-desc">Hai cách để bắt đầu nhẹ nhàng, trước khi vào lộ trình 12–16 buổi đầy đủ.</p>
+
+    <div class="entry-grid">
+      <div class="entry-card free">
+        <div class="entry-badge">Miễn phí · giới hạn 1 lần/học viên mới</div>
+        <div class="entry-name">Buổi học thử cùng thầy Hải</div>
+        <p class="entry-note">30 phút, 1:1, không cần chuẩn bị gì. Thầy Hải trực tiếp nghe trình độ hiện tại của bạn và gợi ý điểm bắt đầu đúng.</p>
+        <div class="entry-price">0€ <span class="unit">/ 30 phút</span> <span class="vnd">0₫</span></div>
+        <a href="/#contact" class="entry-btn">Đặt buổi học thử →</a>
+      </div>
+      <div class="entry-card starter">
+        <div class="entry-badge">Gói Khởi Động</div>
+        <div class="entry-name">3 buổi làm quen</div>
+        <p class="entry-note">Cho ai muốn thử trước khi vào trọn A1. Nếu sau đó đăng ký A1 trọn gói, 3 buổi này được trừ thẳng vào học phí.</p>
+        <div class="entry-price">25€ <span class="unit">/ 3 buổi</span> <span class="vnd">~750.000₫</span></div>
+        <a href="/#contact" class="entry-btn">Bắt đầu Khởi Động →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section id="levels">
+  <div class="wrap">
+    <div class="section-tag">02 · Vé từng chặng</div>
+    <h2 class="section-title">Học theo trình độ, đóng theo buổi</h2>
+    <p class="section-desc">Đóng trọn từ đầu, được giảm 10% — áp dụng đến 10/08/2026 cho khoá khai giảng 15/08. Giá hiển thị bằng Euro (€), kèm quy đổi VND tham khảo theo tỷ giá ~30.000₫/€.</p>
+
+    <div class="ticket-row">
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">A1</div><div class="lvl-tag">12 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Những bước nói đầu tiên <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">120€</span>theo buổi<span class="vnd">~3.600.000₫</span></div>
+            <div class="price-block best"><span class="amt">108€</span>đóng trọn<span class="vnd">~3.240.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 36€</span>trả góp<span class="vnd">~1.080.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−12€</span></div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">A2</div><div class="lvl-tag">13 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Kể chuyện & lập luận đơn giản <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">130€</span>theo buổi<span class="vnd">~3.900.000₫</span></div>
+            <div class="price-block best"><span class="amt">117€</span>đóng trọn<span class="vnd">~3.510.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 39€</span>trả góp<span class="vnd">~1.170.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−13€</span></div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">B1</div><div class="lvl-tag">13 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Tranh luận & bảo vệ quan điểm <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">130€</span>theo buổi<span class="vnd">~3.900.000₫</span></div>
+            <div class="price-block best"><span class="amt">117€</span>đóng trọn<span class="vnd">~3.510.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 39€</span>trả góp<span class="vnd">~1.170.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−13€</span></div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">B2</div><div class="lvl-tag">13 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Lập luận tinh tế, văn phong trang trọng <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">130€</span>theo buổi<span class="vnd">~3.900.000₫</span></div>
+            <div class="price-block best"><span class="amt">117€</span>đóng trọn<span class="vnd">~3.510.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 39€</span>trả góp<span class="vnd">~1.170.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−13€</span></div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">C1</div><div class="lvl-tag">13 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Diễn ngôn trừu tượng & hàm ý <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">130€</span>theo buổi<span class="vnd">~3.900.000₫</span></div>
+            <div class="price-block best"><span class="amt">117€</span>đóng trọn<span class="vnd">~3.510.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 39€</span>trả góp<span class="vnd">~1.170.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−13€</span></div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-level"><div class="lvl">C2</div><div class="lvl-tag">16 buổi</div></div>
+        <div class="ticket-body">
+          <div class="sessions">Tóm tắt, phản biện trước ban giám khảo <span>· 60–75 phút/buổi</span></div>
+          <div class="ticket-prices">
+            <div class="price-block"><span class="amt">160€</span>theo buổi<span class="vnd">~4.800.000₫</span></div>
+            <div class="price-block best"><span class="amt">144€</span>đóng trọn<span class="vnd">~4.320.000₫</span></div>
+            <div class="price-block"><span class="amt">3 × 48€</span>trả góp<span class="vnd">~1.440.000₫/lần</span></div>
+          </div>
+          <div class="ticket-deadline">Giá này áp dụng đến 10/08/2026</div>
+        </div>
+        <div class="ticket-badge"><span class="save-pill">−16€</span></div>
+      </div>
+    </div>
+
+    <div class="goal-banner">
+      <p>Muốn xem học phí theo đúng mục tiêu của bạn — "sợ nói", "cần thi DELF trong 10 tuần", "chuẩn bị hồ sơ định cư" — thay vì theo cấp độ?</p>
+      <a href="/muc-tieu.html">Xem theo mục tiêu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ESTIMATOR -->
+<section id="estimator">
+  <div class="wrap">
+    <div class="section-tag">03 · Mô phỏng học phí</div>
+    <h2 class="section-title">Ước tính lộ trình của riêng bạn</h2>
+    <p class="section-desc">Chọn trình độ hiện tại và mục tiêu — xem ngay số buổi, học phí (đã gồm giảm giá gộp) và thời gian dự kiến.</p>
+
+    <div class="estimator">
+      <div class="estimator-controls">
+        <div class="est-field">
+          <label for="est-current">Trình độ hiện tại của bạn</label>
+          <select id="est-current">
+            <option value="-1">Chưa học bao giờ</option>
+            <option value="0">A1</option>
+            <option value="1">A2</option>
+            <option value="2">B1</option>
+            <option value="3">B2</option>
+            <option value="4">C1</option>
+          </select>
+        </div>
+        <div class="est-field">
+          <label for="est-target">Mục tiêu bạn muốn đạt</label>
+          <select id="est-target">
+            <option value="0">A1</option>
+            <option value="1">A2</option>
+            <option value="2">B1</option>
+            <option value="3">B2</option>
+            <option value="4" selected>C1</option>
+            <option value="5">C2</option>
+          </select>
+        </div>
+        <div class="est-field">
+          <label>Nhịp học</label>
+          <div class="pace-toggle">
+            <button type="button" class="pace-btn active" data-pace="1">1 buổi/tuần</button>
+            <button type="button" class="pace-btn" data-pace="2">2 buổi/tuần</button>
+          </div>
+        </div>
+      </div>
+      <div class="estimator-result">
+        <div class="est-row"><span>Số trình độ</span><span id="est-levels">—</span></div>
+        <div class="est-row"><span>Tổng số buổi</span><span id="est-sessions">—</span></div>
+        <div class="est-total" id="est-price">—<span class="was" id="est-was"></span></div>
+        <div class="est-finish" id="est-finish">Chọn trình độ để xem ước tính →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section id="bundles">
+  <div class="wrap">
+    <div class="section-tag">04 · Trọn hành trình</div>
+    <h2 class="section-title">Càng đi xa, càng tiết kiệm</h2>
+    <p class="section-desc">Cam kết nhiều trình độ cùng lúc — mức giảm 10% áp dụng trên toàn bộ chặng đường.</p>
+
+    <div class="bundle-grid">
+      <div class="bundle-card">
+        <div class="bundle-route">A1 → B1 · 3 trình độ · 38 buổi</div>
+        <div class="bundle-name">Khởi hành</div>
+        <div class="bundle-price"><span class="amt">342€ <span class="vnd">~10.260.000₫</span></span><span class="was">380€</span><div class="save">Tiết kiệm 38€ (~1.140.000₫)</div></div>
+      </div>
+      <div class="bundle-card">
+        <div class="bundle-route">A1 → B2 · 4 trình độ · 51 buổi</div>
+        <div class="bundle-name">Nửa chặng đường</div>
+        <div class="bundle-price"><span class="amt">459€ <span class="vnd">~13.770.000₫</span></span><span class="was">510€</span><div class="save">Tiết kiệm 51€ (~1.530.000₫)</div></div>
+      </div>
+      <div class="bundle-card featured">
+        <div class="bundle-route">A1 → C2 · trọn 6 trình độ · 80 buổi</div>
+        <div class="bundle-name">Trọn hành trình</div>
+        <div class="bundle-price"><span class="amt">720€ <span class="vnd">~21.600.000₫</span></span><span class="was">800€</span><div class="save">Tiết kiệm 80€ (~2.400.000₫)</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUB -->
+<section id="club">
+  <div class="wrap">
+    <div class="section-tag">05 · Giữa hai trình độ</div>
+    <h2 class="section-title">Câu Lạc Bộ Duy Trì Trình Độ</h2>
+
+    <div class="club-panel">
+      <div>
+        <div class="club-headline">Ở gần thầy Hải, giữa hai trình độ.</div>
+        <p class="club-note">Vừa xong <strong>A2</strong>, chưa sẵn sàng vào <strong>B1</strong>? Đây là cách giữ tiếng Pháp của bạn không bị mai một, không quên những gì đã học — luyện nói đều đặn cùng người bản xứ, để khi quay lại lộ trình chính, bạn không phải bắt đầu lại từ đầu.</p>
+        <ul class="club-perks">
+          <li>2 buổi workshop nhóm trực tiếp/tuần, luyện nói cùng người bản xứ</li>
+          <li>Cộng đồng luyện nói, không áp lực điểm số</li>
+          <li class="new">Nhắn hỏi thầy Hải bất cứ lúc nào trong ngày, thầy phản hồi trực tiếp</li>
+          <li class="new">Miễn phí trọn đời ứng dụng học tiếng Pháp Oui Academy khi ra mắt — đặc quyền thành viên sáng lập</li>
+        </ul>
+      </div>
+      <div class="club-plans">
+        <div class="club-plan">
+          <div><div class="name">Theo tháng</div><div class="sub">Đủ để không rơi khỏi nhịp</div></div>
+          <div class="price">15€<span class="vnd">~450.000₫</span><span class="per">/ tháng</span></div>
+        </div>
+        <div class="club-plan">
+          <div><div class="name">Theo quý</div><div class="sub">Như trên · giảm 11%</div></div>
+          <div class="price">40€<span class="vnd">~1.200.000₫</span><span class="per">13.30€/tháng · ~399.000₫</span></div>
+        </div>
+        <div class="club-plan best">
+          <div><div class="name">Theo năm</div><div class="sub">Như trên · giảm 22% · giữ đặc quyền lâu nhất</div></div>
+          <div class="price">140€<span class="vnd">~4.200.000₫</span><span class="per">11.70€/tháng · ~351.000₫</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE -->
+<section id="private">
+  <div class="wrap">
+    <div class="section-tag">06 · Tùy chọn</div>
+    <h2 class="section-title">Học riêng 1:1</h2>
+    <p class="section-desc">Cho ai muốn được kèm sát, đi nhanh hơn, hoặc tập trung vào một mục tiêu cụ thể trước ngày thi.</p>
+    <div class="private-row">
+      <div class="private-card"><div class="label">Theo giờ</div><div class="amt">15€ <small>/ giờ</small> <span class="vnd">~450.000₫</span></div></div>
+      <div class="private-card"><div class="label">Gói 12 giờ</div><div class="amt">150€ <small>· 12.50€/giờ</small> <span class="vnd">~4.500.000₫ · ~375.000₫/giờ</span></div></div>
+    </div>
+    <p class="note-strip">Giá đã bao gồm phản hồi chi tiết sau mỗi buổi — không tính phí thêm cho tài liệu hay bài tập về nhà.</p>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="wrap">
+    <div class="section-tag">Trước khi bạn quyết định</div>
+    <h2 class="section-title">Học viên & Kết quả</h2>
+    <p class="section-desc">Những gương mặt đã chinh phục kỳ thi cùng Oui Academy — kết quả thật, từ Bảng vàng vinh danh trên trang chủ.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-thuy.png" alt="Thuỳ P. - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Thuỳ P.</div><div class="result-score">DELF B2 · 73.5/100</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-do.jpg" alt="Tan Quang - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Tan Quang</div><div class="result-score">DELF B1 · 89/100</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-haoduong.jpg" alt="Hao Duong - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Hao Duong</div><div class="result-score">TEF · C1</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-hailey.jpg" alt="Hailey - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Hailey</div><div class="result-score">DALF C1 · 60/100</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-ducanh.jpg" alt="Đức Anh - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Đức Anh</div><div class="result-score">DELF B2 · 82/100</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-halinh.jpg" alt="Hà Linh - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Hà Linh</div><div class="result-score">DELF B2 · Junior</div></div>
+      </div>
+      <div class="result-card">
+        <img class="result-photo" src="https://ouiacademy.net/images/result-le-h.png" alt="Lê H. - học viên Oui Academy">
+        <div class="result-info"><div class="result-name">Lê H.</div><div class="result-score">TCF Canada · B2</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / LEAD CAPTURE -->
+<section id="advisor">
+  <div class="wrap">
+    <div class="section-tag">Vẫn còn phân vân?</div>
+    <h2 class="section-title">Nói chuyện với Chuyên Gia Giáo Dục Ngoại Ngữ</h2>
+    <p class="section-desc">Để lại email hoặc số điện thoại — chuyên gia sẽ liên hệ trực tiếp, giúp bạn chọn đúng trình độ và gói học phù hợp nhất.</p>
+
+    <div class="contact-panel">
+      <div class="contact-intro">
+        <h3>Không phải chatbot. Là người thật.</h3>
+        <p>Chuyên gia giáo dục ngoại ngữ của Oui Academy sẽ xem thông tin bạn để lại, đối chiếu với mục tiêu (thi cử, định cư, hay đơn giản là tự tin hơn khi nói), rồi gợi ý lộ trình phù hợp — trước khi bạn phải quyết định bất cứ điều gì.</p>
+        <div class="advisor-row">
+          <div class="advisor-dot">H</div>
+          <div>
+            <div class="name">Chuyên gia phụ trách hiện tại</div>
+            <div class="role">Phản hồi trong vòng 24 giờ</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <input type="text" placeholder="Họ và tên">
+        <input type="email" placeholder="Email của bạn">
+        <input type="tel" placeholder="Số điện thoại / Zalo">
+        <div class="contact-btn-row">
+          <button type="button" class="contact-btn email">Gửi qua Email</button>
+          <button type="button" class="contact-btn zalo">Liên hệ qua Zalo</button>
+        </div>
+        <p class="contact-fine">Thông tin của bạn chỉ dùng để tư vấn lộ trình học, không dùng cho mục đích khác.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Chưa chắc nên bắt đầu ở đâu?</h2>
+    <p>Đặt buổi học thử miễn phí — thầy Hải giúp bạn chọn đúng điểm bắt đầu.</p>
+    <a href="#entry" class="cta-btn">Đặt buổi học thử miễn phí</a>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 Oui Academy</div></footer>
+
+<script>
+  const levels = [
+    {code:'A1', sessions:12, price:120},
+    {code:'A2', sessions:13, price:130},
+    {code:'B1', sessions:13, price:130},
+    {code:'B2', sessions:13, price:130},
+    {code:'C1', sessions:13, price:130},
+    {code:'C2', sessions:16, price:160},
+  ];
+
+  const currentSel = document.getElementById('est-current');
+  const targetSel = document.getElementById('est-target');
+  const paceBtns = document.querySelectorAll('.pace-btn');
+  let pace = 1;
+
+  paceBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      paceBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      pace = parseInt(btn.dataset.pace, 10);
+      updateEstimate();
+    });
+  });
+
+  function updateEstimate(){
+    const cur = parseInt(currentSel.value, 10);
+    const tgt = parseInt(targetSel.value, 10);
+    const startIdx = cur + 1;
+
+    const elLevels = document.getElementById('est-levels');
+    const elSessions = document.getElementById('est-sessions');
+    const elPrice = document.getElementById('est-price');
+    const elWas = document.getElementById('est-was');
+    const elFinish = document.getElementById('est-finish');
+
+    if (tgt < startIdx){
+      elLevels.textContent = '—';
+      elSessions.textContent = '—';
+      elPrice.innerHTML = '—';
+      elWas.textContent = '';
+      elFinish.textContent = 'Mục tiêu cần cao hơn trình độ hiện tại của bạn.';
+      return;
+    }
+
+    const included = levels.slice(startIdx, tgt + 1);
+    const totalSessions = included.reduce((s, l) => s + l.sessions, 0);
+    const fullPrice = included.reduce((s, l) => s + l.price, 0);
+    const discount = included.length > 1 ? 0.10 : 0.10; // solo level still gets "đóng trọn" 10% off
+    const finalPrice = Math.round(fullPrice * (1 - discount));
+    const EUR_VND = 30000; // tỷ giá tham khảo — thay bằng API tỷ giá thực khi lên site chính thức
+    const finalPriceVND = (finalPrice * EUR_VND).toLocaleString('vi-VN');
+
+    elLevels.textContent = included.length + ' trình độ (' + included.map(l => l.code).join(' → ') + ')';
+    elSessions.textContent = totalSessions + ' buổi';
+    elPrice.innerHTML = finalPrice + '€ <span class="was">' + fullPrice + '€</span><br><span style="font-size:0.95rem; opacity:0.75;">~' + finalPriceVND + '₫</span>';
+    elWas.textContent = '';
+
+    const weeks = Math.ceil(totalSessions / pace);
+    const months = (weeks / 4.33).toFixed(1);
+    elFinish.textContent = 'Khoảng ' + weeks + ' tuần (~' + months + ' tháng) với nhịp ' + pace + ' buổi/tuần.';
+  }
+
+  currentSel.addEventListener('change', updateEstimate);
+  targetSel.addEventListener('change', updateEstimate);
+  updateEstimate();
+</script>
+
+</body>
+</html>
