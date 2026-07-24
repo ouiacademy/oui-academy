@@ -67,33 +67,25 @@
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 0;
-  }
-  .logo-mark{display:flex; align-items:baseline;}
-  .logo-mark span{
+    padding:14px 0;
     position:relative;
-    font-family:'Space Grotesk'; font-weight:700; font-size:20px;
-    letter-spacing:-0.01em;
-    padding:2px 4px;
   }
-  .logo-mark span::before{
-    content:'';
-    position:absolute;
-    right:-6px; top:2px;
-    width:20px; height:20px;
-    background:var(--yellow);
-    z-index:-1;
-  }
-  .nav-links{display:flex; gap:36px; align-items:center;}
+  .logo-mark{display:flex; align-items:center; flex-shrink:0;}
+  .logo-mark img{height:40px; width:auto; display:block;}
+  .nav-links{display:flex; gap:28px; align-items:center; flex-wrap:wrap;}
   .nav-links a{font-size:14.5px; font-weight:500; color:var(--ink); position:relative; padding:4px 0;}
   .nav-links a:hover{color:var(--grey);}
-  .nav-cta{
+  .nav-links a.nav-cta{
     background:var(--ink); color:var(--cream); padding:10px 20px;
     font-size:14px; font-weight:600; border-radius:var(--radius);
     white-space:nowrap;
   }
-  .nav-cta:hover{background:#000;}
-  .burger{display:none;}
+  .nav-links a.nav-cta:hover{background:#000;}
+  .burger{
+    display:none; background:none; border:2px solid var(--ink); color:var(--ink);
+    border-radius:var(--radius); width:42px; height:38px; font-size:19px; line-height:1;
+    cursor:pointer; align-items:center; justify-content:center; flex-shrink:0;
+  }
 
   /* ===== Hero ===== */
   .hero{
@@ -289,8 +281,16 @@
 
   /* ===== Responsive ===== */
   @media (max-width:860px){
-    .nav-links{display:none;}
-    .burger{display:block; font-size:22px; cursor:pointer;}
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:var(--cream); border-bottom:1px solid var(--line);
+      flex-direction:column; align-items:stretch; gap:0; padding:8px 20px 16px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:12px 0; border-bottom:1px solid var(--line);}
+    .nav-links a:last-child{border-bottom:none;}
+    .nav-links a.nav-cta{margin-top:10px; text-align:center;}
+    .burger{display:inline-flex;}
     .hero-grid, .teacher-grid{grid-template-columns:1fr;}
     .results-grid{grid-template-columns:1fr;}
     .video-grid{grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));}
@@ -311,17 +311,20 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo-mark">
-      <span>Oui Academy</span>
-    </div>
-    <nav class="nav-links">
+    <a href="/" class="logo-mark">
+      <img src="images/logo-mark.png" alt="Oui Academy">
+    </a>
+    <nav class="nav-links" id="navLinks">
       <a href="#about">Giới thiệu</a>
       <a href="#courses">Khóa học</a>
       <a href="#programs">Lộ trình A1–C2</a>
+      <a href="hoc-phi.html">Học phí</a>
+      <a href="muc-tieu.html">Theo mục tiêu</a>
       <a href="#teacher">Giáo viên</a>
       <a href="#results">Học viên</a>
       <a href="#contact" class="nav-cta">Đặt lịch tư vấn</a>
     </nav>
+    <button class="burger" id="burgerBtn" aria-label="Mở menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -603,9 +606,9 @@
 
 <footer>
   <div class="wrap footer-top">
-    <div class="logo-mark">
-      <span>Oui Academy</span>
-    </div>
+    <a href="/" class="logo-mark">
+      <img src="images/logo-mark.png" alt="Oui Academy">
+    </a>
     <div class="social-row">
       <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg>
@@ -626,11 +629,32 @@
   </div>
   <div class="wrap foot-row">
     <div class="foot-links">
+      <a href="hoc-phi.html">Học phí</a>
+      <a href="muc-tieu.html">Theo mục tiêu</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>
   </div>
 </footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var navLinks = document.getElementById('navLinks');
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', function () {
+      var isOpen = navLinks.classList.toggle('open');
+      burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      burgerBtn.textContent = isOpen ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.textContent = '☰';
+      });
+    });
+  }
+</script>
 
 </body>
 </html>

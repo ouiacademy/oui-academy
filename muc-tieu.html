@@ -19,8 +19,8 @@
 
   nav.site-nav{position:sticky; top:0; z-index:50; background:rgba(246,241,231,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
   nav.site-nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px;}
-  .brand{position:relative; display:inline-block; font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem; padding:2px 4px;}
-  .brand::before{content:""; position:absolute; right:-6px; top:2px; width:20px; height:20px; background:var(--yellow); z-index:-1;}
+  .brand{display:flex; align-items:center; flex-shrink:0;}
+  .brand img{height:36px; width:auto; display:block;}
   .nav-links{display:flex; gap:22px; font-size:0.9rem; font-weight:500; flex-wrap:wrap;}
   .nav-links a{color:var(--navy-soft); position:relative; padding:4px 0;}
   .nav-links a:hover{color:var(--navy);}
@@ -80,7 +80,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a href="/" class="brand">Oui Academy</a>
+    <a href="/" class="brand"><img src="images/logo-mark.png" alt="Oui Academy"></a>
     <div class="nav-links">
       <a href="/#about">Giới thiệu</a>
       <a href="/#courses">Khóa học</a>

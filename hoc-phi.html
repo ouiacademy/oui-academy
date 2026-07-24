@@ -9,7 +9,7 @@
 <style>
   :root{
     --ivory:#F6F1E7; --ivory-deep:#EFE7D6; --navy:#1B2A41; --navy-soft:#3A4A63;
-    --yellow:#F4EB00; --yellow-deep:#D6C900; --line:rgba(27,42,65,0.14);
+    --yellow:#8B2C35; --yellow-deep:#561B21; --yellow-bright:#C7424F; --line:rgba(27,42,65,0.14);
     --paper:#FFFDF8;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -21,8 +21,8 @@
 
   nav.site-nav{position:sticky; top:0; z-index:50; background:rgba(246,241,231,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
   nav.site-nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px;}
-  .brand{position:relative; display:inline-block; font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem; letter-spacing:-0.01em; padding:2px 4px;}
-  .brand::before{content:""; position:absolute; right:-6px; top:2px; width:20px; height:20px; background:var(--yellow); z-index:-1;}
+  .brand{display:flex; align-items:center; flex-shrink:0;}
+  .brand img{height:36px; width:auto; display:block;}
   .nav-links{display:flex; gap:22px; font-size:0.9rem; font-weight:500; flex-wrap:wrap;}
   .nav-links a{color:var(--navy-soft); position:relative; padding:4px 0;}
   .nav-links a:hover{color:var(--navy);}
@@ -36,14 +36,14 @@
     font-family:'Space Mono', monospace; font-size:0.82rem;
     text-align:center; padding:11px 20px;
   }
-  .urgency-bar strong{color:var(--yellow);}
+  .urgency-bar strong{color:var(--yellow-bright);}
   .urgency-bar .countdown{display:inline-flex; gap:6px; margin-left:10px;}
   .cbox{background:rgba(246,241,231,0.12); border-radius:5px; padding:2px 7px; font-weight:700;}
 
   .hero{padding:64px 0 44px; border-bottom:1px solid var(--line);}
-  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); background:rgba(244,235,0,0.18); border:1px solid rgba(214,201,0,0.55); padding:6px 14px; border-radius:100px; margin-bottom:22px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); background:rgba(139,44,53,0.16); border:1px solid rgba(139,44,53,0.5); padding:6px 14px; border-radius:100px; margin-bottom:22px;}
   h1.hero-title{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2rem,5vw,3.2rem); line-height:1.08; letter-spacing:-0.015em; max-width:720px;}
-  h1.hero-title em{font-style:italic; color:var(--navy); background:linear-gradient(180deg, transparent 58%, var(--yellow) 58%); padding:0 4px;}
+  h1.hero-title em{font-style:italic; color:var(--navy); background:linear-gradient(180deg, transparent 58%, rgba(139,44,53,0.35) 58%); padding:0 4px;}
   .hero-sub{margin-top:18px; font-size:1.05rem; color:var(--navy-soft); max-width:560px;}
   .hero-links{margin-top:26px; display:flex; gap:14px; flex-wrap:wrap;}
   .hero-links a.secondary{border:1px solid var(--line); padding:10px 18px; border-radius:100px; font-size:0.88rem; font-weight:600; color:var(--navy);}
@@ -67,7 +67,7 @@
   /* ENTRY OFFER */
   .entry-grid{margin-top:36px; display:grid; grid-template-columns:1.1fr 1fr; gap:20px;}
   .entry-card{border-radius:18px; padding:30px; display:flex; flex-direction:column; gap:14px;}
-  .entry-card.free{background:var(--yellow); color:var(--navy);}
+  .entry-card.free{background:var(--yellow); color:var(--ivory);}
   .entry-card.starter{background:var(--paper); border:1px solid var(--line);}
   .entry-badge{font-family:'Space Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.75;}
   .entry-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem;}
@@ -92,13 +92,13 @@
   .ticket-prices{display:flex; gap:24px; margin-top:8px; flex-wrap:wrap;}
   .price-block{font-size:0.82rem; color:var(--navy-soft);}
   .price-block .amt{font-family:'Space Mono',monospace; font-weight:700; font-size:1rem; color:var(--navy); display:block;}
-  .price-block.best{background:rgba(244,235,0,0.16); border-radius:8px; padding:4px 10px; margin:-4px -10px;}
+  .price-block.best{background:rgba(139,44,53,0.14); border-radius:8px; padding:4px 10px; margin:-4px -10px;}
   .price-block.best .amt{color:var(--navy);}
   .vnd{display:block; font-size:0.7rem; color:var(--navy-soft); opacity:0.75; font-weight:400; margin-top:1px;}
   .entry-price .vnd, .bundle-price .amt .vnd, .club-plan .price .vnd, .private-card .amt .vnd{display:inline-block; margin-top:0; margin-left:6px;}
   .ticket-deadline{font-size:0.74rem; margin-top:8px; color:var(--navy); font-weight:600;}
   .ticket-badge{padding:0 22px; text-align:right;}
-  .save-pill{font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--navy); background:var(--yellow); border:1px solid var(--yellow-deep); padding:6px 12px; border-radius:100px; white-space:nowrap;}
+  .save-pill{font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--ivory); background:var(--yellow); border:1px solid var(--yellow-deep); padding:6px 12px; border-radius:100px; white-space:nowrap;}
   @media (max-width:640px){
     .ticket{grid-template-columns:78px 1fr;}
     .ticket::before{left:78px;}
@@ -117,26 +117,26 @@
   .est-field select option{color:var(--navy);}
   .pace-toggle{display:flex; gap:8px;}
   .pace-btn{flex:1; padding:9px; border-radius:8px; border:1px solid rgba(246,241,231,0.25); background:transparent; color:var(--ivory); font-size:0.82rem; cursor:pointer;}
-  .pace-btn.active{background:var(--yellow); border-color:var(--yellow); color:var(--navy); font-weight:700;}
+  .pace-btn.active{background:var(--yellow); border-color:var(--yellow); color:var(--ivory); font-weight:700;}
   .estimator-result{background:rgba(246,241,231,0.06); border-radius:14px; padding:24px; display:flex; flex-direction:column; justify-content:center; gap:10px;}
   .est-row{display:flex; justify-content:space-between; font-size:0.9rem; opacity:0.85;}
   .est-total{font-family:'Space Mono',monospace; font-weight:700; font-size:2rem; margin-top:6px;}
   .est-total .was{font-size:1rem; opacity:0.5; text-decoration:line-through; margin-left:8px; font-weight:400;}
-  .est-finish{font-size:0.82rem; color:var(--yellow); margin-top:4px;}
+  .est-finish{font-size:0.82rem; color:var(--yellow-bright); margin-top:4px;}
   @media (max-width:760px){.estimator{grid-template-columns:1fr;}}
 
   /* BUNDLES */
   .bundle-grid{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
   .bundle-card{background:var(--navy); color:var(--ivory); border-radius:16px; padding:28px 24px; display:flex; flex-direction:column; gap:14px;}
-  .bundle-card.featured{background:var(--yellow); color:var(--navy);}
+  .bundle-card.featured{background:var(--yellow); color:var(--ivory);}
   .bundle-route{font-family:'Space Mono',monospace; font-size:0.76rem; letter-spacing:0.05em; opacity:0.75;}
   .bundle-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem;}
   .bundle-price{margin-top:auto; padding-top:14px; border-top:1px solid rgba(246,241,231,0.22);}
   .bundle-card.featured .bundle-price{border-top:1px solid rgba(27,42,65,0.25);}
   .bundle-price .amt{font-family:'Space Mono',monospace; font-weight:700; font-size:1.8rem;}
   .bundle-price .was{font-size:0.84rem; opacity:0.6; text-decoration:line-through; margin-left:8px;}
-  .bundle-price .save{font-size:0.8rem; color:var(--yellow); margin-top:6px; font-weight:600;}
-  .bundle-card.featured .save{color:var(--navy);}
+  .bundle-price .save{font-size:0.8rem; color:var(--yellow-bright); margin-top:6px; font-weight:600;}
+  .bundle-card.featured .save{color:var(--ivory);}
   @media (max-width:820px){.bundle-grid{grid-template-columns:1fr;}}
 
   /* CLUB */
@@ -155,7 +155,7 @@
   .club-plan .sub{font-size:0.8rem; color:var(--navy-soft);}
   .club-plan .price{font-family:'Space Mono',monospace; font-weight:700; text-align:right;}
   .club-plan .price .per{display:block; font-size:0.72rem; font-weight:400; color:var(--navy-soft);}
-  .club-plan.best{border-color:var(--yellow-deep); background:rgba(244,235,0,0.09);}
+  .club-plan.best{border-color:var(--yellow-deep); background:rgba(139,44,53,0.08);}
   .club-plan.best .price{color:var(--navy);}
   @media (max-width:760px){.club-panel{grid-template-columns:1fr;}}
 
@@ -173,7 +173,7 @@
   .result-photo{width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:var(--ivory-deep);}
   .result-info{padding:12px 14px 16px;}
   .result-name{font-weight:600; font-size:0.92rem;}
-  .result-score{margin-top:6px; display:inline-block; font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--navy); background:var(--yellow); border:1px solid var(--yellow-deep); padding:4px 10px; border-radius:100px;}
+  .result-score{margin-top:6px; display:inline-block; font-family:'Space Mono',monospace; font-size:0.72rem; font-weight:700; color:var(--ivory); background:var(--yellow); border:1px solid var(--yellow-deep); padding:4px 10px; border-radius:100px;}
   @media (max-width:900px){.results-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:520px){.results-grid{grid-template-columns:1fr 1fr;}}
 
@@ -181,13 +181,14 @@
   .goal-banner{margin-top:36px; background:var(--paper); border:1px dashed var(--navy); border-radius:14px; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
   .goal-banner p{font-size:0.94rem; color:var(--navy-soft); max-width:480px;}
   .goal-banner a{background:var(--navy); color:var(--ivory); padding:11px 20px; border-radius:100px; font-size:0.88rem; font-weight:600; white-space:nowrap;}
+  .price-note{margin-top:16px; font-size:0.78rem; color:var(--navy-soft); opacity:0.85;}
 
   /* CONTACT / LEAD CAPTURE */
   .contact-panel{margin-top:36px; background:var(--navy); color:var(--ivory); border-radius:20px; padding:36px; display:grid; grid-template-columns:1fr 1fr; gap:36px;}
   .contact-intro h3{font-family:'Fraunces',serif; font-weight:600; font-size:1.4rem; margin-bottom:12px;}
   .contact-intro p{font-size:0.92rem; opacity:0.8; line-height:1.6;}
   .advisor-row{display:flex; align-items:center; gap:12px; margin-top:20px;}
-  .advisor-dot{width:38px; height:38px; border-radius:50%; background:var(--yellow); color:var(--navy); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; flex-shrink:0;}
+  .advisor-dot{width:38px; height:38px; border-radius:50%; background:var(--yellow); color:var(--ivory); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; flex-shrink:0;}
   .advisor-row .name{font-weight:600; font-size:0.92rem;}
   .advisor-row .role{font-size:0.78rem; opacity:0.7;}
   .contact-form{display:flex; flex-direction:column; gap:12px;}
@@ -199,7 +200,7 @@
   .contact-btn-row{display:flex; gap:10px; margin-top:4px; flex-wrap:wrap;}
   .contact-btn{flex:1; min-width:150px; text-align:center; padding:12px; border-radius:10px; font-weight:600; font-size:0.88rem; cursor:pointer; border:none;}
   .contact-btn.email{background:var(--ivory); color:var(--navy);}
-  .contact-btn.zalo{background:var(--yellow); color:var(--navy);}
+  .contact-btn.zalo{background:var(--yellow); color:var(--ivory);}
   .contact-fine{font-size:0.74rem; opacity:0.6; margin-top:4px;}
   @media (max-width:760px){.contact-panel{grid-template-columns:1fr;}}
 
@@ -214,7 +215,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a href="/" class="brand">Oui Academy</a>
+    <a href="/" class="brand"><img src="images/logo-mark.png" alt="Oui Academy"></a>
     <div class="nav-links">
       <a href="/#about">Giới thiệu</a>
       <a href="/#courses">Khóa học</a>
@@ -305,7 +306,7 @@
   <div class="wrap">
     <div class="section-tag">02 · Vé từng chặng</div>
     <h2 class="section-title">Học theo trình độ, đóng theo buổi</h2>
-    <p class="section-desc">Đóng trọn từ đầu, được giảm 10% — áp dụng đến 10/08/2026 cho khoá khai giảng 15/08. Giá hiển thị bằng Euro (€), kèm quy đổi VND tham khảo theo tỷ giá ~30.000₫/€.</p>
+    <p class="section-desc">Đóng trọn từ đầu, được giảm 10% — áp dụng đến 10/08/2026 cho khoá khai giảng 15/08.</p>
 
     <div class="ticket-row">
       <div class="ticket">
@@ -397,6 +398,8 @@
       <p>Muốn xem học phí theo đúng mục tiêu của bạn — "sợ nói", "cần thi DELF trong 10 tuần", "chuẩn bị hồ sơ định cư" — thay vì theo cấp độ?</p>
       <a href="/muc-tieu.html">Xem theo mục tiêu →</a>
     </div>
+
+    <p class="price-note">* Giá hiển thị bằng Euro (€), kèm quy đổi VND tham khảo theo tỷ giá ~30.000₫/€.</p>
   </div>
 </section>
 
