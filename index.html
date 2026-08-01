@@ -200,15 +200,24 @@
 
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
-  .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
-  .teacher-badge-wrap{display:flex; justify-content:center;}
-  .teacher .stamp{width:220px; height:220px; font-family:'Space Grotesk';}
+  .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:start;}
+  .teacher-badge-wrap{display:flex; flex-direction:column; align-items:center; gap:28px;}
+  .teacher .stamp{width:220px; height:220px; font-family:'Space Grotesk'; flex-shrink:0;}
   .teacher .stamp .big{font-size:44px; font-weight:700;}
   .teacher .stamp .mid{font-size:15px; font-weight:700; letter-spacing:0.04em;}
   .teacher .stamp .small{font-size:12px; font-weight:500; margin-top:2px;}
+  .teacher-photo{
+    position:relative; width:100%; max-width:260px;
+    border:2px solid var(--ink); background:var(--paper); padding:10px;
+    transform:rotate(-2deg);
+  }
+  .teacher-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;}
   .teacher h2{font-size:clamp(26px,3.2vw,34px); margin-bottom:18px;}
-  .teacher p{color:#2c2a26; font-size:17px; max-width:520px;}
+  .teacher p{color:#2c2a26; font-size:17px; max-width:560px;}
   .teacher p + p{margin-top:14px;}
+  .teacher h3{font-size:19px; margin:32px 0 16px;}
+  .teacher-facts{list-style:none; display:flex; flex-direction:column; gap:11px; max-width:560px;}
+  .teacher-facts li{font-size:15.5px; color:#2c2a26; line-height:1.5; padding-left:2px;}
 
   /* ===== Results ===== */
   .results{padding:100px 0; border-top:1px solid var(--line);}
@@ -237,10 +246,12 @@
     background:var(--paper); border:2px solid var(--ink); padding:16px;
     display:flex; flex-direction:column; gap:12px;
   }
-  .video-card video{
-    width:100%; aspect-ratio:9/16; object-fit:cover;
+  .video-card video, .video-card iframe{
+    width:100%;
     border:1px solid var(--line); background:#000; display:block;
   }
+  .video-card video{aspect-ratio:9/16; object-fit:cover;}
+  .video-card iframe{aspect-ratio:16/9;}
 
   /* ===== CTA ===== */
   .cta{
@@ -448,12 +459,31 @@
         <span class="big">50/50</span>
         <span class="small">điểm phần Nói</span>
       </div>
+      <!-- Ảnh anh Hải: thêm khi có file thật, ví dụ images/anh-hai.jpg -->
+      <!--
+      <div class="teacher-photo">
+        <img src="images/anh-hai.jpg" alt="Anh Hải, giáo viên Oui Academy">
+      </div>
+      -->
     </div>
     <div>
       <span class="kicker">Giáo viên</span>
       <h2>Người trực tiếp hướng dẫn bạn: anh Hải</h2>
       <p>Anh Hải đạt <strong>50/50 điểm phần Nói</strong> trong kỳ thi DALF C2 — một kết quả hiếm gặp ngay cả với người học lâu năm.</p>
       <p>Với kinh nghiệm luyện thi chuyên sâu, anh trực tiếp hướng dẫn học viên chiến lược làm bài Nói và Viết: từ cách triển khai ý, tổ chức bài thi, đến cách diễn đạt tự nhiên, thuyết phục như người bản xứ.</p>
+
+      <h3>Anh Hải là ai?</h3>
+      <ul class="teacher-facts">
+        <li>✨ 3 lần đạt DALF C2 — chứng chỉ xác nhận trình độ tương đương người bản ngữ, điểm Nghe-Nói tuyệt đối 50/50 (2026)</li>
+        <li>✨ Điểm Nói tuyệt đối 25/25 trong kỳ thi DALF C1 (2022)</li>
+        <li>✨ Đang theo học Thạc sĩ ngành Giảng dạy Ngoại ngữ tại Pháp</li>
+        <li>✨ Cựu học sinh song ngữ Pháp-Anh trường THPT Chuyên Chu Văn An, 10/10 điểm thi tốt nghiệp tiếng Pháp khối D3</li>
+        <li>✨ Từng trực tiếp giảng dạy DELF B2 tại Đại học Sorbonne Nouvelle, Paris</li>
+        <li>✨ Chứng nhận Nghiệp vụ Sư phạm Đại học từ Đại học Sư phạm Hà Nội</li>
+        <li>✨ Diễn giả tại diễn đàn Campus France 2020/2023</li>
+        <li>✨ Thường xuyên chia sẻ kiến thức tiếng Pháp miễn phí trên kênh @ouiacademytiengphap</li>
+        <li>✨ Sống tại Pháp nhiều năm — phát âm và phản xạ gần như bản ngữ, hiểu chính xác lỗi sai của người Việt và cách sửa nhanh nhất</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -569,6 +599,14 @@
         <video controls playsinline preload="metadata" poster="videos/testimonial-delf-b2-junior-poster.jpg">
           <source src="videos/testimonial-delf-b2-junior.mp4" type="video/mp4">
         </video>
+      </div>
+      <div class="video-card">
+        <div class="pair-header"><span class="name">Học viên Oui Academy</span><span class="tag">DELF B2 Junior 2026</span></div>
+        <iframe src="https://www.youtube.com/embed/mzi-pu4DQwY" title="Témoignage học sinh thi DELF B2 Junior 2026 - Oui Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <div class="pair-header"><span class="name">Một buổi học thật</span><span class="tag">Lớp DELF B2</span></div>
+        <iframe src="https://www.youtube.com/embed/6pf5rQ7iYr4" title="Một buổi học DELF B2 ở Oui Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </div>
