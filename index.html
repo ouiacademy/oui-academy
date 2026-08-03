@@ -212,6 +212,13 @@
     transform:rotate(-2deg);
   }
   .teacher-photo img{width:100%; aspect-ratio:4/5; object-fit:cover; display:block;}
+  .teacher-gallery{display:flex; gap:14px; max-width:260px;}
+  .teacher-gallery .g-item{
+    flex:1; background:var(--paper); border:2px solid var(--ink); padding:5px;
+  }
+  .teacher-gallery .g-item:nth-child(1){transform:rotate(3deg);}
+  .teacher-gallery .g-item:nth-child(2){transform:rotate(-3deg);}
+  .teacher-gallery img{width:100%; aspect-ratio:1/1; object-fit:cover; display:block;}
   .teacher h2{font-size:clamp(26px,3.2vw,34px); margin-bottom:18px;}
   .teacher p{color:#2c2a26; font-size:17px; max-width:560px;}
   .teacher p + p{margin-top:14px;}
@@ -461,6 +468,10 @@
       </div>
       <div class="teacher-photo">
         <img src="images/anh-hai.jpg" alt="Anh Hải, giáo viên Oui Academy">
+      </div>
+      <div class="teacher-gallery">
+        <div class="g-item"><img src="images/anh-hai-2.jpg" alt="Anh Hải, giáo viên Oui Academy"></div>
+        <div class="g-item"><img src="images/anh-hai-3.jpg" alt="Anh Hải tại Paris, Pháp"></div>
       </div>
     </div>
     <div>
