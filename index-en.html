@@ -133,6 +133,9 @@
     font-size:18px; color:#3a3833; max-width:480px; margin-bottom:36px;
   }
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-price-note{margin-top:18px; font-size:13.5px; color:var(--grey);}
+  .hero-price-note a{color:var(--ink); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
+  .hero-price-note a:hover{color:var(--grey);}
   .btn{
     display:inline-flex; align-items:center; justify-content:center;
     padding:15px 28px; font-weight:600; font-size:15px;
@@ -278,6 +281,20 @@
   .video-card video{aspect-ratio:9/16; object-fit:cover;}
   .video-card iframe{aspect-ratio:16/9;}
 
+  /* ===== FAQ ===== */
+  .faq-list{max-width:760px;}
+  .faq-item{border:2px solid var(--ink); background:var(--paper); margin-bottom:14px; transition:box-shadow .15s ease;}
+  .faq-item[open]{box-shadow:6px 6px 0 var(--yellow);}
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:20px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:'Space Grotesk'; font-weight:700; font-size:16.5px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+'; font-size:22px; font-weight:500; flex-shrink:0; transition:transform .15s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .faq-answer{padding:0 24px 22px; color:var(--grey); font-size:15px; max-width:640px;}
+
   /* ===== CTA ===== */
   .cta{
     background:var(--ink); color:var(--cream);
@@ -376,6 +393,7 @@
         <a href="#contact" class="btn btn-primary">Book a free consultation</a>
         <a href="#courses" class="btn btn-secondary">View courses</a>
       </div>
+      <p class="hero-price-note">Pricing from <a href="loc-trinh-toan-dien-en.html">€5/hour</a> — see the full breakdown by level.</p>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
@@ -639,6 +657,61 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">FAQ</span>
+      <h2>Still have questions before you start?</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Online or in person in Paris?</summary>
+        <p class="faq-answer">Both — you learn on your own schedule, whether that's online or in person in Paris.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the difference between the Speaking and Complete Curriculum tracks?</summary>
+        <p class="faq-answer">The <a href="hoc-phi-en.html">Speaking Curriculum</a> focuses specifically on Speaking & Writing exam skills, with 60–75 minute sessions. The <a href="loc-trinh-toan-dien-en.html">Complete Curriculum</a> covers all 4 skills following the Édito (Didier FLE) textbook, with 3-hour sessions — better suited to learners building a foundation from scratch.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <p class="faq-answer">Pricing is per session or per hour depending on the track — see the <a href="hoc-phi-en.html">Speaking Curriculum</a> and <a href="loc-trinh-toan-dien-en.html">Complete Curriculum</a> pricing pages for details. Paying for a full level gets you 10% off, and 3-installment plans are available.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are 1:1 private lessons available?</summary>
+        <p class="faq-answer">Yes — both tracks offer a 1:1 private option, with pricing on the corresponding track's pricing page.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who teaches the classes?</summary>
+        <p class="faq-answer">Hải — who has passed DALF C2 three times with a perfect 50/50 Listening-Speaking score, and has taught DELF B2 at Sorbonne Nouvelle University, Paris. See his full background in the <a href="#teacher">Teacher</a> section.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this for every level, or just beginners?</summary>
+        <p class="faq-answer">Every level — Oui Academy takes students from A0 (complete beginner) through C2, matched to your DELF, DALF, or TCF Canada goal.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get started?</summary>
+        <p class="faq-answer">Book a <a href="#contact">free consultation</a> and we'll figure out the right track and level together.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Online or in person in Paris?", "acceptedAnswer": {"@type": "Answer", "text": "Both — you learn on your own schedule, whether that's online or in person in Paris."}},
+    {"@type": "Question", "name": "What's the difference between the Speaking and Complete Curriculum tracks?", "acceptedAnswer": {"@type": "Answer", "text": "The Speaking Curriculum focuses specifically on Speaking & Writing exam skills, with 60–75 minute sessions. The Complete Curriculum covers all 4 skills following the Édito (Didier FLE) textbook, with 3-hour sessions — better suited to learners building a foundation from scratch."}},
+    {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing is per session or per hour depending on the track. Paying for a full level gets you 10% off, and 3-installment plans are available."}},
+    {"@type": "Question", "name": "Are 1:1 private lessons available?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — both tracks offer a 1:1 private option."}},
+    {"@type": "Question", "name": "Who teaches the classes?", "acceptedAnswer": {"@type": "Answer", "text": "Hải — who has passed DALF C2 three times with a perfect 50/50 Listening-Speaking score, and has taught DELF B2 at Sorbonne Nouvelle University, Paris."}},
+    {"@type": "Question", "name": "Is this for every level, or just beginners?", "acceptedAnswer": {"@type": "Answer", "text": "Every level — Oui Academy takes students from A0 through C2, matched to a DELF, DALF, or TCF Canada goal."}},
+    {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "Book a free consultation and we'll figure out the right track and level together."}}
+  ]
+}
+</script>
+
 <section class="cta" id="contact">
   <span class="sticky-note"></span>
   <span class="sticky-note two"></span>
@@ -698,6 +771,7 @@
       <a href="hoc-phi-en.html">Speaking Curriculum</a>
       <a href="loc-trinh-toan-dien-en.html">Complete Curriculum</a>
       <a href="muc-tieu-en.html">By Goal</a>
+      <a href="#faq">FAQ</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>

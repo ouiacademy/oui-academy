@@ -133,6 +133,9 @@
     font-size:18px; color:#3a3833; max-width:480px; margin-bottom:36px;
   }
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .hero-price-note{margin-top:18px; font-size:13.5px; color:var(--grey);}
+  .hero-price-note a{color:var(--ink); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
+  .hero-price-note a:hover{color:var(--grey);}
   .btn{
     display:inline-flex; align-items:center; justify-content:center;
     padding:15px 28px; font-weight:600; font-size:15px;
@@ -278,6 +281,20 @@
   .video-card video{aspect-ratio:9/16; object-fit:cover;}
   .video-card iframe{aspect-ratio:16/9;}
 
+  /* ===== FAQ ===== */
+  .faq-list{max-width:760px;}
+  .faq-item{border:2px solid var(--ink); background:var(--paper); margin-bottom:14px; transition:box-shadow .15s ease;}
+  .faq-item[open]{box-shadow:6px 6px 0 var(--yellow);}
+  .faq-item summary{
+    list-style:none; cursor:pointer; padding:20px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:'Space Grotesk'; font-weight:700; font-size:16.5px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+'; font-size:22px; font-weight:500; flex-shrink:0; transition:transform .15s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .faq-answer{padding:0 24px 22px; color:var(--grey); font-size:15px; max-width:640px;}
+
   /* ===== CTA ===== */
   .cta{
     background:var(--ink); color:var(--cream);
@@ -376,6 +393,7 @@
         <a href="#contact" class="btn btn-primary">Đặt lịch tư vấn miễn phí</a>
         <a href="#courses" class="btn btn-secondary">Xem khóa học</a>
       </div>
+      <p class="hero-price-note">Học phí từ <a href="loc-trinh-toan-dien.html">5€/giờ</a> — xem chi tiết theo cấp độ.</p>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
@@ -639,6 +657,61 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Câu hỏi thường gặp</span>
+      <h2>Còn thắc mắc gì trước khi bắt đầu?</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Học online hay trực tiếp tại Paris?</summary>
+        <p class="faq-answer">Cả hai — bạn học theo lịch của mình, dù là học online hay trực tiếp tại Paris.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Lộ trình Nói và Lộ trình Toàn Diện khác nhau thế nào?</summary>
+        <p class="faq-answer"><a href="hoc-phi.html">Lộ trình Nói</a> tập trung riêng vào kỹ năng Nói & Viết theo format thi, buổi học 60–75 phút. <a href="loc-trinh-toan-dien.html">Lộ trình Toàn Diện</a> học đủ 4 kỹ năng theo giáo trình Édito (Didier FLE), buổi học 3 giờ, phù hợp người cần xây nền tảng từ đầu.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Học phí bao nhiêu?</summary>
+        <p class="faq-answer">Học phí tính theo buổi hoặc theo giờ tuỳ lộ trình, xem chi tiết tại trang <a href="hoc-phi.html">Lộ trình Nói</a> và <a href="loc-trinh-toan-dien.html">Lộ trình Toàn Diện</a>. Đóng trọn cấp được giảm 10%, và có thể trả góp 3 lần.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Có học riêng 1:1 không?</summary>
+        <p class="faq-answer">Có — mỗi lộ trình đều có tuỳ chọn học riêng 1:1, xem giá cụ thể ở trang học phí tương ứng.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ai là người trực tiếp giảng dạy?</summary>
+        <p class="faq-answer">Anh Hải — người 3 lần đạt DALF C2 với điểm Nghe-Nói tuyệt đối 50/50, từng giảng dạy DELF B2 tại Đại học Sorbonne Nouvelle, Paris. Xem đầy đủ hành trình của anh Hải ở mục <a href="#teacher">Giáo viên</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Trình độ nào cũng học được ở đây à?</summary>
+        <p class="faq-answer">Đúng vậy — Oui Academy nhận học viên mọi trình độ, từ A0 (mới bắt đầu) đến C2, theo đúng mục tiêu thi DELF, DALF hoặc TCF Canada của bạn.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Bắt đầu như thế nào?</summary>
+        <p class="faq-answer">Đặt <a href="#contact">lịch tư vấn miễn phí</a> để cùng xác định lộ trình và trình độ phù hợp nhất với bạn.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Học online hay trực tiếp tại Paris?", "acceptedAnswer": {"@type": "Answer", "text": "Cả hai — bạn học theo lịch của mình, dù là học online hay trực tiếp tại Paris."}},
+    {"@type": "Question", "name": "Lộ trình Nói và Lộ trình Toàn Diện khác nhau thế nào?", "acceptedAnswer": {"@type": "Answer", "text": "Lộ trình Nói tập trung riêng vào kỹ năng Nói & Viết theo format thi, buổi học 60–75 phút. Lộ trình Toàn Diện học đủ 4 kỹ năng theo giáo trình Édito (Didier FLE), buổi học 3 giờ, phù hợp người cần xây nền tảng từ đầu."}},
+    {"@type": "Question", "name": "Học phí bao nhiêu?", "acceptedAnswer": {"@type": "Answer", "text": "Học phí tính theo buổi hoặc theo giờ tuỳ lộ trình. Đóng trọn cấp được giảm 10%, và có thể trả góp 3 lần."}},
+    {"@type": "Question", "name": "Có học riêng 1:1 không?", "acceptedAnswer": {"@type": "Answer", "text": "Có — mỗi lộ trình đều có tuỳ chọn học riêng 1:1."}},
+    {"@type": "Question", "name": "Ai là người trực tiếp giảng dạy?", "acceptedAnswer": {"@type": "Answer", "text": "Anh Hải — người 3 lần đạt DALF C2 với điểm Nghe-Nói tuyệt đối 50/50, từng giảng dạy DELF B2 tại Đại học Sorbonne Nouvelle, Paris."}},
+    {"@type": "Question", "name": "Trình độ nào cũng học được ở đây à?", "acceptedAnswer": {"@type": "Answer", "text": "Oui Academy nhận học viên mọi trình độ, từ A0 đến C2, theo đúng mục tiêu thi DELF, DALF hoặc TCF Canada."}},
+    {"@type": "Question", "name": "Bắt đầu như thế nào?", "acceptedAnswer": {"@type": "Answer", "text": "Đặt lịch tư vấn miễn phí để cùng xác định lộ trình và trình độ phù hợp nhất."}}
+  ]
+}
+</script>
+
 <section class="cta" id="contact">
   <span class="sticky-note"></span>
   <span class="sticky-note two"></span>
@@ -698,6 +771,7 @@
       <a href="hoc-phi.html">Lộ trình Nói</a>
       <a href="loc-trinh-toan-dien.html">Lộ trình Toàn Diện</a>
       <a href="muc-tieu.html">Theo mục tiêu</a>
+      <a href="#faq">Câu hỏi thường gặp</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>
