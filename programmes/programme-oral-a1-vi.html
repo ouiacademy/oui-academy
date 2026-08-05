@@ -235,6 +235,20 @@
   .site-footer .social-row a svg{width:15px; height:15px;}
   .site-footer .social-row a:hover{background:var(--yellow); transform:translateY(-2px);}
   .site-footer p{font-size:12px; color:var(--ink-faint);}
+
+  .back-to-top{
+    position:fixed; right:20px; bottom:20px;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--ink); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    border:none; cursor:pointer; opacity:0; pointer-events:none;
+    transition:opacity .2s ease, transform .15s ease;
+    box-shadow:0 2px 10px rgba(0,0,0,0.22);
+    z-index:60;
+  }
+  .back-to-top.visible{opacity:1; pointer-events:auto;}
+  .back-to-top:hover{background:var(--yellow); color:var(--ink); transform:translateY(-3px);}
+  .back-to-top svg{width:20px; height:20px;}
 </style>
 </head>
 <body>
@@ -458,5 +472,21 @@
   <p>Oui Academy</p>
 </footer>
 
+
+<button class="back-to-top" id="backToTop" aria-label="Lên đầu trang" title="Lên đầu trang">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+<script>
+  (function(){
+    var btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 600) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    });
+    btn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  })();
+</script>
 </body>
 </html>
