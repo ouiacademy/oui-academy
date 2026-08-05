@@ -250,6 +250,17 @@
   .back-to-top:hover{background:var(--yellow); color:var(--ink); transform:translateY(-3px);}
   .back-to-top svg{width:20px; height:20px;}
 
+
+  .chat-fab{position:fixed; left:20px; bottom:20px; z-index:75; display:flex; flex-direction:column; gap:10px;}
+  .chat-fab a{
+    width:46px; height:46px; border-radius:50%; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.22); transition:transform .15s ease;
+  }
+  .chat-fab a:hover{transform:translateY(-3px);}
+  .chat-fab a svg{width:22px; height:22px;}
+  .chat-fab .whatsapp{background:#25D366;}
+  .chat-fab .zalo{background:#0068FF;}
   .sticky-cta{display:none;}
   @media (max-width:680px){
     .sticky-cta{
@@ -263,6 +274,7 @@
       border-radius:2px;
     }
     body{padding-bottom:64px;}
+    .chat-fab{bottom:78px;}
     .back-to-top{bottom:78px;}
   }
 </style>
@@ -557,6 +569,14 @@
   })();
 </script>
 
+<div class="chat-fab">
+  <a class="whatsapp" href="https://wa.me/84856789190" target="_blank" rel="noopener" aria-label="Chat via WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+  <a class="zalo" href="https://zalo.me/84856789190" target="_blank" rel="noopener" aria-label="Chat via Zalo" title="Zalo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+</div>
 <div class="sticky-cta">
   <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Book a free consultation</a>
 </div>
