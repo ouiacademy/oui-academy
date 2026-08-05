@@ -66,6 +66,7 @@
   .row-price{text-align:right;}
   .row-price .per{font-size:13px; color:var(--grey);}
   .row-price .total{font-family:'Space Grotesk'; font-weight:700; font-size:24px;}
+  .row-price .total .vnd{font-size:14px; color:var(--grey); font-weight:600;}
   .row-price .total .save{font-size:11.5px; color:var(--grey); font-weight:500; display:block;}
 
   .mini-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
@@ -73,6 +74,7 @@
   .mini:hover{transform:translateY(-3px);}
   .mini .lv{font-family:'Space Grotesk'; font-weight:700; font-size:12.5px; color:var(--yellow); margin-bottom:10px; text-transform:uppercase; letter-spacing:.04em;}
   .mini .price{font-family:'Space Grotesk'; font-weight:700; font-size:25px;}
+  .mini .vnd{font-size:13px; color:#B8B4A4; font-weight:600;}
 
   .single{border:2px solid var(--ink); background:var(--paper); padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border-left:6px solid var(--yellow); transition:transform .15s ease, box-shadow .15s ease;}
   .single:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
@@ -117,6 +119,7 @@
     <span>Đóng trọn cấp: −10%</span>
     <span>Trả góp 3 lần</span>
   </div>
+  <p class="foot-note" style="margin-top:18px;">Giá hiển thị bằng Euro (€), kèm quy đổi tham khảo sang VNĐ.</p>
 </div>
 
 <section>
@@ -133,7 +136,7 @@
       </div>
       <div class="row-price">
         <div class="per">5€/giờ</div>
-        <div class="total">405€ <span class="save">trọn cấp, −10%</span></div>
+        <div class="total">405€ <span class="vnd">(~12.150.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
       </div>
     </div>
 
@@ -147,7 +150,7 @@
       </div>
       <div class="row-price">
         <div class="per">6€/giờ</div>
-        <div class="total">535€ <span class="save">trọn cấp, −10%</span></div>
+        <div class="total">535€ <span class="vnd">(~16.050.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
       </div>
     </div>
 
@@ -161,7 +164,7 @@
       </div>
       <div class="row-price">
         <div class="per">7€/giờ</div>
-        <div class="total">624€ <span class="save">trọn cấp, −10%</span></div>
+        <div class="total">624€ <span class="vnd">(~18.720.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
       </div>
     </div>
 
@@ -175,7 +178,7 @@
       </div>
       <div class="row-price">
         <div class="per">8€/giờ</div>
-        <div class="total">778€ <span class="save">trọn cấp, −10%</span></div>
+        <div class="total">778€ <span class="vnd">(~23.340.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
       </div>
     </div>
 
@@ -189,11 +192,11 @@
       </div>
       <div class="row-price">
         <div class="per">9€/giờ</div>
-        <div class="total">948€ <span class="save">trọn cấp, −10%</span></div>
+        <div class="total">948€ <span class="vnd">(~28.440.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
       </div>
     </div>
 
-    <p class="foot-note">Số giờ A1 theo giáo trình Édito chính thức (80–100 giờ). A2–C1 là ước tính theo tỉ lệ, chưa kiểm chứng với NXB.</p>
+    <p class="foot-note">Số giờ A1 theo giáo trình Édito chính thức (80–100 giờ). A2–C1 là ước tính theo tỉ lệ, chưa kiểm chứng với NXB. Giá VNĐ chỉ mang tính tham khảo (~1€ ≈ 30.000₫, tỷ giá cập nhật 2026), thanh toán thực tế bằng Euro.</p>
   </div>
 </section>
 
@@ -201,9 +204,9 @@
   <div class="wrap">
     <div class="kicker">Đóng gộp nhiều cấp</div>
     <div class="mini-grid">
-      <div class="mini"><div class="lv">A1 → B1</div><div class="price">1.564€</div></div>
-      <div class="mini"><div class="lv">A1 → B2</div><div class="price">2.342€</div></div>
-      <div class="mini"><div class="lv">A1 → C1</div><div class="price">3.290€</div></div>
+      <div class="mini"><div class="lv">A1 → B1</div><div class="price">1.564€ <span class="vnd">(~46.920.000₫)</span></div></div>
+      <div class="mini"><div class="lv">A1 → B2</div><div class="price">2.342€ <span class="vnd">(~70.260.000₫)</span></div></div>
+      <div class="mini"><div class="lv">A1 → C1</div><div class="price">3.290€ <span class="vnd">(~98.700.000₫)</span></div></div>
     </div>
   </div>
 </section>
@@ -215,9 +218,9 @@
     <div class="single" style="margin-bottom:14px;">
       <div>
         <h3>Học riêng 1:1</h3>
-        <p>Mọi cấp độ, đồng giá 15€/giờ.</p>
+        <p>Mọi cấp độ, đồng giá 15€/giờ (~450.000₫/giờ).</p>
       </div>
-      <div class="price">45€ <span class="unit">/ buổi 3 giờ · 15€/giờ</span></div>
+      <div class="price">45€ <span class="vnd" style="display:block;">(~1.350.000₫)</span><span class="unit">/ buổi 3 giờ · 15€/giờ</span></div>
     </div>
 
     <div class="single">
@@ -225,7 +228,7 @@
         <h3>Atelier d'écriture C2</h3>
         <p>Lớp luyện Viết bậc cao cho DALF C2 — 12 buổi, vì Édito không có bản C2.</p>
       </div>
-      <div class="price">30€ <span class="unit">/ buổi · 324€ trọn</span></div>
+      <div class="price">30€ <span class="vnd" style="display:block;">(~900.000₫)</span><span class="unit">/ buổi · 324€ trọn (~9.720.000₫)</span></div>
     </div>
   </div>
 </section>
