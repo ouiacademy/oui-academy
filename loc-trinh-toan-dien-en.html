@@ -86,11 +86,13 @@
   .foot-note{font-size:12.5px; color:var(--grey); margin-top:26px; line-height:1.6;}
   footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
 
-  @media (max-width:640px){
+  @media (max-width:760px){
     .mini-grid{grid-template-columns:1fr;}
     .row{flex-direction:column; align-items:flex-start;}
-    .row-price{text-align:left;}
-    .single .price{text-align:left;}
+    .row-left{width:100%;}
+    .row-price{text-align:left; width:100%;}
+    .single{flex-direction:column; align-items:flex-start;}
+    .single .price{text-align:left; width:100%;}
   }
 </style>
 </head>
