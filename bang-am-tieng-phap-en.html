@@ -276,19 +276,41 @@
   var ERROR_MESSAGES = {
     'not-allowed': 'Microphone permission was not granted. Allow microphone access and try again.',
     'permission-denied': 'Microphone permission was not granted. Allow microphone access and try again.',
-    'no-speech': "Didn't hear anything — try speaking louder or try again.",
+    'no-speech': "Didn't hear anything — speak up, start talking as soon as you see \"Listening…\", or try again.",
     'audio-capture': 'No microphone found. Check your device\'s microphone.',
     'service-not-allowed': "This browser doesn't support speech recognition — try Chrome instead.",
     'network': 'Network error during speech recognition — try again.',
     'start-failed': 'Could not start the microphone — try again.',
+    'timeout': 'No response from the microphone — another app or tab may be using it at the same time. Close other apps/tabs using the mic and try again.',
     'default': 'Something went wrong while recording — try again.'
   };
 
   var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
   var recSupported = !!SpeechRec;
-  var hasWarmedUp = false;
+  var micPrimed = false;
   var activePanel = null;
   var frenchVoice = null;
+
+  function primeMicThenRecognize(targetWord, recordBtn, statusEl, resultEl){
+    if (micPrimed) {
+      runRecognition(targetWord, recordBtn, statusEl, resultEl);
+      return;
+    }
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+        stream.getTracks().forEach(function(t){ t.stop(); });
+        micPrimed = true;
+        setTimeout(function(){
+          runRecognition(targetWord, recordBtn, statusEl, resultEl);
+        }, 400);
+      }).catch(function(){
+        showError(statusEl, resultEl, recordBtn, 'not-allowed');
+      });
+    } else {
+      micPrimed = true;
+      runRecognition(targetWord, recordBtn, statusEl, resultEl);
+    }
+  }
 
   if (!recSupported) {
     document.getElementById('unsupportedNotice').classList.add('show');
@@ -455,11 +477,7 @@
       recordBtn.disabled = true;
       resultEl.classList.remove('show', 'good', 'mid', 'bad', 'err');
       statusEl.textContent = LABELS.prep;
-      var delay = hasWarmedUp ? 150 : 1500;
-      hasWarmedUp = true;
-      setTimeout(function(){
-        runRecognition(sound.words[wordIdx], recordBtn, statusEl, resultEl);
-      }, delay);
+      primeMicThenRecognize(sound.words[wordIdx], recordBtn, statusEl, resultEl);
     });
 
     return card;
@@ -478,8 +496,13 @@
 
     var done = false;
     var safety = setTimeout(function(){
-      if (!done) { done = true; try { rec.stop(); } catch(e){} }
-    }, 7000);
+      if (!done) {
+        done = true;
+        try { rec.stop(); } catch(e){}
+        try { rec.abort && rec.abort(); } catch(e){}
+        showError(statusEl, resultEl, recordBtn, 'timeout');
+      }
+    }, 8000);
 
     rec.onresult = function(ev){
       done = true;

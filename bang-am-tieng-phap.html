@@ -276,19 +276,41 @@
   var ERROR_MESSAGES = {
     'not-allowed': 'Trình duyệt chưa được cấp quyền micro. Hãy cho phép quyền micro rồi thử lại.',
     'permission-denied': 'Trình duyệt chưa được cấp quyền micro. Hãy cho phép quyền micro rồi thử lại.',
-    'no-speech': 'Không nghe thấy gì — hãy nói to hơn hoặc thử lại.',
+    'no-speech': 'Không nghe thấy gì — hãy nói to hơn, nói ngay khi thấy "Đang nghe…", hoặc thử lại.',
     'audio-capture': 'Không tìm thấy micro. Kiểm tra micro của thiết bị.',
     'service-not-allowed': 'Trình duyệt này chưa hỗ trợ nhận diện giọng nói — hãy thử trên Chrome.',
     'network': 'Lỗi kết nối mạng khi nhận diện giọng nói — hãy thử lại.',
     'start-failed': 'Không khởi động được micro — hãy thử lại.',
+    'timeout': 'Không nhận được phản hồi từ micro — có thể trình duyệt đang xung đột với ứng dụng khác đang dùng micro. Đóng các tab/ứng dụng khác đang dùng micro rồi thử lại.',
     'default': 'Có lỗi khi ghi âm — hãy thử lại.'
   };
 
   var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
   var recSupported = !!SpeechRec;
-  var hasWarmedUp = false;
+  var micPrimed = false;
   var activePanel = null;
   var frenchVoice = null;
+
+  function primeMicThenRecognize(targetWord, recordBtn, statusEl, resultEl){
+    if (micPrimed) {
+      runRecognition(targetWord, recordBtn, statusEl, resultEl);
+      return;
+    }
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+        stream.getTracks().forEach(function(t){ t.stop(); });
+        micPrimed = true;
+        setTimeout(function(){
+          runRecognition(targetWord, recordBtn, statusEl, resultEl);
+        }, 400);
+      }).catch(function(){
+        showError(statusEl, resultEl, recordBtn, 'not-allowed');
+      });
+    } else {
+      micPrimed = true;
+      runRecognition(targetWord, recordBtn, statusEl, resultEl);
+    }
+  }
 
   if (!recSupported) {
     document.getElementById('unsupportedNotice').classList.add('show');
@@ -455,11 +477,7 @@
       recordBtn.disabled = true;
       resultEl.classList.remove('show', 'good', 'mid', 'bad', 'err');
       statusEl.textContent = LABELS.prep;
-      var delay = hasWarmedUp ? 150 : 1500;
-      hasWarmedUp = true;
-      setTimeout(function(){
-        runRecognition(sound.words[wordIdx], recordBtn, statusEl, resultEl);
-      }, delay);
+      primeMicThenRecognize(sound.words[wordIdx], recordBtn, statusEl, resultEl);
     });
 
     return card;
@@ -478,8 +496,13 @@
 
     var done = false;
     var safety = setTimeout(function(){
-      if (!done) { done = true; try { rec.stop(); } catch(e){} }
-    }, 7000);
+      if (!done) {
+        done = true;
+        try { rec.stop(); } catch(e){}
+        try { rec.abort && rec.abort(); } catch(e){}
+        showError(statusEl, resultEl, recordBtn, 'timeout');
+      }
+    }, 8000);
 
     rec.onresult = function(ev){
       done = true;
