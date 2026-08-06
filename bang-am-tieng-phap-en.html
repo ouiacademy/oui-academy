@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>French Sounds Chart — Listen &amp; Practice Each Sound — Oui Academy</title>
+<meta name="description" content="34 French sounds — oral vowels, nasal vowels, consonants. Click to hear each word, record yourself to practice, and get scored instantly in your browser.">
+<link rel="canonical" href="https://ouiacademy.net/bang-am-tieng-phap-en">
+<link rel="alternate" hreflang="en" href="https://ouiacademy.net/bang-am-tieng-phap-en">
+<link rel="alternate" hreflang="vi" href="https://ouiacademy.net/bang-am-tieng-phap">
+<link rel="alternate" hreflang="x-default" href="https://ouiacademy.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oui Academy">
+<meta property="og:title" content="French Sounds Chart — Listen & Practice Each Sound">
+<meta property="og:description" content="34 French sounds — click to hear, record yourself, and get scored instantly.">
+<meta property="og:url" content="https://ouiacademy.net/bang-am-tieng-phap-en">
+<meta property="og:image" content="https://ouiacademy.net/images/logo-mark.png">
+<meta property="og:locale" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141311; --yellow:#F4E600; --cream:#FFFDF6; --paper:#FFFFFF;
+    --grey:#6E6B60; --line:#EAE5D2; --radius:2px; --green:#1E8E3E; --amber:#B8860B; --red:#C0392B;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--cream); color:var(--ink); font-family:'Be Vietnam Pro', sans-serif; font-size:16px; line-height:1.55;}
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(255,253,246,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:10px;}
+  .nav-title{font-family:'Space Grotesk'; font-weight:700; font-size:15px;}
+  .nav-title span{background:var(--yellow); padding:0 6px;}
+  .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap; font-size:13.5px;}
+  .nav-links a.nav-cta{background:var(--ink); color:var(--cream); padding:8px 16px; font-weight:600; border-radius:var(--radius);}
+  .nav-links a.lang-toggle{border:1.5px solid var(--ink); padding:6px 10px;}
+  .nav-links a.lang-toggle:hover{background:var(--ink); color:var(--cream);}
+
+  .hero{padding:50px 0 30px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;}
+  .eyebrow::before{content:''; width:8px; height:8px; background:var(--yellow); border:1.5px solid var(--ink); display:inline-block;}
+  .hero h1{font-size:clamp(28px,4.2vw,42px); margin-bottom:12px;}
+  .hero h1 .hl{background:var(--yellow); padding:0 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;}
+  .hero p{color:var(--grey); font-size:15.5px; max-width:640px;}
+  .hero .facts{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+  .hero .facts span{border:1.5px solid var(--ink); padding:6px 12px; font-size:12.5px; font-weight:600;}
+
+  .notice{border:2px solid var(--ink); border-left:6px solid var(--amber); background:var(--paper); padding:14px 20px; margin:20px 0 0; font-size:13.5px; display:none;}
+  .notice.show{display:block;}
+
+  section{padding:38px 0;}
+  .cat-title{font-family:'Space Grotesk'; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--ink); background:var(--yellow); display:inline-block; border:1.5px solid var(--ink); padding:5px 14px; margin-bottom:20px;}
+
+  .sound-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:860px){.sound-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.sound-grid{grid-template-columns:1fr;}}
+
+  .sound-card{border:2px solid var(--ink); background:var(--paper); padding:16px; transition:box-shadow .15s ease;}
+  .sound-card:hover{box-shadow:4px 4px 0 var(--yellow);}
+  .sound-head{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px;}
+  .ipa{font-family:'Space Grotesk'; font-weight:700; font-size:18px;}
+  .practice-toggle{border:1.5px solid var(--ink); background:var(--paper); font-size:12px; font-weight:700; padding:6px 10px; cursor:pointer; white-space:nowrap;}
+  .practice-toggle:hover{background:var(--yellow);}
+  .practice-toggle.active{background:var(--ink); color:var(--cream);}
+
+  .word-chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .word-chip{border:1.5px solid var(--line); background:var(--cream); font-family:inherit; font-size:13px; padding:6px 11px; cursor:pointer; border-radius:100px;}
+  .word-chip:hover{border-color:var(--ink); background:var(--yellow);}
+  .word-chip.speaking{background:var(--ink); color:var(--cream); border-color:var(--ink);}
+
+  .practice-panel{display:none; margin-top:14px; padding-top:14px; border-top:1.5px dashed var(--line);}
+  .practice-panel.open{display:block;}
+  .practice-target{font-size:13px; margin-bottom:10px;}
+  .practice-target strong{background:var(--yellow); padding:1px 6px;}
+  .change-word{border:none; background:none; text-decoration:underline; text-decoration-color:var(--yellow); cursor:pointer; font-size:12px; font-family:inherit; margin-left:6px;}
+  .practice-actions{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;}
+  .practice-actions button{border:1.5px solid var(--ink); font-family:inherit; font-size:12.5px; font-weight:700; padding:9px 14px; cursor:pointer; background:var(--paper);}
+  .practice-actions .listen-btn:hover{background:var(--yellow);}
+  .practice-actions .record-btn{background:var(--ink); color:var(--cream);}
+  .practice-actions .record-btn:hover{background:#000;}
+  .practice-actions .record-btn.recording{background:var(--red); border-color:var(--red);}
+  .practice-actions button:disabled{opacity:.5; cursor:default;}
+  .practice-status{font-size:12.5px; color:var(--grey); min-height:16px; margin-bottom:6px;}
+  .practice-result{font-size:13px; padding:10px 12px; display:none;}
+  .practice-result.show{display:block;}
+  .practice-result.good{background:rgba(30,142,62,0.12); border:1.5px solid var(--green); color:#0f5c26;}
+  .practice-result.mid{background:rgba(184,134,11,0.12); border:1.5px solid var(--amber); color:#8a660a;}
+  .practice-result.bad{background:rgba(192,57,43,0.1); border:1.5px solid var(--red); color:#8f2a1f;}
+  .practice-result.err{background:var(--cream); border:1.5px solid var(--grey); color:var(--grey);}
+
+  .legend{display:flex; gap:16px; flex-wrap:wrap; font-size:12.5px; color:var(--grey); margin-top:18px;}
+  .legend span{display:flex; align-items:center; gap:6px;}
+  .legend i{width:10px; height:10px; display:inline-block; border:1.5px solid var(--ink);}
+
+  footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
+  footer .social-row{display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px;}
+  footer .social-row a{
+    width:34px; height:34px; border:2px solid var(--ink); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink); transition:all .15s ease; flex-shrink:0;
+  }
+  footer .social-row a svg{width:15px; height:15px;}
+  @media (hover:hover) {
+    footer .social-row a:hover{background:var(--yellow); transform:translateY(-2px);}
+  }
+
+  .chat-fab{position:fixed; left:20px; bottom:20px; z-index:75; display:flex; flex-direction:column; gap:10px;}
+  .chat-fab a{
+    width:46px; height:46px; border-radius:50%; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.22); transition:transform .15s ease;
+  }
+  @media (hover:hover) {
+    .chat-fab a:hover{transform:translateY(-3px);}
+  }
+  .chat-fab a svg{width:22px; height:22px;}
+  .chat-fab .whatsapp{background:#25D366;}
+  .chat-fab .zalo{background:#0068FF;}
+  .sticky-cta{display:none;}
+  @media (max-width:680px){
+    .sticky-cta{
+      display:block; position:fixed; left:0; right:0; bottom:0; z-index:80;
+      background:var(--ink); padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      box-shadow:0 -2px 12px rgba(0,0,0,0.18);
+    }
+    .sticky-cta a{
+      display:block; background:var(--yellow); color:var(--ink);
+      font-weight:700; text-align:center; padding:13px; font-size:15px;
+      border-radius:2px;
+    }
+    body{padding-bottom:64px;}
+    .chat-fab{bottom:78px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="nav-title">Oui Academy — <span>Sounds Chart</span></div>
+    <nav class="nav-links">
+      <a href="index-en.html">Home</a>
+      <a href="hoc-phi-en.html">Speaking Curriculum</a>
+      <a href="kiem-tra-trinh-do-en.html">Level Check</a>
+      <a href="blog/index-en.html">Blog</a>
+      <a href="bang-am-tieng-phap.html" class="lang-toggle">VI</a>
+      <a href="index-en.html#contact" class="nav-cta">Book a Consult</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <span class="eyebrow">Listen · Speak · Practice</span>
+  <h1>French <span class="hl">Sounds Chart</span></h1>
+  <p>34 French sounds — oral vowels, nasal vowels, and consonants. Click any word to hear the correct pronunciation. Click "Practice" to record yourself and get scored instantly, right in your browser.</p>
+  <div class="facts">
+    <span>34 sounds</span>
+    <span>Unlimited free listening</span>
+    <span>Instant scoring on record</span>
+  </div>
+  <div class="notice" id="unsupportedNotice">
+    ⚠️ This browser doesn't support <strong>speech recognition</strong> for scoring practice attempts (common on Safari for iPhone/iPad). You can still click any word to <strong>listen</strong> normally — for scored practice, try again in Chrome (desktop or Android).
+  </div>
+</div>
+
+<section id="oral">
+  <div class="wrap">
+    <div class="cat-title">Oral Vowels · Voyelles orales</div>
+    <div class="sound-grid" id="gridOral"></div>
+  </div>
+</section>
+
+<section id="nasal">
+  <div class="wrap">
+    <div class="cat-title">Nasal Vowels · Voyelles nasales</div>
+    <div class="sound-grid" id="gridNasal"></div>
+  </div>
+</section>
+
+<section id="consonant">
+  <div class="wrap">
+    <div class="cat-title">Consonants · Consonnes</div>
+    <div class="sound-grid" id="gridConsonant"></div>
+    <div class="legend">
+      <span><i style="background:var(--yellow);"></i> Click a word to listen</span>
+      <span><i style="background:var(--ink);"></i> Click "Practice" to record & get scored</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-row">
+    <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ouiacademyspeakfrench/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademytiengphap" target="_blank" rel="noopener" aria-label="TikTok Tiếng Pháp" title="TikTok · Tiếng Pháp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademyspeakfrench" target="_blank" rel="noopener" aria-label="TikTok Speak French" title="TikTok · Speak French">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+  </div>
+  Oui Academy · French Sounds Chart
+  <div style="margin-top:8px; font-size:11.5px;">Chart based on <a href="https://www.podcastfrancaisfacile.com/" target="_blank" rel="noopener" style="text-decoration:underline;">podcastfrancaisfacile.com</a></div>
+</footer>
+
+<div class="chat-fab">
+  <a class="whatsapp" href="https://wa.me/84856789190" target="_blank" rel="noopener" aria-label="Chat via WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+  <a class="zalo" href="https://zalo.me/84856789190" target="_blank" rel="noopener" aria-label="Chat via Zalo" title="Zalo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+</div>
+<div class="sticky-cta">
+  <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Book a free consult</a>
+</div>
+<script src="/chatbot-widget.js" defer></script>
+<script>
+(function(){
+  var SOUNDS = [
+    {cat:'oral', ipa:'[i]', words:['Yves','mini','Anny']},
+    {cat:'oral', ipa:'[e]', words:['et','avez','préféré','aller','des']},
+    {cat:'oral', ipa:'[ɛ]', words:['est','mais','lève','être','appelle']},
+    {cat:'oral', ipa:'[a] · [ɑ]', words:['à','âge','Anna','bas']},
+    {cat:'oral', ipa:'[y]', words:['sur','sûr','Ursule','eu']},
+    {cat:'oral', ipa:'[ø] · [ə]', words:['veux','deux','mercredi','Denis']},
+    {cat:'oral', ipa:'[œ]', words:['œuf','neuf','beurre','seul']},
+    {cat:'oral', ipa:'[u]', words:['où','vous','coût','loup']},
+    {cat:'oral', ipa:'[o]', words:['au','beau','tôt','pot']},
+    {cat:'oral', ipa:'[ɔ]', words:['os','bol','Victor','Paul']},
+    {cat:'nasal', ipa:'[ɛ̃] · [œ̃]', words:['vin','impossible','pain','essaim','teindre','un','humble','parfum']},
+    {cat:'nasal', ipa:'[ɑ̃]', words:['an','ampoule','encre','empêcher']},
+    {cat:'nasal', ipa:'[ɔ̃]', words:['on','ombre','tronc','maison']},
+    {cat:'consonant', ipa:'[p]', words:['pipe','cap','appel']},
+    {cat:'consonant', ipa:'[b]', words:['bal','bébé','abbé']},
+    {cat:'consonant', ipa:'[m]', words:['Mamie','âme','homme']},
+    {cat:'consonant', ipa:'[t]', words:['tarte','patte','théorie']},
+    {cat:'consonant', ipa:'[d]', words:['Denis','mode','addition','Alfred']},
+    {cat:'consonant', ipa:'[n]', words:['nous','âne','tonne']},
+    {cat:'consonant', ipa:'[ɲ]', words:['signature']},
+    {cat:'consonant', ipa:'[k]', words:['casse','sac','paquet']},
+    {cat:'consonant', ipa:'[g]', words:['gaffe','tag','bague']},
+    {cat:'consonant', ipa:'[ŋ]', words:['camping']},
+    {cat:'consonant', ipa:'[f]', words:['fou','bof','affaire','photo']},
+    {cat:'consonant', ipa:'[v]', words:['va','cave','avril']},
+    {cat:'consonant', ipa:'[l]', words:['lit','halle','allé']},
+    {cat:'consonant', ipa:'[s]', words:['si','casse','cerise','maçon','nation','science']},
+    {cat:'consonant', ipa:'[z]', words:['zoo','gaz','base','examen']},
+    {cat:'consonant', ipa:'[ʃ]', words:['chat','tache','achat']},
+    {cat:'consonant', ipa:'[ʒ]', words:['jeu','tige','âgé']},
+    {cat:'consonant', ipa:'[ʁ]', words:['rat','car','carré']},
+    {cat:'consonant', ipa:'[j]', words:['lié','travail','sommeil']},
+    {cat:'consonant', ipa:'[ɥ]', words:['huit']},
+    {cat:'consonant', ipa:'[w]', words:['oui','moi']}
+  ];
+
+  var LABELS = {
+    good: '✅ Nailed it! Great pronunciation.',
+    mid: '🟡 Close — listen to the reference and try again.',
+    bad: '🔴 Not quite — listen to the reference and try again.',
+    prep: 'Getting the microphone ready…',
+    listening: '🎙️ Listening… speak clearly and at normal volume',
+    change: 'Try another word'
+  };
+
+  var ERROR_MESSAGES = {
+    'not-allowed': 'Microphone permission was not granted. Allow microphone access and try again.',
+    'permission-denied': 'Microphone permission was not granted. Allow microphone access and try again.',
+    'no-speech': "Didn't hear anything — try speaking louder or try again.",
+    'audio-capture': 'No microphone found. Check your device\'s microphone.',
+    'service-not-allowed': "This browser doesn't support speech recognition — try Chrome instead.",
+    'network': 'Network error during speech recognition — try again.',
+    'start-failed': 'Could not start the microphone — try again.',
+    'default': 'Something went wrong while recording — try again.'
+  };
+
+  var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recSupported = !!SpeechRec;
+  var hasWarmedUp = false;
+  var activePanel = null;
+  var frenchVoice = null;
+
+  if (!recSupported) {
+    document.getElementById('unsupportedNotice').classList.add('show');
+  }
+
+  function pickFrenchVoice(){
+    if (!('speechSynthesis' in window)) return null;
+    var voices = window.speechSynthesis.getVoices();
+    if (!voices.length) return null;
+    var fr = voices.filter(function(v){ return v.lang && v.lang.toLowerCase().indexOf('fr') === 0; });
+    if (!fr.length) return null;
+    var exact = fr.filter(function(v){ return v.lang.toLowerCase() === 'fr-fr'; });
+    return exact[0] || fr[0];
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = function(){ frenchVoice = pickFrenchVoice(); };
+    frenchVoice = pickFrenchVoice();
+  }
+
+  function speak(text, chipEl){
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'fr-FR';
+    var v = frenchVoice || pickFrenchVoice();
+    if (v) u.voice = v;
+    u.rate = 0.88;
+    if (chipEl) {
+      u.onstart = function(){ chipEl.classList.add('speaking'); };
+      u.onend = function(){ chipEl.classList.remove('speaking'); };
+      u.onerror = function(){ chipEl.classList.remove('speaking'); };
+    }
+    window.speechSynthesis.speak(u);
+  }
+
+  function levenshtein(a, b){
+    var m = a.length, n = b.length;
+    var dp = new Array(n + 1);
+    for (var j = 0; j <= n; j++) dp[j] = j;
+    for (var i = 1; i <= m; i++) {
+      var prev = dp[0];
+      dp[0] = i;
+      for (var k = 1; k <= n; k++) {
+        var tmp = dp[k];
+        dp[k] = a[i-1] === b[k-1] ? prev : 1 + Math.min(prev, dp[k], dp[k-1]);
+        prev = tmp;
+      }
+    }
+    return dp[n];
+  }
+
+  function similarity(a, b){
+    a = (a || '').toLowerCase().trim();
+    b = (b || '').toLowerCase().trim();
+    if (!a || !b) return 0;
+    var dist = levenshtein(a, b);
+    return 1 - dist / Math.max(a.length, b.length);
+  }
+
+  function closePanel(panel){
+    panel.el.classList.remove('open');
+    panel.toggleBtn.classList.remove('active');
+    panel.toggleBtn.textContent = '🎤 Practice';
+  }
+
+  function buildCard(sound){
+    var card = document.createElement('div');
+    card.className = 'sound-card';
+
+    var head = document.createElement('div');
+    head.className = 'sound-head';
+    var ipa = document.createElement('span');
+    ipa.className = 'ipa';
+    ipa.textContent = sound.ipa;
+    var toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'practice-toggle';
+    toggleBtn.textContent = '🎤 Practice';
+    head.appendChild(ipa);
+    head.appendChild(toggleBtn);
+    card.appendChild(head);
+
+    var chips = document.createElement('div');
+    chips.className = 'word-chips';
+    sound.words.forEach(function(w){
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'word-chip';
+      chip.textContent = w;
+      chip.addEventListener('click', function(){ speak(w, chip); });
+      chips.appendChild(chip);
+    });
+    card.appendChild(chips);
+
+    var panelEl = document.createElement('div');
+    panelEl.className = 'practice-panel';
+
+    var targetLine = document.createElement('div');
+    targetLine.className = 'practice-target';
+    var targetLabel = document.createTextNode('Practicing: ');
+    var targetWordEl = document.createElement('strong');
+    var wordIdx = 0;
+    targetWordEl.textContent = sound.words[wordIdx];
+    var changeBtn = document.createElement('button');
+    changeBtn.type = 'button';
+    changeBtn.className = 'change-word';
+    changeBtn.textContent = LABELS.change;
+    targetLine.appendChild(targetLabel);
+    targetLine.appendChild(targetWordEl);
+    targetLine.appendChild(changeBtn);
+
+    var actions = document.createElement('div');
+    actions.className = 'practice-actions';
+    var listenBtn = document.createElement('button');
+    listenBtn.type = 'button';
+    listenBtn.className = 'listen-btn';
+    listenBtn.textContent = '🔊 Listen';
+    var recordBtn = document.createElement('button');
+    recordBtn.type = 'button';
+    recordBtn.className = 'record-btn';
+    recordBtn.textContent = '🎤 Record & score';
+    if (!recSupported) recordBtn.disabled = true;
+    actions.appendChild(listenBtn);
+    actions.appendChild(recordBtn);
+
+    var statusEl = document.createElement('div');
+    statusEl.className = 'practice-status';
+    var resultEl = document.createElement('div');
+    resultEl.className = 'practice-result';
+
+    panelEl.appendChild(targetLine);
+    panelEl.appendChild(actions);
+    panelEl.appendChild(statusEl);
+    panelEl.appendChild(resultEl);
+    card.appendChild(panelEl);
+
+    var panel = { el: panelEl, toggleBtn: toggleBtn };
+
+    changeBtn.addEventListener('click', function(){
+      wordIdx = (wordIdx + 1) % sound.words.length;
+      targetWordEl.textContent = sound.words[wordIdx];
+      resultEl.classList.remove('show', 'good', 'mid', 'bad', 'err');
+      statusEl.textContent = '';
+    });
+
+    listenBtn.addEventListener('click', function(){ speak(sound.words[wordIdx]); });
+
+    toggleBtn.addEventListener('click', function(){
+      var isOpen = panelEl.classList.contains('open');
+      if (activePanel && activePanel !== panel) closePanel(activePanel);
+      if (isOpen) {
+        closePanel(panel);
+        activePanel = null;
+      } else {
+        panelEl.classList.add('open');
+        toggleBtn.classList.add('active');
+        toggleBtn.textContent = '▲ Close';
+        activePanel = panel;
+      }
+    });
+
+    recordBtn.addEventListener('click', function(){
+      if (!recSupported) return;
+      recordBtn.disabled = true;
+      resultEl.classList.remove('show', 'good', 'mid', 'bad', 'err');
+      statusEl.textContent = LABELS.prep;
+      var delay = hasWarmedUp ? 150 : 1500;
+      hasWarmedUp = true;
+      setTimeout(function(){
+        runRecognition(sound.words[wordIdx], recordBtn, statusEl, resultEl);
+      }, delay);
+    });
+
+    return card;
+  }
+
+  function runRecognition(targetWord, recordBtn, statusEl, resultEl){
+    var rec;
+    try { rec = new SpeechRec(); } catch (e) {
+      showError(statusEl, resultEl, recordBtn, 'start-failed');
+      return;
+    }
+    rec.lang = 'fr-FR';
+    rec.maxAlternatives = 3;
+    rec.interimResults = false;
+    rec.continuous = false;
+
+    var done = false;
+    var safety = setTimeout(function(){
+      if (!done) { done = true; try { rec.stop(); } catch(e){} }
+    }, 7000);
+
+    rec.onresult = function(ev){
+      done = true;
+      clearTimeout(safety);
+      var alts = [];
+      for (var i = 0; i < ev.results[0].length; i++) alts.push(ev.results[0][i].transcript);
+      var best = { transcript: alts[0] || '', score: 0 };
+      alts.forEach(function(t){
+        var sc = similarity(t, targetWord);
+        if (sc > best.score) best = { transcript: t, score: sc };
+      });
+      showResult(statusEl, resultEl, recordBtn, best, targetWord);
+    };
+    rec.onerror = function(ev){
+      if (done) return;
+      done = true;
+      clearTimeout(safety);
+      showError(statusEl, resultEl, recordBtn, ev.error);
+    };
+    rec.onend = function(){
+      if (!done) {
+        done = true;
+        clearTimeout(safety);
+        showError(statusEl, resultEl, recordBtn, 'no-speech');
+      }
+    };
+
+    try {
+      rec.start();
+      statusEl.textContent = LABELS.listening;
+    } catch (e) {
+      showError(statusEl, resultEl, recordBtn, 'start-failed');
+    }
+  }
+
+  function showResult(statusEl, resultEl, recordBtn, best, targetWord){
+    statusEl.textContent = '';
+    recordBtn.disabled = false;
+    var cls, label;
+    if (best.score >= 0.75) { cls = 'good'; label = LABELS.good; }
+    else if (best.score >= 0.45) { cls = 'mid'; label = LABELS.mid; }
+    else { cls = 'bad'; label = LABELS.bad; }
+    resultEl.className = 'practice-result show ' + cls;
+    resultEl.innerHTML = label + '<br><span style="opacity:.75;">You said: "' + escapeHtml(best.transcript || '—') + '" · target: "' + escapeHtml(targetWord) + '"</span>';
+  }
+
+  function showError(statusEl, resultEl, recordBtn, code){
+    statusEl.textContent = '';
+    recordBtn.disabled = false;
+    var msg = ERROR_MESSAGES[code] || ERROR_MESSAGES['default'];
+    resultEl.className = 'practice-result show err';
+    resultEl.textContent = msg;
+  }
+
+  function escapeHtml(s){
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  var grids = { oral: document.getElementById('gridOral'), nasal: document.getElementById('gridNasal'), consonant: document.getElementById('gridConsonant') };
+  SOUNDS.forEach(function(sound){
+    grids[sound.cat].appendChild(buildCard(sound));
+  });
+})();
+</script>
+</body>
+</html>

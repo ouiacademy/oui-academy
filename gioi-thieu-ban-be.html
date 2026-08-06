@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu bạn bè — Oui Academy</title>
+<meta name="description" content="Mời một người bạn học cùng Oui Academy — khi bạn ấy đặt buổi học thử và đăng ký lộ trình, cả hai cùng nhận 1 buổi học miễn phí. Không giới hạn số lượt giới thiệu.">
+<link rel="canonical" href="https://ouiacademy.net/gioi-thieu-ban-be">
+<link rel="alternate" hreflang="vi" href="https://ouiacademy.net/gioi-thieu-ban-be">
+<link rel="alternate" hreflang="en" href="https://ouiacademy.net/gioi-thieu-ban-be-en">
+<link rel="alternate" hreflang="x-default" href="https://ouiacademy.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oui Academy">
+<meta property="og:title" content="Giới thiệu bạn bè — Oui Academy">
+<meta property="og:description" content="Mời một người bạn học cùng Oui Academy — cả hai cùng nhận 1 buổi học miễn phí.">
+<meta property="og:url" content="https://ouiacademy.net/gioi-thieu-ban-be">
+<meta property="og:image" content="https://ouiacademy.net/images/logo-mark.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Giới thiệu bạn bè — Oui Academy">
+<meta name="twitter:description" content="Mời một người bạn học cùng Oui Academy — cả hai cùng nhận 1 buổi học miễn phí.">
+<meta name="twitter:image" content="https://ouiacademy.net/images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141311; --yellow:#F4E600; --cream:#FFFDF6; --paper:#FFFFFF;
+    --grey:#6E6B60; --line:#EAE5D2; --radius:2px; --green:#1E8E3E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--cream); color:var(--ink); font-family:'Be Vietnam Pro', sans-serif; font-size:16px; line-height:1.55;}
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(255,253,246,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:10px;}
+  .nav-title{font-family:'Space Grotesk'; font-weight:700; font-size:15px;}
+  .nav-title span{background:var(--yellow); padding:0 6px;}
+  .nav-links{display:flex; gap:20px; align-items:center; flex-wrap:wrap; font-size:13.5px;}
+  .nav-links a.nav-cta{background:var(--ink); color:var(--cream); padding:8px 16px; font-weight:600; border-radius:var(--radius);}
+  .nav-links a.lang-toggle{border:1.5px solid var(--ink); padding:6px 10px;}
+  .nav-links a.lang-toggle:hover{background:var(--ink); color:var(--cream);}
+
+  .hero{padding:56px 0 44px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;}
+  .eyebrow::before{content:''; width:8px; height:8px; background:var(--yellow); border:1.5px solid var(--ink); display:inline-block;}
+  .hero h1{font-size:clamp(30px,4.4vw,44px); margin-bottom:12px;}
+  .hero h1 .hl{background:var(--yellow); padding:0 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;}
+  .hero p{color:var(--grey); font-size:15.5px; max-width:560px;}
+  .hero .facts{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+  .hero .facts span{border:1.5px solid var(--ink); padding:6px 12px; font-size:12.5px; font-weight:600;}
+
+  section{padding:36px 0 44px; border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .kicker{font-size:12.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--grey); margin-bottom:20px;}
+
+  /* referral banner (shown when ?ref= present) */
+  .ref-banner{display:none; background:var(--ink); color:var(--cream); border-left:6px solid var(--yellow); padding:18px 22px; margin:20px 0 0; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .ref-banner.show{display:flex;}
+  .ref-banner .msg{font-size:14.5px;}
+  .ref-banner .msg b{color:var(--yellow);}
+  .ref-banner .btn{background:var(--yellow); color:var(--ink); font-weight:700; padding:10px 18px; font-size:13.5px; white-space:nowrap; border-radius:var(--radius);}
+
+  .step-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .step{background:var(--paper); border:2px solid var(--ink); padding:20px 18px; transition:transform .15s ease, box-shadow .15s ease;}
+  .step:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
+  .step .num{font-family:'Space Grotesk'; font-weight:700; font-size:22px; color:var(--ink); background:var(--yellow); display:inline-flex; width:32px; height:32px; align-items:center; justify-content:center; border:2px solid var(--ink); margin-bottom:12px;}
+  .step h3{font-size:15px; margin-bottom:6px;}
+  .step p{font-size:13px; color:var(--grey);}
+  @media (max-width:760px){.step-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:460px){.step-grid{grid-template-columns:1fr;}}
+
+  .tool{border:2px solid var(--ink); background:var(--paper); padding:28px; border-left:6px solid var(--yellow);}
+  .tool label{font-size:13px; font-weight:700; display:block; margin-bottom:8px;}
+  .tool-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .tool input[type=text]{flex:1; min-width:200px; border:2px solid var(--ink); padding:12px 14px; font-size:15px; font-family:inherit; background:var(--cream);}
+  .tool input[type=text]:focus{outline:2px solid var(--yellow); outline-offset:-2px;}
+  .tool button{background:var(--ink); color:var(--cream); border:2px solid var(--ink); padding:12px 22px; font-weight:700; font-size:14px; cursor:pointer; white-space:nowrap;}
+  .tool button:hover{background:#000;}
+  .tool-result{display:none; margin-top:20px; padding-top:20px; border-top:1px dashed var(--line);}
+  .tool-result.show{display:block;}
+  .tool-result .link-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+  .tool-result input[type=text]{background:var(--cream); font-size:13.5px; color:var(--grey);}
+  .copy-btn{border:1.5px solid var(--ink); background:var(--paper); padding:11px 16px; font-weight:600; font-size:13px; cursor:pointer; white-space:nowrap;}
+  .copy-btn:hover{background:var(--ink); color:var(--cream);}
+  .copy-btn.copied{background:var(--green); color:#fff; border-color:var(--green);}
+  .share-row{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
+  .share-row a{display:inline-flex; align-items:center; gap:8px; padding:11px 18px; font-weight:700; font-size:13.5px; border-radius:var(--radius); color:#fff;}
+  .share-row a svg{width:16px; height:16px;}
+  .share-row .wa{background:#25D366;}
+  .share-row .zl{background:#0068FF;}
+  .tool-note{font-size:12px; color:var(--grey); margin-top:6px;}
+
+  .terms{font-size:13.5px; color:var(--grey); line-height:1.8;}
+  .terms li{margin-bottom:6px; margin-left:20px;}
+
+  .cta-final{text-align:center; padding:50px 28px;}
+  .cta-final p{color:var(--grey); margin-top:10px;}
+  .cta-btn{display:inline-block; margin-top:22px; background:var(--ink); color:var(--cream); padding:14px 30px; border-radius:var(--radius); font-weight:700; font-size:14.5px;}
+
+  footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
+  footer .social-row{display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px;}
+  footer .social-row a{
+    width:34px; height:34px; border:2px solid var(--ink); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink); transition:all .15s ease; flex-shrink:0;
+  }
+  footer .social-row a svg{width:15px; height:15px;}
+  @media (hover:hover) {
+    footer .social-row a:hover{background:var(--yellow); transform:translateY(-2px);}
+  }
+
+  @media (max-width:680px){
+    .tool{padding:20px;}
+  }
+
+  .chat-fab{position:fixed; left:20px; bottom:20px; z-index:75; display:flex; flex-direction:column; gap:10px;}
+  .chat-fab a{
+    width:46px; height:46px; border-radius:50%; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.22); transition:transform .15s ease;
+  }
+  @media (hover:hover) {
+    .chat-fab a:hover{transform:translateY(-3px);}
+  }
+  .chat-fab a svg{width:22px; height:22px;}
+  .chat-fab .whatsapp{background:#25D366;}
+  .chat-fab .zalo{background:#0068FF;}
+  .sticky-cta{display:none;}
+  @media (max-width:680px){
+    .sticky-cta{
+      display:block; position:fixed; left:0; right:0; bottom:0; z-index:80;
+      background:var(--ink); padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      box-shadow:0 -2px 12px rgba(0,0,0,0.18);
+    }
+    .sticky-cta a{
+      display:block; background:var(--yellow); color:var(--ink);
+      font-weight:700; text-align:center; padding:13px; font-size:15px;
+      border-radius:2px;
+    }
+    body{padding-bottom:64px;}
+    .chat-fab{bottom:78px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="nav-title">Oui Academy — <span>Giới thiệu bạn bè</span></div>
+    <nav class="nav-links">
+      <a href="index.html">Trang chủ</a>
+      <a href="hoc-phi.html">Lộ trình Nói</a>
+      <a href="kiem-tra-trinh-do.html">Kiểm tra trình độ</a>
+      <a href="bang-am-tieng-phap.html">Bảng âm</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="gioi-thieu-ban-be-en.html" class="lang-toggle">EN</a>
+      <a href="index.html#contact" class="nav-cta">Đặt lịch tư vấn</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <span class="eyebrow">Chương trình giới thiệu</span>
+  <h1>Học cùng nhau, <span class="hl">cả hai đều lợi</span></h1>
+  <p>Bạn đang học ở Oui Academy và thấy hiệu quả? Mời một người bạn — khi bạn ấy đặt buổi học thử và đăng ký một lộ trình, cả hai cùng nhận ngay <strong>1 buổi học miễn phí</strong>.</p>
+  <div class="facts">
+    <span>+1 buổi miễn phí / lượt giới thiệu</span>
+    <span>Không giới hạn số lượt</span>
+    <span>Cộng dồn được</span>
+  </div>
+
+  <div class="ref-banner" id="refBanner">
+    <div class="msg">🎉 Bạn được <b id="refName">một người bạn</b> giới thiệu đến Oui Academy! Đặt buổi học thử để cả hai cùng nhận 1 buổi miễn phí.</div>
+    <a class="btn" id="refBannerBtn" href="#" target="_blank" rel="noopener">Nhắn đặt buổi học thử</a>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">Cách hoạt động</div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Tạo link của bạn</h3>
+        <p>Nhập tên ở công cụ bên dưới, nhận ngay một link giới thiệu riêng.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Gửi cho bạn bè</h3>
+        <p>Qua Zalo, Messenger, hoặc bất kỳ đâu bạn muốn.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Bạn ấy đặt học thử</h3>
+        <p>Mở link, nhắn Oui Academy để đặt buổi học thử miễn phí.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Cả hai nhận thưởng</h3>
+        <p>Khi bạn ấy đăng ký lộ trình, cả hai được cộng 1 buổi học miễn phí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tool">
+  <div class="wrap">
+    <div class="kicker">Công cụ tạo link giới thiệu</div>
+    <div class="tool">
+      <label for="refInput">Tên của bạn (để bạn bè biết ai đã giới thiệu)</label>
+      <div class="tool-row">
+        <input type="text" id="refInput" placeholder="VD: Minh Anh" maxlength="40">
+        <button id="refGenerate" type="button">Tạo link giới thiệu</button>
+      </div>
+
+      <div class="tool-result" id="refResult">
+        <label>Link của bạn — gửi cho bạn bè</label>
+        <div class="link-row">
+          <input type="text" id="refLink" readonly>
+          <button class="copy-btn" id="refCopy" type="button">Sao chép</button>
+        </div>
+        <div class="share-row">
+          <a class="wa" id="refShareWa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Gửi qua WhatsApp
+          </a>
+        </div>
+        <p class="tool-note">Mẹo: gửi trực tiếp cho một người bạn cụ thể qua đoạn chat riêng để dễ theo dõi hơn là đăng công khai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="wrap">
+    <div class="kicker">Điều khoản nhỏ, nhưng cần biết</div>
+    <ul class="terms">
+      <li>Áp dụng cho học viên <strong>mới</strong> — chưa từng đăng ký lộ trình trả phí tại Oui Academy trước đó.</li>
+      <li>Buổi miễn phí được cộng cho cả hai bên sau khi người được giới thiệu hoàn tất buổi học thử <strong>và</strong> đăng ký ít nhất một lộ trình trả phí.</li>
+      <li>Không giới hạn số lượt giới thiệu — giới thiệu càng nhiều người, nhận càng nhiều buổi miễn phí. Không quy đổi thành tiền mặt.</li>
+      <li>Khi nhắn tin đặt lịch, nhớ nói rõ <em>"mình được [tên] giới thiệu"</em> để được ghi nhận đúng — công cụ ở trên tự động điền phần này giúp bạn.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Có một người bạn nghĩ ngay đến việc học tiếng Pháp?</h2>
+    <p>Tạo link giới thiệu ở trên, hoặc để bạn ấy nhắn thẳng cho Oui Academy.</p>
+    <a href="#tool" class="cta-btn">Tạo link giới thiệu ngay</a>
+  </div>
+</section>
+
+<footer>
+  <div class="social-row">
+    <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ouiacademyspeakfrench/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademytiengphap" target="_blank" rel="noopener" aria-label="TikTok Tiếng Pháp" title="TikTok · Tiếng Pháp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ouiacademyspeakfrench" target="_blank" rel="noopener" aria-label="TikTok Speak French" title="TikTok · Speak French">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+  </div>
+  Oui Academy · Giới thiệu bạn bè
+</footer>
+
+<div class="chat-fab">
+  <a class="whatsapp" href="https://wa.me/84856789190" target="_blank" rel="noopener" aria-label="Chat qua WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+  <a class="zalo" href="https://zalo.me/84856789190" target="_blank" rel="noopener" aria-label="Chat qua Zalo" title="Zalo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+</div>
+<div class="sticky-cta">
+  <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Đặt lịch tư vấn miễn phí</a>
+</div>
+<script src="/chatbot-widget.js" defer></script>
+<script>
+(function(){
+  var SCHOOL_WA = "84856789190";
+  var params = new URLSearchParams(window.location.search);
+  var ref = params.get('ref');
+  if (ref) {
+    var name = ref.trim().slice(0, 40);
+    if (name) {
+      document.getElementById('refName').textContent = name;
+      document.getElementById('refBanner').classList.add('show');
+      var msg = "Chào Oui Academy, mình được " + name + " giới thiệu, mình muốn đặt buổi học thử ạ!";
+      document.getElementById('refBannerBtn').href = "https://wa.me/" + SCHOOL_WA + "?text=" + encodeURIComponent(msg);
+    }
+  }
+
+  var input = document.getElementById('refInput');
+  var genBtn = document.getElementById('refGenerate');
+  var result = document.getElementById('refResult');
+  var linkField = document.getElementById('refLink');
+  var copyBtn = document.getElementById('refCopy');
+  var shareWa = document.getElementById('refShareWa');
+
+  function generate(){
+    var name = input.value.trim().slice(0, 40);
+    if (!name) { input.focus(); input.style.borderColor = '#C0392B'; return; }
+    input.style.borderColor = '';
+    var url = "https://ouiacademy.net/gioi-thieu-ban-be.html?ref=" + encodeURIComponent(name);
+    linkField.value = url;
+    result.classList.add('show');
+    var shareMsg = "Mình đang học tiếng Pháp ở Oui Academy, khá hiệu quả — bạn thử buổi học miễn phí xem sao: " + url;
+    shareWa.href = "https://wa.me/?text=" + encodeURIComponent(shareMsg);
+    result.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  genBtn.addEventListener('click', generate);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') generate(); });
+
+  copyBtn.addEventListener('click', function(){
+    linkField.select();
+    linkField.setSelectionRange(0, 99999);
+    var done = function(){
+      copyBtn.textContent = 'Đã sao chép ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(function(){ copyBtn.textContent = 'Sao chép'; copyBtn.classList.remove('copied'); }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(linkField.value).then(done).catch(function(){ document.execCommand('copy'); done(); });
+    } else {
+      document.execCommand('copy'); done();
+    }
+  });
+})();
+</script>
+</body>
+</html>

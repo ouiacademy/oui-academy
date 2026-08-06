@@ -33,6 +33,62 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ouiacademy.net/bang-am-tieng-phap</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/bang-am-tieng-phap-en</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/kiem-tra-trinh-do</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/kiem-tra-trinh-do-en</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/gioi-thieu-ban-be</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/gioi-thieu-ban-be-en</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/index-en</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/loi-phat-am-tieng-phap</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/loi-phat-am-tieng-phap-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/delf-dalf-tcf-nen-thi-gi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/delf-dalf-tcf-nen-thi-gi-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/lo-trinh-a1-den-b2-bao-lau</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/blog/lo-trinh-a1-den-b2-bao-lau-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ouiacademy.net/programmes/programme-oral-a1-vi</loc>
     <priority>0.6</priority>
   </url>
