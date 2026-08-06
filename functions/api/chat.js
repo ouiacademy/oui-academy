@@ -19,71 +19,50 @@ Email: ouiacademy.contact@gmail.com
 Social: Facebook /ouiacademy, Instagram @ouiacademyspeakfrench, TikTok @ouiacademytiengphap and @ouiacademyspeakfrench, YouTube @OuiAcademy.
 === END FACTS ===`;
 
-const CORS_HEADERS = {
-	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Methods": "POST, OPTIONS",
-	"Access-Control-Allow-Headers": "Content-Type",
-};
+export async function onRequestPost(context) {
+  const { request, env } = context;
 
-export default {
-	async fetch(request, env) {
-		const url = new URL(request.url);
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return Response.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
 
-		if (request.method === "OPTIONS") {
-			return new Response(null, { headers: CORS_HEADERS });
-		}
+  const message = typeof body.message === "string" ? body.message.slice(0, 800) : "";
+  const historyIn = Array.isArray(body.history) ? body.history.slice(-8) : [];
 
-		if (url.pathname !== "/api/chat" || request.method !== "POST") {
-			return new Response("Not found", { status: 404, headers: CORS_HEADERS });
-		}
+  if (!message.trim()) {
+    return Response.json({ error: "Empty message" }, { status: 400 });
+  }
 
-		let body;
-		try {
-			body = await request.json();
-		} catch {
-			return new Response(JSON.stringify({ error: "Invalid JSON body" }), {
-				status: 400,
-				headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-			});
-		}
+  const messages = [
+    { role: "system", content: SYSTEM_PROMPT },
+    ...historyIn
+      .filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
+      .map((m) => ({ role: m.role, content: m.content.slice(0, 800) })),
+    { role: "user", content: message },
+  ];
 
-		const message = typeof body.message === "string" ? body.message.slice(0, 800) : "";
-		const historyIn = Array.isArray(body.history) ? body.history.slice(-8) : [];
+  try {
+    const result = await env.AI.run("@cf/zai-org/glm-4.7-flash", {
+      messages,
+      max_tokens: 1200,
+    });
 
-		if (!message.trim()) {
-			return new Response(JSON.stringify({ error: "Empty message" }), {
-				status: 400,
-				headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-			});
-		}
+    const reply =
+      result?.response ??
+      result?.choices?.[0]?.message?.content ??
+      "Xin loi, minh chua tra loi duoc cau nay. Ban nhan tin qua Zalo/WhatsApp 0856789190 nhe.";
 
-		const messages = [
-			{ role: "system", content: SYSTEM_PROMPT },
-			...historyIn
-				.filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
-				.map((m) => ({ role: m.role, content: m.content.slice(0, 800) })),
-			{ role: "user", content: message },
-		];
-
-		try {
-			const result = await env.AI.run("@cf/zai-org/glm-4.7-flash", {
-				messages,
-				max_tokens: 400,
-			});
-
-			const reply = result?.response ?? "Xin loi, minh chua tra loi duoc cau nay. Ban nhan tin qua Zalo/WhatsApp 0856789190 nhe.";
-
-			return new Response(JSON.stringify({ reply }), {
-				headers: { "Content-Type": "application/json", ...CORS_HEADERS },
-			});
-		} catch (err) {
-			return new Response(
-				JSON.stringify({
-					error: "AI request failed",
-					reply: "Xin loi, minh dang gap loi ky thuat. Ban nhan tin qua Zalo/WhatsApp 0856789190 de duoc ho tro nhe.",
-				}),
-				{ status: 502, headers: { "Content-Type": "application/json", ...CORS_HEADERS } }
-			);
-		}
-	},
-};
+    return Response.json({ reply });
+  } catch (err) {
+    return Response.json(
+      {
+        error: "AI request failed",
+        reply: "Xin loi, minh dang gap loi ky thuat. Ban nhan tin qua Zalo/WhatsApp 0856789190 de duoc ho tro nhe.",
+      },
+      { status: 502 }
+    );
+  }
+}
