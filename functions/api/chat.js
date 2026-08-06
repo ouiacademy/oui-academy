@@ -57,12 +57,12 @@ export async function onRequestPost(context) {
 
     return Response.json({ reply });
   } catch (err) {
-    return Response.json(
-      {
-        error: "AI request failed",
-        reply: "Xin loi, minh dang gap loi ky thuat. Ban nhan tin qua Zalo/WhatsApp 0856789190 de duoc ho tro nhe.",
-      },
-      { status: 502 }
-    );
+    // Cloudflare's edge replaces 5xx response bodies with its own generic
+    // error page, so this stays 200 — the JSON body is what the widget
+    // actually reads and shows to the visitor.
+    return Response.json({
+      error: "AI request failed",
+      reply: "Xin loi, minh dang gap loi ky thuat. Ban nhan tin qua Zalo/WhatsApp 0856789190 de duoc ho tro nhe.",
+    });
   }
 }
