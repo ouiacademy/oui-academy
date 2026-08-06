@@ -47,7 +47,7 @@ export async function onRequestPost(context) {
   try {
     const result = await env.AI.run("@cf/zai-org/glm-4.7-flash", {
       messages,
-      max_tokens: 1200,
+      max_tokens: 1800,
     });
 
     const reply =
