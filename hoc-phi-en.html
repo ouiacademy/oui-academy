@@ -96,6 +96,11 @@
   .club-cta-row .btn{background:var(--ink); color:var(--cream); font-weight:700; padding:12px 22px; font-size:14px; border-radius:var(--radius); white-space:nowrap; display:inline-block;}
   .club-cta-row .btn:hover{background:var(--yellow); color:var(--ink);}
 
+  .cart-add{margin-top:8px; display:inline-block; font-size:12px; font-weight:700; padding:7px 14px; border:1.5px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer; white-space:nowrap;}
+  .cart-add:hover{background:var(--yellow);}
+  .mini .cart-add{background:transparent; border-color:var(--cream); color:var(--cream);}
+  .mini .cart-add:hover{background:var(--yellow); border-color:var(--yellow); color:var(--ink);}
+
   .foot-note{font-size:12.5px; color:var(--grey); margin-top:26px; line-height:1.6;}
   footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
   footer .social-row{display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px;}
@@ -204,27 +209,27 @@
 
     <div class="row" id="entry">
       <div class="row-left"><span class="badge">A1</span><div class="row-info"><div class="buoi">12 sessions</div></div></div>
-      <div class="row-price"><div class="per">€120 pay-as-you-go</div><div class="total">€108 <span class="usd">(~$117)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€120 pay-as-you-go</div><div class="total">€108 <span class="usd">(~$117)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-a1","name":"Speaking Track – A1","price":108,"unit":"12 sessions"}'>+ Cart</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">A2</span><div class="row-info"><div class="buoi">13 sessions</div></div></div>
-      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-a2","name":"Speaking Track – A2","price":117,"unit":"13 sessions"}'>+ Cart</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">B1</span><div class="row-info"><div class="buoi">13 sessions</div></div></div>
-      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-b1","name":"Speaking Track – B1","price":117,"unit":"13 sessions"}'>+ Cart</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">B2</span><div class="row-info"><div class="buoi">13 sessions</div></div></div>
-      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-b2","name":"Speaking Track – B2","price":117,"unit":"13 sessions"}'>+ Cart</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">C1</span><div class="row-info"><div class="buoi">13 sessions</div></div></div>
-      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€130 pay-as-you-go</div><div class="total">€117 <span class="usd">(~$126)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-c1","name":"Speaking Track – C1","price":117,"unit":"13 sessions"}'>+ Cart</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">C2</span><div class="row-info"><div class="buoi">16 sessions</div></div></div>
-      <div class="row-price"><div class="per">€160 pay-as-you-go</div><div class="total">€144 <span class="usd">(~$156)</span><span class="save">full level, −10%</span></div></div>
+      <div class="row-price"><div class="per">€160 pay-as-you-go</div><div class="total">€144 <span class="usd">(~$156)</span><span class="save">full level, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-c2","name":"Speaking Track – C2","price":144,"unit":"16 sessions"}'>+ Cart</button></div>
     </div>
 
     <p class="foot-note">3-installment plans are available on any full-level package. USD amounts are approximate (~$1 = €0.93, rate updated 2026) and settlement is in Euros.</p>
@@ -235,9 +240,9 @@
   <div class="wrap">
     <div class="kicker">Multi-level bundles</div>
     <div class="mini-grid">
-      <div class="mini"><div class="lv">A1 → B1</div><div class="price">€342 <span class="usd">(~$369)</span></div></div>
-      <div class="mini"><div class="lv">A1 → B2</div><div class="price">€459 <span class="usd">(~$496)</span></div></div>
-      <div class="mini"><div class="lv">A1 → C2</div><div class="price">€720 <span class="usd">(~$778)</span></div></div>
+      <div class="mini"><div class="lv">A1 → B1</div><div class="price">€342 <span class="usd">(~$369)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-b1","name":"Speaking Track – bundle A1 → B1","price":342,"unit":"full bundle"}'>+ Cart</button></div>
+      <div class="mini"><div class="lv">A1 → B2</div><div class="price">€459 <span class="usd">(~$496)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-b2","name":"Speaking Track – bundle A1 → B2","price":459,"unit":"full bundle"}'>+ Cart</button></div>
+      <div class="mini"><div class="lv">A1 → C2</div><div class="price">€720 <span class="usd">(~$778)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-c2","name":"Speaking Track – bundle A1 → C2","price":720,"unit":"full bundle"}'>+ Cart</button></div>
     </div>
   </div>
 </section>
@@ -251,7 +256,7 @@
         <h3>1:1 Private Lessons</h3>
         <p>Any level, flat rate of €15/hour (~$16/hour).</p>
       </div>
-      <div class="price">€150 <span class="usd" style="display:block;">(~$162)</span><span class="unit">/ 12-hour package · €15/hour</span></div>
+      <div class="price">€150 <span class="usd" style="display:block;">(~$162)</span><span class="unit">/ 12-hour package · €15/hour</span><button type="button" class="cart-add" data-cart-item='{"id":"noi-private","name":"1:1 Private Lessons","price":150,"unit":"12-hour package"}'>+ Cart</button></div>
     </div>
 
   </div>
@@ -313,5 +318,6 @@
   <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Book a free consultation</a>
 </div>
 <script src="/chatbot-widget.js" defer></script>
+<script src="/cart.js" defer></script>
 </body>
 </html>

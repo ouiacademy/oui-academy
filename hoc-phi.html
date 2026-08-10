@@ -96,6 +96,11 @@
   .club-cta-row .btn{background:var(--ink); color:var(--cream); font-weight:700; padding:12px 22px; font-size:14px; border-radius:var(--radius); white-space:nowrap; display:inline-block;}
   .club-cta-row .btn:hover{background:var(--yellow); color:var(--ink);}
 
+  .cart-add{margin-top:8px; display:inline-block; font-size:12px; font-weight:700; padding:7px 14px; border:1.5px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer; white-space:nowrap;}
+  .cart-add:hover{background:var(--yellow);}
+  .mini .cart-add{background:transparent; border-color:var(--cream); color:var(--cream);}
+  .mini .cart-add:hover{background:var(--yellow); border-color:var(--yellow); color:var(--ink);}
+
   .foot-note{font-size:12.5px; color:var(--grey); margin-top:26px; line-height:1.6;}
   footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
   footer .social-row{display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px;}
@@ -204,27 +209,27 @@
 
     <div class="row" id="entry">
       <div class="row-left"><span class="badge">A1</span><div class="row-info"><div class="buoi">12 buổi</div></div></div>
-      <div class="row-price"><div class="per">120€ theo buổi</div><div class="total">108€ <span class="vnd">(~3.240.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">120€ theo buổi</div><div class="total">108€ <span class="vnd">(~3.240.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-a1","name":"Lộ trình Nói – A1","price":108,"unit":"12 buổi"}'>+ Giỏ hàng</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">A2</span><div class="row-info"><div class="buoi">13 buổi</div></div></div>
-      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-a2","name":"Lộ trình Nói – A2","price":117,"unit":"13 buổi"}'>+ Giỏ hàng</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">B1</span><div class="row-info"><div class="buoi">13 buổi</div></div></div>
-      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-b1","name":"Lộ trình Nói – B1","price":117,"unit":"13 buổi"}'>+ Giỏ hàng</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">B2</span><div class="row-info"><div class="buoi">13 buổi</div></div></div>
-      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-b2","name":"Lộ trình Nói – B2","price":117,"unit":"13 buổi"}'>+ Giỏ hàng</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">C1</span><div class="row-info"><div class="buoi">13 buổi</div></div></div>
-      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">130€ theo buổi</div><div class="total">117€ <span class="vnd">(~3.510.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-c1","name":"Lộ trình Nói – C1","price":117,"unit":"13 buổi"}'>+ Giỏ hàng</button></div>
     </div>
     <div class="row">
       <div class="row-left"><span class="badge">C2</span><div class="row-info"><div class="buoi">16 buổi</div></div></div>
-      <div class="row-price"><div class="per">160€ theo buổi</div><div class="total">144€ <span class="vnd">(~4.320.000₫)</span> <span class="save">trọn cấp, −10%</span></div></div>
+      <div class="row-price"><div class="per">160€ theo buổi</div><div class="total">144€ <span class="vnd">(~4.320.000₫)</span> <span class="save">trọn cấp, −10%</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-c2","name":"Lộ trình Nói – C2","price":144,"unit":"16 buổi"}'>+ Giỏ hàng</button></div>
     </div>
 
     <p class="foot-note">Trả góp 3 lần áp dụng cho mọi gói đóng trọn. Giá VNĐ chỉ mang tính tham khảo (~1€ ≈ 30.000₫, tỷ giá cập nhật 2026), thanh toán thực tế bằng Euro.</p>
@@ -235,9 +240,9 @@
   <div class="wrap">
     <div class="kicker">Đóng gộp nhiều cấp</div>
     <div class="mini-grid">
-      <div class="mini"><div class="lv">A1 → B1</div><div class="price">342€ <span class="vnd">(~10.260.000₫)</span></div></div>
-      <div class="mini"><div class="lv">A1 → B2</div><div class="price">459€ <span class="vnd">(~13.770.000₫)</span></div></div>
-      <div class="mini"><div class="lv">A1 → C2</div><div class="price">720€ <span class="vnd">(~21.600.000₫)</span></div></div>
+      <div class="mini"><div class="lv">A1 → B1</div><div class="price">342€ <span class="vnd">(~10.260.000₫)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-b1","name":"Lộ trình Nói – gộp A1 → B1","price":342,"unit":"trọn gói"}'>+ Giỏ hàng</button></div>
+      <div class="mini"><div class="lv">A1 → B2</div><div class="price">459€ <span class="vnd">(~13.770.000₫)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-b2","name":"Lộ trình Nói – gộp A1 → B2","price":459,"unit":"trọn gói"}'>+ Giỏ hàng</button></div>
+      <div class="mini"><div class="lv">A1 → C2</div><div class="price">720€ <span class="vnd">(~21.600.000₫)</span></div><button type="button" class="cart-add" data-cart-item='{"id":"noi-bundle-a1-c2","name":"Lộ trình Nói – gộp A1 → C2","price":720,"unit":"trọn gói"}'>+ Giỏ hàng</button></div>
     </div>
   </div>
 </section>
@@ -251,7 +256,7 @@
         <h3>Học riêng 1:1</h3>
         <p>Mọi cấp độ, đồng giá 15€/giờ (~450.000₫/giờ).</p>
       </div>
-      <div class="price">150€ <span class="vnd" style="display:block;">(~4.500.000₫)</span><span class="unit">/ gói 12 giờ · 15€/giờ</span></div>
+      <div class="price">150€ <span class="vnd" style="display:block;">(~4.500.000₫)</span><span class="unit">/ gói 12 giờ · 15€/giờ</span><button type="button" class="cart-add" data-cart-item='{"id":"noi-private","name":"Học riêng 1:1","price":150,"unit":"gói 12 giờ"}'>+ Giỏ hàng</button></div>
     </div>
 
   </div>
@@ -313,5 +318,6 @@
   <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Đặt lịch tư vấn miễn phí</a>
 </div>
 <script src="/chatbot-widget.js" defer></script>
+<script src="/cart.js" defer></script>
 </body>
 </html>
