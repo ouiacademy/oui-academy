@@ -83,6 +83,19 @@
   .single .price{font-family:'Space Grotesk'; font-weight:700; font-size:26px; white-space:nowrap; text-align:right;}
   .single .price .unit{display:block; font-size:12.5px; color:var(--grey); font-weight:500; margin-top:2px;}
 
+  .club-section{border:2px solid var(--ink); background:var(--paper); border-left:6px solid var(--yellow); padding:28px 26px;}
+  .club-head h3{font-size:19px; margin-bottom:8px;}
+  .club-head p{color:var(--grey); font-size:14.5px; max-width:540px;}
+  .club-features{list-style:none; display:flex; flex-direction:column; gap:9px; margin:20px 0 24px;}
+  .club-features li{display:flex; gap:10px; font-size:14px; align-items:flex-start;}
+  .club-features li::before{content:'✓'; font-family:'Space Grotesk'; font-weight:700; color:var(--ink); background:var(--yellow); border:1.5px solid var(--ink); width:19px; height:19px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; margin-top:1px;}
+  .club-cta-row{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:18px; border-top:1px dashed var(--line);}
+  .club-cta-row .price{font-family:'Space Grotesk'; font-weight:700; font-size:26px;}
+  .club-cta-row .price .usd{display:block; font-size:14px; color:var(--grey); font-weight:600;}
+  .club-cta-row .price .unit{display:block; font-size:12.5px; color:var(--grey); font-weight:500; margin-top:2px;}
+  .club-cta-row .btn{background:var(--ink); color:var(--cream); font-weight:700; padding:12px 22px; font-size:14px; border-radius:var(--radius); white-space:nowrap; display:inline-block;}
+  .club-cta-row .btn:hover{background:var(--yellow); color:var(--ink);}
+
   .foot-note{font-size:12.5px; color:var(--grey); margin-top:26px; line-height:1.6;}
   footer{padding:30px 0; border-top:1px solid var(--line); text-align:center; font-size:12.5px; color:var(--grey);}
   footer .social-row{display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px;}
@@ -103,6 +116,7 @@
     .row-price{text-align:left; width:100%;}
     .single{flex-direction:column; align-items:flex-start;}
     .single .price{text-align:left; width:100%;}
+    .club-cta-row{flex-direction:column; align-items:flex-start;}
   }
 
 
@@ -240,12 +254,27 @@
       <div class="price">€150 <span class="usd" style="display:block;">(~$162)</span><span class="unit">/ 12-hour package · €15/hour</span></div>
     </div>
 
-    <div class="single" id="club">
-      <div>
-        <h3>Maintenance Club</h3>
-        <p>Between two levels — keep speaking regularly, don't lose momentum.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Bonus</div>
+    <div class="club-section">
+      <div class="club-head">
+        <h3>French Club — a weekly live group speaking session</h3>
+        <p>You're not practicing alone. One live small-group session every week, speaking with other learners — topics prepared for you, no need to go find speaking partners yourself.</p>
       </div>
-      <div class="price">€15 <span class="usd" style="display:block;">(~$16)</span><span class="unit">/ month</span></div>
+      <ul class="club-features">
+        <li>One live group session every week, speaking directly with other learners</li>
+        <li>Topics prepared in advance for your level, not left to figure out on your own</li>
+        <li>Great between two levels, or to keep your reflex sharp after finishing a track</li>
+        <li>Monthly, cancel anytime — no long-term commitment</li>
+      </ul>
+      <div class="club-cta-row" id="club">
+        <div class="price">€15 <span class="usd">(~$16)</span><span class="unit">/ month</span></div>
+        <a class="btn" href="https://wa.me/84856789190?text=Hi%20Oui%20Academy%2C%20I%27d%20like%20to%20join%20the%20French%20Club." target="_blank" rel="noopener">Join the French Club →</a>
+      </div>
     </div>
   </div>
 </section>
