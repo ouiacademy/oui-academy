@@ -47,7 +47,26 @@
   .hero p{color:var(--grey); font-size:15.5px; max-width:520px;}
 
   section{padding:0 0 50px;}
+  .tag-filter{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;}
+  .tag-filter button{
+    font-family:'Space Grotesk', sans-serif; font-size:12px; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+    background:var(--paper); color:var(--ink); border:1.5px solid var(--ink); padding:7px 14px; border-radius:var(--radius);
+    cursor:pointer; transition:all .15s ease;
+  }
+  @media (hover:hover){ .tag-filter button:hover{background:var(--yellow);} }
+  .tag-filter button.active{background:var(--ink); color:var(--cream); border-color:var(--ink);}
   .post-grid{display:grid; gap:16px;}
+  .post-card.is-hidden{display:none;}
+  .featured-banner{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    border:2px solid var(--ink); background:var(--yellow); padding:20px 24px; margin-bottom:28px;
+  }
+  .featured-banner .fb-text strong{display:block; font-family:'Space Grotesk'; font-size:17px; margin-bottom:4px;}
+  .featured-banner .fb-text span{font-size:13.5px; color:#4A4834;}
+  .featured-banner a.fb-cta{
+    flex-shrink:0; background:var(--ink); color:var(--cream); text-decoration:none;
+    font-weight:700; font-size:13.5px; padding:10px 18px; border-radius:var(--radius);
+  }
   .post-card{display:block; border:2px solid var(--ink); background:var(--paper); padding:26px; transition:transform .15s ease, box-shadow .15s ease;}
   .post-card:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
   .post-tag{display:inline-block; font-family:'Space Grotesk'; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink); background:var(--yellow); border:1.5px solid var(--ink); padding:2px 9px; margin-bottom:12px;}
@@ -122,6 +141,14 @@
 
 <section>
   <div class="wrap">
+    <a class="featured-banner" href="huong-dan-tcf-canada.html">
+      <div class="fb-text">
+        <strong>Hướng dẫn TCF Canada từ A đến Z</strong>
+        <span>20 bài viết, sắp xếp theo đúng thứ tự nên đọc — bắt đầu từ đây nếu chưa biết đọc gì trước.</span>
+      </div>
+      <span class="fb-cta">Xem hướng dẫn →</span>
+    </a>
+    <div class="tag-filter" id="tagFilter"></div>
     <div class="post-grid">
 
       <a class="post-card" href="loi-phat-am-tieng-phap.html">
@@ -379,5 +406,41 @@
 </div>
 <script src="/chatbot-widget.js" defer></script>
 <script src="/cart.js" defer></script>
+<script>
+(function(){
+  var grid = document.querySelector('.post-grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.post-card'));
+  var tags = [];
+  cards.forEach(function(c){
+    var t = c.querySelector('.post-tag').textContent.trim();
+    if (tags.indexOf(t) === -1) tags.push(t);
+  });
+  var filterBar = document.getElementById('tagFilter');
+  function apply(tag){
+    cards.forEach(function(c){
+      var t = c.querySelector('.post-tag').textContent.trim();
+      c.classList.toggle('is-hidden', tag !== null && t !== tag);
+    });
+  }
+  function render(active){
+    filterBar.innerHTML = '';
+    var allBtn = document.createElement('button');
+    allBtn.type = 'button';
+    allBtn.textContent = 'Tất cả';
+    if (active === null) allBtn.className = 'active';
+    allBtn.addEventListener('click', function(){ apply(null); render(null); });
+    filterBar.appendChild(allBtn);
+    tags.forEach(function(t){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = t;
+      if (active === t) btn.className = 'active';
+      btn.addEventListener('click', function(){ apply(t); render(t); });
+      filterBar.appendChild(btn);
+    });
+  }
+  render(null);
+})();
+</script>
 </body>
 </html>
