@@ -10,7 +10,7 @@
         close: 'Close',
         greeting:
           "Hi! I'm the Oui Academy assistant. Ask me about courses, pricing, or the teacher — for anything I'm not sure about, I'll point you to a real person.",
-        error: 'Sorry, something went wrong. Message us on WhatsApp/Zalo at 0856789190 instead.',
+        error: 'Sorry, something went wrong. Message us on WhatsApp/Zalo at 0631823901 instead.',
         typing: 'Typing...',
       }
     : {
@@ -21,7 +21,7 @@
         close: 'Đóng',
         greeting:
           'Chào bạn! Mình là trợ lý AI của Oui Academy. Hỏi mình về khóa học, học phí, hoặc giáo viên nhé — với những gì mình chưa chắc, mình sẽ hướng bạn liên hệ trực tiếp.',
-        error: 'Xin lỗi, có lỗi xảy ra. Bạn nhắn tin qua Zalo/WhatsApp 0856789190 nhé.',
+        error: 'Xin lỗi, có lỗi xảy ra. Bạn nhắn tin qua Zalo/WhatsApp 0631823901 nhé.',
         typing: 'Đang trả lời...',
       };
 

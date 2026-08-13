@@ -3,7 +3,7 @@
 
   var LANG = (document.documentElement.getAttribute('lang') || 'vi').indexOf('en') === 0 ? 'en' : 'vi';
   var STORAGE_KEY = 'oa_cart_v1';
-  var WHATSAPP_NUMBER = '84856789190';
+  var WHATSAPP_NUMBER = '84631823901';
   var VND_RATE = 30000;
 
   var STR = {
