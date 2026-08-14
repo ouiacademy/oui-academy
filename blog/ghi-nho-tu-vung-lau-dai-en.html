@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Complete TCF Canada Guide — Oui Academy</title>
-<meta name="description" content="20 articles on TCF Canada, organized in the order you should actually read them — from picking the right certificate, to exam structure, skill-by-skill practice, registration, and using your score.">
-<link rel="canonical" href="https://ouiacademy.net/blog/huong-dan-tcf-canada-en">
-<link rel="alternate" hreflang="vi" href="https://ouiacademy.net/blog/huong-dan-tcf-canada">
-<link rel="alternate" hreflang="en" href="https://ouiacademy.net/blog/huong-dan-tcf-canada-en">
+<title>How to Actually Remember French Vocabulary Long-Term (Spaced Repetition) — Oui Academy</title>
+<meta name="description" content="Learning 50 words in one sitting, then forgetting most of them a week later, isn't a memory problem — it's a review-timing problem. Spaced repetition and how to apply it without a complicated app.">
+<link rel="canonical" href="https://ouiacademy.net/blog/ghi-nho-tu-vung-lau-dai-en">
+<link rel="alternate" hreflang="vi" href="https://ouiacademy.net/blog/ghi-nho-tu-vung-lau-dai">
+<link rel="alternate" hreflang="en" href="https://ouiacademy.net/blog/ghi-nho-tu-vung-lau-dai-en">
 <link rel="alternate" hreflang="x-default" href="https://ouiacademy.net/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Oui Academy">
-<meta property="og:title" content="The Complete TCF Canada Guide">
-<meta property="og:description" content="20 articles on TCF Canada, organized in the order you should actually read them.">
-<meta property="og:url" content="https://ouiacademy.net/blog/huong-dan-tcf-canada-en">
+<meta property="og:title" content="How to Actually Remember French Vocabulary Long-Term">
+<meta property="og:description" content="Spaced repetition and how to apply it without a complicated app.">
+<meta property="og:url" content="https://ouiacademy.net/blog/ghi-nho-tu-vung-lau-dai-en">
 <meta property="og:image" content="https://ouiacademy.net/images/logo-mark.png">
 <meta property="og:locale" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
   h1,h2,h3{font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.01em;}
   a{color:var(--ink); text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:2px; text-underline-offset:2px;}
   .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
-  .article{max-width:720px; margin:0 auto; padding:0 28px;}
+  .article{max-width:680px; margin:0 auto; padding:0 28px;}
 
   header{position:sticky; top:0; z-index:50; background:rgba(255,253,246,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
   .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:10px; max-width:880px; margin:0 auto; padding-left:28px; padding-right:28px;}
@@ -43,28 +43,25 @@
 
   .post-header{padding:50px 0 34px;}
   .post-tag{display:inline-block; font-family:'Space Grotesk'; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink); background:var(--yellow); border:1.5px solid var(--ink); padding:2px 9px; margin-bottom:16px;}
-  .post-header h1{font-size:clamp(28px,4.6vw,42px); line-height:1.2; margin-bottom:14px;}
+  .post-header h1{font-size:clamp(26px,4.2vw,38px); line-height:1.25; margin-bottom:14px;}
   .post-byline{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--grey); margin-top:20px;}
   .post-byline img{width:34px; height:34px; border-radius:50%; object-fit:cover; border:1.5px solid var(--ink);}
 
+  .prose{padding-bottom:20px;}
+  .prose p{margin-bottom:18px; font-size:16px;}
+  .prose h2{font-size:21px; margin:36px 0 14px;}
+  .prose ul, .prose ol{margin:0 0 18px 22px;}
+  .prose li{margin-bottom:8px;}
+  .prose strong{background:linear-gradient(180deg, transparent 60%, var(--yellow) 60%);}
   .lede{font-size:18px; color:var(--grey); margin-bottom:8px;}
+  .callout{border:2px solid var(--ink); border-left:6px solid var(--yellow); background:var(--paper); padding:18px 22px; margin:26px 0; font-size:14.5px;}
+  .callout strong{display:block; font-family:'Space Grotesk'; font-size:13px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px; background:none;}
 
-  .guide{padding-bottom:20px;}
-  .guide-section{margin:40px 0;}
-  .guide-section .sec-num{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:26px; height:26px; background:var(--yellow); border:1.5px solid var(--ink);
-    font-family:'Space Grotesk'; font-weight:700; font-size:14px; margin-right:10px;
-  }
-  .guide-section h2{font-size:21px; display:inline-flex; align-items:center; margin-bottom:6px;}
-  .guide-section .sec-desc{color:var(--grey); font-size:14.5px; margin:6px 0 16px 36px;}
-  .guide-links{display:grid; gap:10px; margin-left:36px;}
-  .guide-links a{
-    display:block; border:1.5px solid var(--line); background:var(--paper);
-    padding:13px 16px; font-size:14.5px; font-weight:600; text-decoration:none;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  @media (hover:hover){ .guide-links a:hover{border-color:var(--ink); transform:translateX(2px);} }
+  .steps{margin:26px 0; display:grid; gap:10px;}
+  .steps .step{border:2px solid var(--ink); background:var(--paper); padding:14px 18px; display:flex; gap:14px; align-items:flex-start;}
+  .steps .step .num{font-family:'Space Grotesk'; font-weight:700; font-size:15px; background:var(--yellow); border:1.5px solid var(--ink); width:26px; height:26px; flex-shrink:0; display:flex; align-items:center; justify-content:center;}
+  .steps .step p{margin:0; font-size:14.5px; color:var(--grey);}
+  .steps .step strong{font-size:15px; color:var(--ink); display:block; margin-bottom:3px; background:none;}
 
   .post-cta{border:2px solid var(--ink); background:var(--ink); color:var(--cream); padding:26px 28px; margin:40px 0; text-align:center;}
   .post-cta h3{color:var(--cream); font-size:18px; margin-bottom:8px;}
@@ -114,7 +111,6 @@
     }
     body{padding-bottom:64px;}
     .chat-fab{bottom:78px;}
-    .guide-section .sec-desc, .guide-links{margin-left:0;}
   }
   .related-posts{margin:44px 0 20px; padding-top:28px; border-top:1px solid var(--line);}
   .related-posts h3{font-family:'Space Grotesk'; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--grey); margin-bottom:14px;}
@@ -125,12 +121,12 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Complete TCF Canada Guide",
-  "description": "20 articles on TCF Canada, organized in the order you should actually read them — from picking the right certificate, to exam structure, skill-by-skill practice, registration, and using your score.",
+  "@type": "BlogPosting",
+  "headline": "How to Actually Remember French Vocabulary Long-Term (Spaced Repetition)",
+  "description": "Spaced repetition and how to apply it without a complicated app.",
   "author": {"@type": "Person", "name": "Hai Bui"},
   "publisher": {"@type": "EducationalOrganization", "name": "Oui Academy", "url": "https://ouiacademy.net"},
-  "mainEntityOfPage": "https://ouiacademy.net/blog/huong-dan-tcf-canada-en",
+  "mainEntityOfPage": "https://ouiacademy.net/blog/ghi-nho-tu-vung-lau-dai-en",
   "inLanguage": "en"
 }
 </script>
@@ -143,7 +139,7 @@
     <div class="nav-links">
       <a href="../index-en.html">Home</a>
       <a href="index-en.html">Blog</a>
-      <a href="huong-dan-tcf-canada.html" class="lang-toggle">VI</a>
+      <a href="ghi-nho-tu-vung-lau-dai.html" class="lang-toggle">VI</a>
       <a href="../index-en.html#contact" class="nav-cta">Book a Consult</a>
     </div>
   </nav>
@@ -152,75 +148,62 @@
 <div class="article">
   <a class="back-link" href="index-en.html">← Back to Blog</a>
   <div class="post-header">
-    <span class="post-tag">Guide</span>
-    <h1>The Complete TCF Canada Guide</h1>
-    <p class="lede">20 articles, organized in the order you should actually read them — from picking the right certificate, to understanding the exam structure, practicing each skill, preparing to register, and using your score for an immigration application. No need to read it all at once — use this page as a map to find the right article when you need it.</p>
+    <span class="post-tag">Method</span>
+    <h1>How to Actually Remember French Vocabulary Long-Term (Spaced Repetition)</h1>
+    <p class="lede">Learning 50 new words in one evening, then forgetting most of them a week later, is a familiar experience for most language learners. The problem isn't poor memory — it's reviewing at the wrong time. The brain needs to be reminded right before it's about to forget, not crammed once and left alone.</p>
     <div class="post-byline">
       <img src="../images/anh-hai.jpg" alt="Hai Bui">
       <span>Hai Bui · DALF C2, 50/50 on Speaking · Oui Academy</span>
     </div>
   </div>
 
-  <div class="guide">
+  <div class="prose">
+    <h2>What spaced repetition actually is</h2>
+    <p>Instead of reviewing a new word repeatedly within the same session (then never touching it again), spaced repetition stretches out review intervals further and further apart — review after 1 day, then 3 days, then 1 week, then 2 weeks. Reviewing right before you're about to forget builds a much deeper memory than cramming the same material repeatedly in a short window.</p>
 
-    <div class="guide-section">
-      <h2><span class="sec-num">1</span>Where to start</h2>
-      <p class="sec-desc">Confirm the right certificate and goal before you start training, so you don't spend effort in the wrong direction.</p>
-      <div class="guide-links">
-        <a href="delf-dalf-tcf-nen-thi-gi-en.html">DELF, DALF, TCF Canada: Which Certificate Should You Take?</a>
-        <a href="hoc-tieng-phap-dinh-cu-canada-en.html">Learning French for Canadian Immigration: Roadmap, Method, and Everything You Need to Know</a>
-        <a href="tcf-vs-tef-canada-en.html">TCF Canada or TEF Canada: Which Should You Take?</a>
-        <a href="tcf-canada-va-tcf-quebec-khac-nhau-en.html">TCF Canada vs. TCF Québec: What's the Difference?</a>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <div>
+          <strong>Don't learn too many new words at once</strong>
+          <p>10-15 new words a day, reviewed consistently, works far better than 50 words crammed in one sitting and then forgotten — a smaller amount retained long-term beats a larger amount forgotten quickly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <div>
+          <strong>Test yourself before checking the meaning</strong>
+          <p>Trying to recall the meaning before flipping to the answer creates active recall — far more effective than just skimming a word list repeatedly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <div>
+          <strong>Use a flashcard app with automatic spacing</strong>
+          <p>Apps like Anki calculate the right review timing for each word based on how quickly or slowly you recall it — no need to manually plan a review schedule yourself.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">4</span>
+        <div>
+          <strong>Attach new words to example sentences, not isolated words</strong>
+          <p>A word on its own is easier to forget than a word embedded in a sentence with real context — the brain remembers through association, not isolated lists.</p>
+        </div>
       </div>
     </div>
 
-    <div class="guide-section">
-      <h2><span class="sec-num">2</span>Understand the exam structure</h2>
-      <p class="sec-desc">Know exactly what the exam covers and how scores convert before you start training.</p>
-      <div class="guide-links">
-        <a href="cau-truc-de-thi-tcf-canada-en.html">TCF Canada Exam Structure: 4 Skills and NCLC Score Conversion</a>
-        <a href="tcf-canada-diem-dinh-cu-en.html">How Many TCF Canada Points Are Enough for Immigration?</a>
-      </div>
+    <div class="callout">
+      <strong>A note</strong>
+      You don't need a complex app to apply this — a notebook organized by review day works too, as long as you keep it consistent. The tool only helps with scheduling; the real effectiveness comes from reviewing at the right time, not from the tool itself.
     </div>
 
-    <div class="guide-section">
-      <h2><span class="sec-num">3</span>Practice each skill</h2>
-      <p class="sec-desc">Each section needs its own strategy — there's no single formula that covers all four skills.</p>
-      <div class="guide-links">
-        <a href="luyen-doc-tcf-canada-en.html">TCF Canada Reading: Reading Fast and Accurately Under Time Pressure</a>
-        <a href="luyen-nghe-tcf-canada-en.html">TCF Canada Listening: How to Train When You Can't Replay</a>
-        <a href="luyen-viet-tcf-canada-en.html">TCF Canada Writing: 3 Task Types and How to Score High</a>
-        <a href="luyen-noi-tcf-canada-en.html">TCF Canada Speaking: Strategy for the Most Feared Section</a>
-        <a href="tu-vung-tcf-canada-theo-chu-de-en.html">TCF Canada Vocabulary by Topic: The 4 Most Common Groups</a>
-        <a href="tu-noi-huu-ich-thi-noi-viet-tcf-canada-en.html">Useful Connectors for TCF Canada Speaking and Writing</a>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <h2><span class="sec-num">4</span>Get ready to register</h2>
-      <p class="sec-desc">Nail down the right timing and know the process in advance, so nothing catches you off guard.</p>
-      <div class="guide-links">
-        <a href="bao-lau-truoc-khi-thi-tcf-canada-en.html">How Long Before Your Filing Date Should You Start Training for TCF Canada?</a>
-        <a href="lam-sao-biet-da-san-sang-thi-tcf-canada-en.html">How Do You Know You're Ready for TCF Canada?</a>
-        <a href="le-phi-va-dang-ky-thi-tcf-canada-en.html">TCF Canada Fees and How to Register</a>
-      </div>
-    </div>
-
-    <div class="guide-section">
-      <h2><span class="sec-num">5</span>After the exam</h2>
-      <p class="sec-desc">Your score is only the first step — know how to use it, and when a retest actually makes sense.</p>
-      <div class="guide-links">
-        <a href="co-diem-tcf-canada-buoc-tiep-theo-la-gi-en.html">You've Got Your TCF Canada Score — What's Next?</a>
-        <a href="tcf-canada-thi-lai-en.html">Retaking TCF Canada: How Long to Wait, and Is There a Limit?</a>
-        <a href="tcf-canada-het-han-khi-nao-en.html">How Long Is TCF Canada Valid? Timing Your Test for an Immigration Application</a>
-      </div>
-    </div>
-
+    <h2>Vocabulary retention works best alongside topic-based practice</h2>
+    <p>Spaced repetition helps retention, but learning words grouped by related topics is still more effective than learning at random. See <a href="tu-vung-tcf-canada-theo-chu-de-en.html">TCF Canada vocabulary by topic</a> to combine both approaches.</p>
   </div>
 
   <div class="post-cta">
-    <h3>Want a personalized training plan instead of figuring it out alone?</h3>
-    <p>Book a free consult — Hải will help you assess your current level and build a plan that matches your actual goal.</p>
+    <h3>Want a vocabulary plan matched to your specific exam goal?</h3>
+    <p>Book a free consult — Hải will help you build a vocabulary plan that's effective and sustainable long-term.</p>
     <div class="btns">
       <a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Book a consult</a>
       <a class="secondary" href="../kiem-tra-trinh-do-en.html">Take the level test</a>
@@ -230,9 +213,9 @@
   <div class="related-posts">
     <h3>Related Articles</h3>
     <div class="related-list">
-          <a href="lam-sao-biet-da-san-sang-thi-tcf-canada-en.html">How Do You Know You're Ready for TCF Canada?</a>
-          <a href="le-phi-va-dang-ky-thi-tcf-canada-en.html">TCF Canada Fees and How to Register</a>
-          <a href="lo-trinh-a1-den-b2-bao-lau-en.html">How Long Does It Take to Go From A1 to B2?</a>
+          <a href="nghe-tieng-phap-mien-phi-o-dau-en.html">Where to Listen to Free French Every Day</a>
+          <a href="phuong-phap-shadowing-la-gi-en.html">What Is Shadowing and Why Does It Speed Up Spoken French?</a>
+          <a href="thoi-quen-luyen-tieng-phap-moi-ngay-en.html">A Daily French Practice Habit for Busy Schedules</a>
     </div>
   </div>
   <a class="back-link" href="index-en.html">← Back to Blog</a>
