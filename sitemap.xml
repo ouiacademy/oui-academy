@@ -57,6 +57,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ouiacademy.net/ve-chung-toi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/ve-chung-toi-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ouiacademy.net/blog/</loc>
     <priority>0.7</priority>
   </url>
