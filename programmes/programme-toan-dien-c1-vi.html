@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giáo án Toàn Diện C1 theo Édito — Oui Academy</title>
+<meta name="description" content="Giáo án chi tiết Lộ trình Toàn Diện C1: 39 buổi, đủ 4 kỹ năng, theo giáo trình Édito (Didier FLE).">
+<link rel="canonical" href="https://ouiacademy.net/programmes/programme-toan-dien-c1-vi">
+<link rel="alternate" hreflang="vi" href="https://ouiacademy.net/programmes/programme-toan-dien-c1-vi">
+<link rel="alternate" hreflang="en" href="https://ouiacademy.net/programmes/programme-toan-dien-c1-en">
+<link rel="alternate" hreflang="x-default" href="https://ouiacademy.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oui Academy">
+<meta property="og:title" content="Giáo án Toàn Diện C1 theo Édito — Oui Academy">
+<meta property="og:description" content="Giáo án chi tiết Lộ trình Toàn Diện C1: 39 buổi, đủ 4 kỹ năng, theo giáo trình Édito (Didier FLE).">
+<meta property="og:url" content="https://ouiacademy.net/programmes/programme-toan-dien-c1-vi">
+<meta property="og:image" content="https://ouiacademy.net/images/logo-mark.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#141311;--yellow:#F4E600;--yellow-deep:#E4D400;--cream:#FFFDF6;--paper:#FFFFFF;--grey:#6E6B60;--line:#EAE5D2;--radius:2px;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif;-webkit-font-smoothing:antialiased;}
+  @media print{.station,.card{break-inside:avoid;page-break-inside:avoid;}.terminus-strip{break-inside:avoid;}a.pill,a.lang-toggle{text-decoration:none;}body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 100px;}
+  .brandbar{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:820px;margin:0 auto;border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;text-decoration:none;color:inherit;cursor:pointer;flex-shrink:0;}
+  .brand img{height:34px;width:auto;display:block;}
+  .brand-links{display:flex;align-items:center;gap:16px;}
+  .brand-links a.text-link{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:600;color:var(--grey);text-decoration:none;}
+  .brand-links a.text-link:hover{color:var(--ink);}
+  .lang-toggle{font-family:'Be Vietnam Pro',sans-serif;font-size:12px;font-weight:600;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);padding:5px 10px;}
+  .lang-toggle:hover{background:var(--ink);color:#fff;}
+  .topnav{display:flex;gap:6px;flex-wrap:wrap;padding:16px 24px 0;max-width:820px;margin:0 auto;}
+  .pill{font-family:'Be Vietnam Pro',sans-serif;font-size:12.5px;font-weight:600;text-decoration:none;color:var(--grey);border:1.5px solid var(--line);padding:5px 11px;transition:all .15s ease;}
+  .pill:hover{border-color:var(--ink);color:var(--ink);}
+  .pill.active{background:var(--ink);border-color:var(--ink);color:var(--yellow);}
+  .hero{padding:36px 0 40px;}
+  .hero-badge{position:relative;display:inline-block;margin-bottom:22px;}
+  .hero-badge .square{width:104px;height:104px;background:var(--yellow);}
+  .hero-badge .code{position:absolute;left:14px;bottom:10px;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:40px;color:var(--ink);letter-spacing:-0.02em;}
+  .eyebrow{font-family:'Be Vietnam Pro',sans-serif;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);font-weight:600;margin:0 0 8px;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(26px,4vw,34px);line-height:1.15;margin:0 0 10px;letter-spacing:-0.01em;}
+  .hero .meta{font-family:'Be Vietnam Pro',sans-serif;font-size:13px;color:var(--grey);margin:0 0 12px;}
+  .hero .tagline{font-size:15.5px;color:var(--grey);line-height:1.55;margin:0;max-width:60ch;}
+  .hero .src{font-size:12px;color:var(--grey);margin:14px 0 0;}
+  .modmark{margin:34px 0 22px;border-left:5px solid var(--yellow);padding:2px 0 2px 16px;}
+  .modmark:first-of-type{margin-top:8px;}
+  .modmark .mnum{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--grey);}
+  .modmark h2{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:21px;margin:5px 0 5px;letter-spacing:-0.01em;}
+  .modmark p{font-size:13px;color:var(--grey);margin:0;max-width:60ch;}
+  .line-list{list-style:none;margin:0;padding:0;}
+  .station{display:grid;grid-template-columns:40px 1fr;gap:20px;position:relative;}
+  .track{display:flex;flex-direction:column;align-items:center;}
+  .node{width:32px;height:32px;background:var(--paper);border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;flex:none;z-index:2;}
+  .node em{font-style:normal;font-family:'Be Vietnam Pro',sans-serif;font-weight:600;font-size:12px;color:var(--ink);}
+  .node.terminus{width:38px;height:38px;background:var(--ink);}
+  .node.terminus em{color:var(--yellow);font-size:13px;}
+  .rail{width:3px;flex:1;background:var(--ink);margin-top:-2px;margin-bottom:-2px;min-height:60px;}
+  .card{background:var(--paper);border:1px solid var(--line);padding:18px 20px 20px;margin-bottom:22px;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease;}
+  .card:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:4px 4px 0 0 var(--yellow);}
+  .fr-title{font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;color:var(--grey);margin:0 0 4px;letter-spacing:.01em;}
+  .card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;margin:0 0 11px;letter-spacing:-0.01em;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px;}
+  .chip{font-family:'Be Vietnam Pro',sans-serif;font-size:11px;font-weight:500;padding:3px 8px;color:var(--grey);}
+  .chip-lang{background:#FBF9E0;color:#54530f;}
+  .chip-phon{background:#F0EEEA;color:var(--grey);}
+  .card p.sujet{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink);}
+  .sujet-label{font-family:'Be Vietnam Pro',sans-serif;font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--ink);}
+  .card ul.detail{margin:10px 0 0;padding-left:18px;}
+  .card ul.detail li{font-size:13px;line-height:1.5;color:var(--ink);margin-bottom:3px;}
+  .card ul.detail li b{font-weight:600;}
+  .station:last-child .card{margin-bottom:0;border:2px solid var(--ink);background:linear-gradient(180deg,var(--paper) 60%,var(--yellow) 320%);}
+  .terminus-strip{margin-top:38px;display:flex;align-items:center;gap:12px;padding:18px 20px;background:var(--ink);color:var(--yellow);}
+  .terminus-strip .dot{width:10px;height:10px;background:var(--yellow);flex:none;}
+  .terminus-strip p{margin:0;font-size:14px;font-family:'Be Vietnam Pro',sans-serif;letter-spacing:.01em;color:#fff;}
+  .terminus-strip .arrow{color:var(--grey);margin-left:auto;font-family:'Be Vietnam Pro',sans-serif;font-size:13px;}
+  @media (max-width:560px){.station{grid-template-columns:32px 1fr;gap:14px;}.hero-badge .square{width:84px;height:84px;}.hero-badge .code{font-size:32px;left:10px;bottom:8px;}.brandbar{padding:18px 20px;}}
+  .site-footer{border-top:2px solid var(--line);padding:28px 24px 34px;text-align:center;}
+  .site-footer .social-row{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:12px;}
+  .site-footer .social-row a{width:34px;height:34px;border:2px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .15s ease;flex-shrink:0;}
+  .site-footer .social-row a svg{width:15px;height:15px;}
+  @media (hover:hover){.site-footer .social-row a:hover{background:var(--yellow);transform:translateY(-2px);}}
+  .site-footer p{font-size:12px;color:var(--grey);}
+  .back-to-top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .15s ease;box-shadow:0 2px 10px rgba(0,0,0,0.22);z-index:60;}
+  .back-to-top.visible{opacity:1;pointer-events:auto;}
+  @media (hover:hover){.back-to-top:hover{background:var(--yellow);color:var(--ink);transform:translateY(-3px);}}
+  .back-to-top svg{width:20px;height:20px;}
+  .chat-fab{position:fixed;left:20px;bottom:20px;z-index:75;display:flex;flex-direction:column;gap:10px;}
+  .chat-fab a{width:46px;height:46px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.22);transition:transform .15s ease;}
+  @media (hover:hover){.chat-fab a:hover{transform:translateY(-3px);}}
+  .chat-fab a svg{width:22px;height:22px;}
+  .chat-fab .whatsapp{background:#25D366;}
+  .chat-fab .zalo{background:#0068FF;}
+  .sticky-cta{display:none;}
+  @media (max-width:680px){.sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--ink);padding:12px 16px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px rgba(0,0,0,0.18);}.sticky-cta a{display:block;background:var(--yellow);color:var(--ink);font-weight:700;text-align:center;padding:13px;font-size:15px;border-radius:2px;}body{padding-bottom:64px;}.chat-fab{bottom:78px;}.back-to-top{bottom:78px;}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Giáo án Toàn Diện C1 theo Édito — Oui Academy","description":"Giáo án chi tiết Lộ trình Toàn Diện C1: 39 buổi, đủ 4 kỹ năng, theo giáo trình Édito (Didier FLE).","provider":{"@type":"EducationalOrganization","name":"Oui Academy","url":"https://ouiacademy.net"},"url":"https://ouiacademy.net/programmes/programme-toan-dien-c1-vi","inLanguage":"vi","hasCourseInstance":{"@type":"CourseInstance","courseMode":["online","onsite"],"location":{"@type":"Place","name":"Paris, France"}}}
+</script>
+</head>
+<body>
+
+  <div class="brandbar">
+    <a class="brand" href="../index.html"><img src="../images/logo-mark.png" alt="Oui Academy"></a>
+    <div class="brand-links">
+      <a class="text-link" href="../loc-trinh-toan-dien.html">Lộ trình Toàn Diện</a>
+      <a class="text-link" href="../hoc-phi.html">Lộ trình Nói</a>
+      <a class="lang-toggle" href="programme-toan-dien-c1-en.html">EN</a>
+    </div>
+  </div>
+
+  <nav class="topnav" aria-label="Levels">
+<a class="pill" href="programme-toan-dien-a1-vi.html">A1</a>
+<a class="pill" href="programme-toan-dien-a2-vi.html">A2</a>
+<a class="pill" href="programme-toan-dien-b1-vi.html">B1</a>
+<a class="pill" href="programme-toan-dien-b2-vi.html">B2</a>
+<a class="pill active" href="programme-toan-dien-c1-vi.html">C1</a>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-badge"><div class="square"></div><div class="code">C1</div></div>
+      <p class="eyebrow">Giáo án Toàn Diện · Édito C1</p>
+      <h1>Giáo án Toàn Diện C1</h1>
+      <p class="meta">39 buổi · 3 giờ/buổi · 1 buổi/tuần · giáo trình Édito C1 (2ᵉ édition)</p>
+      <p class="tagline">Trình độ thuần thục: xã hội &amp; môi trường, văn hóa &amp; gia đình, con người &amp; tương lai — tổ chức theo chủ đề (thème).</p>
+      <p class="src">Nội dung xây dựng theo « Tableau des contenus » chính thức của giáo trình Édito (Didier FLE). Số buổi do Oui Academy phân bổ.</p>
+    </header>
+
+    <div class="modmark">
+      <div class="mnum">Mô-đun 1</div>
+      <h2>Xã hội &amp; môi trường</h2>
+      <p>Tư pháp thay thế, dân chủ, dám thay đổi, khí hậu nóng lạnh.</p>
+    </div>
+    <ol class="line-list">
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>1</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 1 — Justice, quelles alternatives ?</p>
+          <h3>Tư pháp phục hồi (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: distinguer les valeurs du passif</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur la justice restaurative, faire connaître le rôle de membre de la communauté</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la justice : acteurs, faits, lieux, procédure pénale, effets</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: extrait d&#x27;émission radiophonique sur l&#x27;équithérapie en prison · PO: échanger sur la médiation animale</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>2</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 1 — Justice, quelles alternatives ?</p>
+          <h3>Hòa giải bằng động vật trong tù (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: le lexique de la justice restaurative</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Argumenter sur la médiation animale en prison (DALF), rédiger une tribune</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la procédure pénale, les effets de la justice restaurative</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: tribune sur la justice restaurative · PE: argumenter sur la médiation animale en prison (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>3</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 1 — Justice, quelles alternatives ?</p>
+          <h3>Tóm tắt văn bản (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 1</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Résumer un texte sur la justice restaurative</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (la justice restaurative en Belgique) · Fiche méthodologique 2 : le résumé</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Résumer un texte sur la justice restaurative (Fiche méthodo 2)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>4</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 2 — SOS démocratie</p>
+          <h3>Dân chủ &amp; chủ nghĩa dân túy (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: assurer la cohérence et la cohésion avec les connecteurs logiques (Fiche méthodo 8)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Exposer son point de vue sur la « politique spectacle » (DALF), débattre sur le vote obligatoire</p>
+          <ul class="detail"><li><b>Từ vựng:</b> vie politique et démocratie : systèmes, acteurs, obstacles, renouvellement</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: chronique satirique sur la politique, émission sur l&#x27;essor du populisme · PO: s&#x27;exprimer sur les sociétés démocratiques actuelles (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>5</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 2 — SOS démocratie</p>
+          <h3>Ngờ vực chính trị &amp; bầu cử (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: les connecteurs logiques (suite) · la démocratie (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger une charte à destination de futurs élus, écrire une lettre à un journaliste</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la crise de la démocratie, le vote obligatoire, le référendum</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: infographie sur le rapport des Français à la politique, article sur la crise de la démocratie · PE: charte pour futurs élus, lettre à un journaliste</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>6</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 2 — SOS démocratie</p>
+          <h3>Bài luận có lập luận (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 2</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger un essai argumenté sur la pertinence de voter aux élections (Fiche méthodo 3)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (le chroniqueur nigérien Mamane) · Atelier: préparer une initiative participative</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Essai argumenté (Fiche méthodo 3) · Atelier médiation: Préparer une initiative participative</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>7</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 3 — Osé, le changement !</p>
+          <h3>Chuyển đổi nghề nghiệp (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: distinguer les valeurs de tout</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Décrypter le changement professionnel, présenter les principaux changements dans le monde du travail</p>
+          <ul class="detail"><li><b>Từ vựng:</b> le changement : facteurs, aspirations, clés de la réussite, freins, leurres</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: témoignage de reconversion professionnelle, dialogue sur la gestion du changement · PO: présenter les changements dans le monde du travail</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>8</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 3 — Osé, le changement !</p>
+          <h3>Quản lý sự thay đổi (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: le changement (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Décrire l&#x27;apport de changements pour lutter contre la crise climatique, réagir au phénomène de la chambre d&#x27;hôtes</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les aspirations, les freins et les leurres du changement</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article sur le concept de changement · PE: apport de changements pour la crise climatique, réagir au phénomène de la chambre d&#x27;hôtes</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>9</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 3 — Osé, le changement !</p>
+          <h3>Thuyết trình (phương pháp + DALF)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 3</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — S&#x27;interroger sur la capacité à changer (Fiche méthodo 5 : exposé oral)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Produire: exposé oral</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: S&#x27;interroger sur la capacité à changer (Fiche méthodo 5) · entraînement DALF Compréhension de l&#x27;oral</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>10</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 4 — Souffler le chaud et le froid</p>
+          <h3>Lịch sử sưởi ấm &amp; nắng nóng (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: distinguer les valeurs de si</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre de l&#x27;égalité face au changement de vie (DALF), définir un plan de prévention canicule pour sa ville</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la crise climatique : la chaleur, l&#x27;eau, l&#x27;habitat, les énergies, le textile</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: émission sur l&#x27;histoire du chauffage, interview d&#x27;un ingénieur présentant une innovation écologique · PO: participer à une consultation salariale sur la température des bureaux</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>11</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 4 — Souffler le chaud et le froid</p>
+          <h3>AMAP &amp; máy lạnh (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: la crise climatique (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Exposer les avantages et les inconvénients des AMAP, réfléchir à l&#x27;impact environnemental du chauffage</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les causes, les conséquences, les solutions et les adaptations, les vagues de chaleur</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article sur les conséquences des canicules · PE: impact environnemental du chauffage, présenter une innovation écologique à un client · Produire: donner son opinion sur l&#x27;attitude face aux vagues de chaleur (Fiche méthodo 3)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>12</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 4 — Souffler le chaud et le froid</p>
+          <h3>Sáng kiến công dân (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 4</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Donner son opinion sur l&#x27;attitude à adopter face aux vagues de chaleur</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (une innovation écologique tunisienne) · Atelier: préparer une initiative participative</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Atelier médiation: Préparer une initiative participative</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>13</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Ôn tập — Révision Module 1 + DALF C1</p>
+          <h3>Ôn tập Mô-đun 1 &amp; luyện DALF C1 (nghe + đọc)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision transversale Thèmes 1–4</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Reprise des Thèmes 1 à 4, repérer plan et thèse d&#x27;un document long</p>
+          <ul class="detail"><li><b>Từ vựng:</b> từ vựng tư pháp, dân chủ, thay đổi, khí hậu</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> 2 bài thi thử CO &amp; CE (documents longs) · chữa · fiche de connecteurs et de reformulations</li></ul>
+        </div>
+      </li>
+    </ol>
+    <div class="modmark">
+      <div class="mnum">Mô-đun 2</div>
+      <h2>Văn hóa &amp; gia đình</h2>
+      <p>Bộ mặt mới của văn hóa, nữ quyền, trò chơi may rủi, gia đình.</p>
+    </div>
+    <ol class="line-list">
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>14</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 5 — Les nouveaux visages de la culture</p>
+          <h3>Công chúng mới của bảo tàng (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: utiliser la mise en relief pour souligner des propos</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur l&#x27;apport des nouvelles technologies dans l&#x27;art chez les jeunes (DALF), proposer un nouveau concept à un directeur de musée (DALF)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> l&#x27;art et la culture : genres, supports, initiatives, publics</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: extrait d&#x27;émission sur les initiatives en faveur des publics des musées · PO: débattre sur la modernisation des musées (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>15</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 5 — Les nouveaux visages de la culture</p>
+          <h3>Hiện đại hóa bảo tàng (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: le lexique des publics et des initiatives culturelles</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger un article sur les jeunes et la culture, sur les pratiques culturelles de ses amis</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les supports, les caméras, les initiatives, les publics</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article sur les jeunes et la culture · PE: article sur les pratiques culturelles de ses amis</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>16</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 5 — Les nouveaux visages de la culture</p>
+          <h3>Viết sáng tạo (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 5</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Créer un épisode de série culturelle (Fiche méthodo 6 : écriture créative)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Produire: écriture créative</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Créer un épisode de série culturelle (Fiche méthodo 6)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>17</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 6 — On ne naît pas féministe…</p>
+          <h3>Đấu tranh nữ quyền hôm nay (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: maîtriser les préfixes et les suffixes</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Exposer un combat féministe actuel (DALF), débattre sur les réunions féministes réservées aux femmes</p>
+          <ul class="detail"><li><b>Từ vựng:</b> le féminisme : combats, domination, identité, masculinités</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: interview d&#x27;une bibliothécaire féministe ivoirienne, podcast sur les masculinités · PO: expliquer le concept de charge mentale et son histoire</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>18</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 6 — On ne naît pas féministe…</p>
+          <h3>Khuôn mẫu giới (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: le lexique du féminisme et des masculinités</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger un argumentaire pour une marque de vêtements non genrée, présenter les luttes pour l&#x27;égalité femmes-hommes</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les stéréotypes de genre, l&#x27;éducation sexiste, le changement, l&#x27;identité</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article retraçant l&#x27;histoire et les combats du féminisme, extrait de La Femme gelée d&#x27;Annie Ernaux · PE: argumentaire pour une marque non genrée, luttes pour l&#x27;égalité</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>19</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 6 — On ne naît pas féministe…</p>
+          <h3>Bài nói về một nhân vật nữ quyền (phương pháp + DALF)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 6</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Réaliser une chronique sur une féministe qui a marqué l&#x27;histoire (Fiche méthodo 5 : exposé oral)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (une bibliothèque féministe en Côte d&#x27;Ivoire) · Atelier: choisir un hymne féministe</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Chronique sur une féministe (Fiche méthodo 5) · Atelier: Choisir un hymne féministe · entraînement DALF Compréhension des écrits</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>20</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 7 — Quitte ou double !</p>
+          <h3>Trò chơi may rủi &amp; e-sport (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: utiliser le participe présent, le gérondif et l&#x27;adjectif verbal</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur le positionnement de l&#x27;État par rapport aux jeux de hasard (DALF), présenter l&#x27;e-sport</p>
+          <ul class="detail"><li><b>Từ vựng:</b> le jeu : types de jeux, la dépendance, la ludothérapie</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: dialogue sur un jeu populaire, extrait sur la plus-value thérapeutique du jeu · PO: enquêter sur les thérapies par réalité virtuelle (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>21</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 7 — Quitte ou double !</p>
+          <h3>Nghiện game (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: la dépendance, la ludothérapie (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Développer sa réflexion sur l&#x27;attitude face à l&#x27;addiction aux jeux, partager son point de vue sur l&#x27;effet des jeux vidéo</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les jeux d&#x27;argent, la réalité virtuelle, l&#x27;addiction</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: extrait littéraire Requiem pour un joueur d&#x27;Erwan Le Bihan · PE: réflexion sur l&#x27;addiction aux jeux, point de vue sur l&#x27;effet des jeux vidéo</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>22</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 7 — Quitte ou double !</p>
+          <h3>Bài luận có lập luận (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 7</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Prendre position sur l&#x27;interdiction de la publicité pour les jeux d&#x27;argent (Fiche méthodo 3)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Produire: essai argumenté</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Prendre position sur l&#x27;interdiction de la publicité pour les jeux d&#x27;argent (Fiche méthodo 3)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>23</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 8 — Ma belle famille !</p>
+          <h3>Vai trò ông bà &amp; làm cha mẹ (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: adapter le registre de langue</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Exposer le rôle et les droits des grands-parents (DALF), débattre sur la majorité numérique (DALF)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la famille et l&#x27;éducation : filiation, types de famille, transmission, tensions intra-familiales</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: chronique sur le rôle des grands-parents, interview d&#x27;un couple ayant choisi la coparentalité · PO: interroger le concept de parentalité</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>24</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 8 — Ma belle famille !</p>
+          <h3>Bố mẹ kế &amp; kiểm soát của cha mẹ (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: les tensions intra-familiales, la transmission (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Argumenter sur les liens entre géniteur et parent, écrire un commentaire sur les femmes qui refusent le rôle de belle-mère</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les beaux-parents, le contrôle parental, les principes éducatifs</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article sur l&#x27;image des belles-mères, témoignages de belles-mères · PE: liens entre géniteur et parent, article sur le contrôle parental</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>25</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 8 — Ma belle famille !</p>
+          <h3>Tổng hợp tài liệu (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 8</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger une synthèse sur la place des belles-mères dans les familles (Fiche méthodo 4)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (la chroniqueuse camerounaise Charlotte Ntamack) · Atelier: compte rendu sur des concepts éducatifs</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Synthèse sur la place des belles-mères (Fiche méthodo 4) · Atelier médiation: Rédiger un compte rendu sur des concepts éducatifs</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>26</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Ôn tập — Révision Module 2 + DALF C1</p>
+          <h3>Ôn tập Mô-đun 2 &amp; luyện DALF C1 (viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision transversale Thèmes 5–8</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Reprise des Thèmes 5 à 8, méthodologie de la synthèse et de l&#x27;essai</p>
+          <ul class="detail"><li><b>Từ vựng:</b> từ vựng văn hóa, nữ quyền, trò chơi, gia đình</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Synthèse de 2 documents (220 từ) + essai argumenté · chữa theo tiêu chí · fiche de reformulation</li></ul>
+        </div>
+      </li>
+    </ol>
+    <div class="modmark">
+      <div class="mnum">Mô-đun 3</div>
+      <h2>Con người &amp; tương lai</h2>
+      <p>Tuổi già, y tế 3.0, đoàn kết, mối quan hệ với thế giới sống.</p>
+    </div>
+    <ol class="line-list">
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>27</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 9 — Vieillir : une aventure</p>
+          <h3>Hình ảnh tuổi già trong xã hội (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: assurer la continuité du texte avec la reprise</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur le bien-vieillir (DALF), présenter l&#x27;âgisme et exposer des actions pour lutter contre</p>
+          <ul class="detail"><li><b>Từ vựng:</b> la vieillesse et le vieillissement : dénominations, hébergement, représentations, ressources, retraite</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: extrait d&#x27;émission sur la représentation de la vieillesse, dialogue sur un départ à la retraite · PO: prononcer un discours pour un départ à la retraite</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>28</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 9 — Vieillir : une aventure</p>
+          <h3>Tuổi tác &amp; định kiến (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: les représentations, les signes de vieillissement (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Argumenter sur le fait de mentir sur son âge, donner son avis sur le rôle des médias dans les stéréotypes liés à l&#x27;âge (DALF)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les modes d&#x27;hébergement, les ressources, les signes de vieillissement, la retraite</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: extrait littéraire La Voyageuse de nuit de Laure Adler · PE: argumenter sur le fait de mentir sur son âge, rôle des médias dans les stéréotypes (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>29</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 9 — Vieillir : une aventure</p>
+          <h3>Thuyết trình về dân số già (phương pháp + DALF)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 9</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — S&#x27;interroger sur le vieillissement de la population et ses enjeux (Fiche méthodo 5 : exposé oral)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (la représentation de la vieillesse au Canada)</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: S&#x27;interroger sur le vieillissement de la population (Fiche méthodo 5) · entraînement DALF Production écrite</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>30</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 10 — Santé 3.0</p>
+          <h3>Công nghệ bù đắp khuyết tật (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: maîtriser les temps du récit au passé</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur la « crétinisation » de la société (DALF), exposer les implications éthiques liées aux puces cérébrales</p>
+          <ul class="detail"><li><b>Từ vựng:</b> sciences et santé : consultation médicale, actes médicaux, troubles et handicaps, transhumanisme, questionnement éthique</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: podcast sur une technologie pour pallier un handicap visuel, reportage sur une technologie réparatrice · PO: débattre de l&#x27;utilisation des technologies compensant un handicap (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>31</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 10 — Santé 3.0</p>
+          <h3>Chủ nghĩa siêu nhân &amp; tiểu thuyết viễn tưởng (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: les nouvelles technologies, le transhumanisme (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger un article sur des avancées technologiques en matière de handicap, rédiger un texte de science-fiction</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les troubles et handicaps, les nouvelles technologies, le questionnement éthique, le transhumanisme</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: interview des auteures d&#x27;un roman d&#x27;anticipation, extrait de Résistance 2050 d&#x27;Amanda Sthers et Aurélie Jean · PE: article sur des avancées technologiques, texte de science-fiction</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>32</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 10 — Santé 3.0</p>
+          <h3>Bài luận + liên kết logic (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 10</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger des propositions pour protéger médecins et patients face aux avancées technologiques (Fiches méthodo 3 et 8)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (une technologie de soins à domicile au Canada) · Atelier: rédiger un texte de science-fiction avec une IA</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Propositions pour protéger médecins et patients (Fiches méthodo 3 et 8) · Atelier médiation: Rédiger un texte de science-fiction avec une IA</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>33</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 11 — Solidarité, un bel élan !</p>
+          <h3>Tình nguyện &amp; dấn thân (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: modaliser son discours</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Faire un état des lieux du bénévolat dans son pays, convaincre des jeunes de s&#x27;engager dans le bénévolat</p>
+          <ul class="detail"><li><b>Từ vựng:</b> solidarités et entraide : motivations, formes, actions, acteurs et destinataires</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: interview d&#x27;un homme interpellé par la situation des migrants, dialogue entre un bénévole et une personne intéressée · PO: débattre sur l&#x27;engagement et le bonheur (DALF)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>34</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 11 — Solidarité, un bel élan !</p>
+          <h3>Người di cư vị thành niên (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: les motivations et les formes de solidarité (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Présenter un projet solidaire pour sa ville, rédiger une lettre ouverte à propos des migrants mineurs</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les formes de solidarité, les actions, les acteurs et les destinataires</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: article sur la solidarité et ses bienfaits · PE: projet solidaire pour sa ville, lettre ouverte sur les migrants mineurs</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>35</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 11 — Solidarité, un bel élan !</p>
+          <h3>Viết sáng tạo dạng số (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 11</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Écrire un récit numérique sur la solidarité (Fiche méthodo 6 : écriture créative)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Produire: écriture créative numérique</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Écrire un récit numérique sur la solidarité (Fiche méthodo 6)</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>36</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 12 — Vous réglez en espèce(s) ?</p>
+          <h3>Quan hệ với các loài khác (nghe – nói)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: former un groupe nominal avec de, d&#x27; ou des + nom pluriel</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Débattre sur l&#x27;impact de notre rapport aux autres espèces (DALF), exposer les effets bénéfiques et néfastes de la chasse (DALF)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> le vivant : les forêts, la cohabitation, les espèces animales</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CO: émission sur le loup et les éleveurs, émission sur la faune et la flore d&#x27;un parc · PO: réfléchir au rôle du tourisme dans la préservation de la biodiversité</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>37</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 12 — Vous réglez en espèce(s) ?</p>
+          <h3>Động vật trong điều kiện nuôi nhốt (đọc – viết)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: la cohabitation, les espèces animales (lexique)</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger une description poétique d&#x27;un espace naturel, un courriel pour soutenir un projet de forêt primaire</p>
+          <ul class="detail"><li><b>Từ vựng:</b> les normes et le bien-être des animaux en captivité</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> CE: deux articles sur notre rapport au vivant · PE: description poétique d&#x27;un espace naturel, courriel pour soutenir un projet de forêt primaire</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node"><em>38</em></span>
+          <span class="rail"></span>
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Thème 12 — Vous réglez en espèce(s) ?</p>
+          <h3>Tổng hợp + phổ cập văn bản pháp lý (phương pháp)</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: révision Thème 12</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Rédiger une synthèse de documents sur notre relation au vivant (Fiche méthodo 4)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> Francophonie (la philosophe belge Vinciane Despret) · Atelier: rendre un texte juridique accessible au grand public</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Produire: Synthèse sur notre relation au vivant (Fiche méthodo 4) · Atelier médiation: Rendre un texte juridique accessible au grand public</li></ul>
+        </div>
+      </li>
+      <li class="station">
+        <div class="track">
+          <span class="node terminus"><em>39</em></span>
+          
+        </div>
+        <div class="card">
+          <p class="fr-title">Édito C1 · Bilan — Bilan final C1</p>
+          <h3>Thi thử DALF C1 hoàn chỉnh + tổng kết lộ trình</h3>
+          <div class="chips"><span class="chip chip-lang">Ngữ pháp: synthèse des acquis C1</span></div>
+          <p class="sujet"><span class="sujet-label">Giao tiếp</span> — Épreuve blanche complète : CO, CE avec synthèse, PE (essai argumenté), PO (exposé à partir d&#x27;un dossier)</p>
+          <ul class="detail"><li><b>Từ vựng:</b> toàn bộ từ vựng và ngữ pháp C1</li><li><b>Nhiệm vụ 4 kỹ năng (nghe · nói · đọc · viết):</b> Làm 4 kỹ năng theo tiêu chí DALF C1 · bilan toàn bộ lộ trình Toàn Diện A1 → C1</li></ul>
+        </div>
+      </li>
+    </ol>
+
+    <div class="terminus-strip">
+      <span class="dot"></span>
+      <p>Hoàn thành lộ trình Toàn Diện A1 → C1 — sẵn sàng thi DALF C1</p>
+      <span class="arrow">Kỳ thi → DALF C1</span>
+    </div>
+  </div>
+
+<footer class="site-footer">
+  <div class="social-row">
+    <a href="https://www.facebook.com/ouiacademy/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.5 1.53-1.5H16.5V4.26C16.17 4.2 15.06 4 13.77 4 11.09 4 9.5 5.66 9.5 8.2v2.3H7v3h2.5V21h4z"/></svg></a>
+    <a href="https://www.instagram.com/ouiacademyspeakfrench/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></a>
+    <a href="https://www.tiktok.com/@ouiacademytiengphap" target="_blank" rel="noopener" aria-label="TikTok Tiếng Pháp" title="TikTok · Tiếng Pháp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg></a>
+    <a href="https://www.tiktok.com/@ouiacademyspeakfrench" target="_blank" rel="noopener" aria-label="TikTok Speak French" title="TikTok · Speak French"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3c-1.5 0-2.9-.4-4.1-1.2v6.3c0 3.4-2.7 6.2-6.1 6.2S4.4 18.5 4.4 15.1c0-3.3 2.6-6 5.9-6.2v3.1c-1.6.2-2.8 1.5-2.8 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3h2.9z"/></svg></a>
+    <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+  </div>
+  <p>Oui Academy · Lộ trình Toàn Diện</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Top" title="Top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<script>(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){if(window.scrollY>600)b.classList.add('visible');else b.classList.remove('visible');});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();</script>
+
+<div class="chat-fab">
+  <a class="whatsapp" href="https://wa.me/84631823901" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+  <a class="zalo" href="https://zalo.me/84631823901" target="_blank" rel="noopener" aria-label="Zalo" title="Zalo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+</div>
+<div class="sticky-cta"><a href="https://calendly.com/haibuiworks/30min" target="_blank" rel="noopener">Đặt lịch tư vấn miễn phí</a></div>
+<script src="/chatbot-widget.js" defer></script>
+<script src="/cart.js" defer></script>
+</body>
+</html>
