@@ -72,6 +72,31 @@
   @media (max-width:760px){.step-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:460px){.step-grid{grid-template-columns:1fr;}}
 
+  .reward-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:22px;}
+  .reward-card{background:var(--paper); border:2px solid var(--ink); padding:22px 20px; transition:transform .15s ease, box-shadow .15s ease;}
+  .reward-card:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
+  .reward-card.top{border-left:6px solid var(--yellow);}
+  .reward-card .badge-num{font-family:'Space Grotesk'; font-weight:700; font-size:17px; background:var(--yellow); border:2px solid var(--ink); width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .reward-card h3{font-size:15.5px; margin-bottom:6px;}
+  .reward-card p{font-size:13px; color:var(--grey);}
+  .reward-card .prize{margin-top:12px; font-weight:700; font-size:14.5px; color:var(--ink);}
+  @media (max-width:760px){.reward-grid{grid-template-columns:1fr;}}
+
+  .month-prize{border:2px solid var(--ink); background:var(--paper); border-left:6px solid var(--yellow); padding:22px 24px; margin-bottom:22px;}
+  .month-prize h3{font-size:16px; margin-bottom:6px;}
+  .month-prize p{color:var(--grey); font-size:14px;}
+
+  .table-wrap{overflow-x:auto; margin-bottom:16px;}
+  .reward-table{width:100%; min-width:520px; border-collapse:collapse; border:2px solid var(--ink);}
+  .reward-table th, .reward-table td{border-bottom:1px solid var(--line); padding:14px 16px; text-align:left; font-size:13.5px; vertical-align:top;}
+  .reward-table thead th{background:var(--ink); color:var(--cream); font-family:'Space Grotesk'; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; border-bottom:none;}
+  .reward-table tbody tr:last-child th, .reward-table tbody tr:last-child td{border-bottom:none;}
+  .reward-table td.tier{font-family:'Space Grotesk'; font-weight:700; white-space:nowrap;}
+  .reward-table td.prize{font-weight:700; white-space:nowrap;}
+  .reward-table tbody tr.top td{background:#FFFCE0;}
+  .reward-table tbody tr.top td:first-child{border-left:6px solid var(--yellow); padding-left:10px;}
+  .reward-note{font-size:12.5px; color:var(--grey); margin-bottom:24px;}
+
   .tool{border:2px solid var(--ink); background:var(--paper); padding:28px; border-left:6px solid var(--yellow);}
   .tool label{font-size:13px; font-weight:700; display:block; margin-bottom:8px;}
   .tool-row{display:flex; gap:10px; flex-wrap:wrap;}
@@ -172,6 +197,7 @@
     <span>+1 buổi miễn phí / lượt giới thiệu</span>
     <span>Không giới hạn số lượt</span>
     <span>Cộng dồn được</span>
+    <a href="#content-reward"><span>Chia sẻ trải nghiệm: đến 10 buổi miễn phí →</span></a>
   </div>
 
   <div class="ref-banner" id="refBanner">
@@ -244,6 +270,51 @@
       <li>Buổi miễn phí được cộng cho cả hai bên sau khi người được giới thiệu hoàn tất buổi học thử <strong>và</strong> đăng ký ít nhất một lộ trình trả phí.</li>
       <li>Không giới hạn số lượt giới thiệu — giới thiệu càng nhiều người, nhận càng nhiều buổi miễn phí. Không quy đổi thành tiền mặt.</li>
       <li>Khi nhắn tin đặt lịch, nhớ nói rõ <em>"mình được [tên] giới thiệu"</em> để được ghi nhận đúng — công cụ ở trên tự động điền phần này giúp bạn.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="content-reward">
+  <div class="wrap">
+    <div class="kicker">Chia sẻ trải nghiệm học — nhận thưởng</div>
+    <p style="color:var(--grey); font-size:15px; max-width:620px; margin-bottom:24px;">Đang học ở Oui Academy và thấy hiệu quả? Đăng video, ảnh hoặc bài viết chia sẻ trải nghiệm học lên trang cá nhân — dưới đây là chính xác bạn nhận được bao nhiêu buổi cho từng loại nội dung.</p>
+
+    <div class="table-wrap">
+      <table class="reward-table">
+        <thead>
+          <tr><th>Bậc</th><th>Điều kiện</th><th>Bạn nhận</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tier">Bậc 1 — Bài / story</td>
+            <td>Bài viết hoặc story <strong>công khai</strong>, có tag @ouiacademy và hashtag #OuiAcademy, giữ tối thiểu 30 ngày.</td>
+            <td class="prize">1 buổi miễn phí <span style="color:var(--grey); font-weight:500;">(~10€)</span></td>
+          </tr>
+          <tr>
+            <td class="tier">Bậc 2 — Video trải nghiệm</td>
+            <td>Video ngắn (Reels/TikTok), <strong>tối thiểu 15 giây</strong>, kể về quá trình học tại Oui Academy, công khai tối thiểu 30 ngày.</td>
+            <td class="prize">3 buổi miễn phí <span style="color:var(--grey); font-weight:500;">(~30€)</span></td>
+          </tr>
+          <tr class="top">
+            <td class="tier">Bậc 3 — Được đăng lại</td>
+            <td>Bài/video ở Bậc 1 hoặc Bậc 2 được Oui Academy <strong>chọn đăng lại</strong> trên fanpage/kênh chính thức.</td>
+            <td class="prize">10 buổi miễn phí <span style="color:var(--grey); font-weight:500;">(~100€)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reward-note">Mỗi bài đăng chỉ tính <strong>1 mức thưởng cao nhất</strong> bạn đạt được (không cộng dồn cả 3 bậc cùng lúc) — ví dụ bài được đăng lại thì nhận thẳng 10 buổi, không phải 1+3+10.</p>
+
+    <div class="month-prize">
+      <h3>🏆 Giải nội dung xuất sắc nhất tháng</h3>
+      <p>Ngoài 3 bậc trên, mỗi tháng Oui Academy chọn thêm <strong>1 bài viết/video nổi bật nhất</strong> trong số tất cả bài đã gửi trong tháng để trao <strong>10 buổi học miễn phí</strong> — không cần chờ được đăng lại, và cộng dồn được với phần thưởng ở bảng trên.</p>
+    </div>
+
+    <ul class="terms">
+      <li>Áp dụng cho học viên đang học (đã đóng học phí) tại Oui Academy.</li>
+      <li>Nội dung phải công khai (không ở chế độ riêng tư), có tag/hashtag Oui Academy, và giữ tối thiểu 30 ngày.</li>
+      <li>Buổi miễn phí không quy đổi thành tiền mặt, được cộng trực tiếp vào lộ trình đang học. Giá trị quy đổi Euro chỉ mang tính tham khảo, theo mức 10€/buổi của Lộ trình Nói.</li>
+      <li>Gửi link bài đăng qua WhatsApp/Zalo để Oui Academy ghi nhận và xét thưởng.</li>
     </ul>
   </div>
 </section>
