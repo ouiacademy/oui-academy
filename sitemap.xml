@@ -504,4 +504,44 @@
     <loc>https://ouiacademy.net/programmes/programme-oral-c2-en</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-a1-vi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-a1-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-a2-vi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-a2-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-b1-vi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-b1-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-b2-vi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-b2-en</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-c1-vi</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/programmes/programme-toan-dien-c1-en</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -59,6 +59,9 @@
   .row{border:2px solid var(--ink); background:var(--paper); padding:20px 24px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; transition:transform .15s ease, box-shadow .15s ease;}
   .row:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
   .row-left{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  a.row-left{text-decoration:none; color:inherit; cursor:pointer;}
+  .syllabus-hint{font-size:11.5px; font-weight:600; color:var(--grey); margin-top:4px;}
+  a.row-left:hover .syllabus-hint{color:var(--ink); text-decoration:underline;}
   .badge{font-family:'Space Grotesk'; font-weight:700; font-size:20px; background:var(--yellow); border:2px solid var(--ink); padding:4px 12px; min-width:56px; text-align:center; transform:rotate(-3deg); flex-shrink:0;}
   .row:nth-child(even) .badge{transform:rotate(2deg);}
   .row-info .modules{font-size:12.5px; color:var(--grey); margin-top:3px;}
@@ -195,13 +198,14 @@
     <div class="kicker">Học theo cấp</div>
 
     <div class="row">
-      <div class="row-left">
+      <a class="row-left" href="programmes/programme-toan-dien-a1-vi.html">
         <span class="badge">A1</span>
         <div class="row-info">
           <div class="buoi">30 buổi</div>
           <div class="modules">Làm quen · Đời sống · Sức khỏe & công việc</div>
+          <div class="syllabus-hint">Xem giáo án →</div>
         </div>
-      </div>
+      </a>
       <div class="row-price">
         <div class="per">5€/giờ</div>
         <div class="total">405€ <span class="vnd">(~12.150.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
@@ -210,13 +214,14 @@
     </div>
 
     <div class="row">
-      <div class="row-left">
+      <a class="row-left" href="programmes/programme-toan-dien-a2-vi.html">
         <span class="badge">A2</span>
         <div class="row-info">
           <div class="buoi">33 buổi</div>
           <div class="modules">Con người & cuộc sống · Khoa học & sức khỏe · Tiêu dùng & môi trường</div>
+          <div class="syllabus-hint">Xem giáo án →</div>
         </div>
-      </div>
+      </a>
       <div class="row-price">
         <div class="per">6€/giờ</div>
         <div class="total">535€ <span class="vnd">(~16.050.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
@@ -225,13 +230,14 @@
     </div>
 
     <div class="row">
-      <div class="row-left">
+      <a class="row-left" href="programmes/programme-toan-dien-b1-vi.html">
         <span class="badge">B1</span>
         <div class="row-info">
           <div class="buoi">33 buổi</div>
           <div class="modules">Xã hội & văn hóa · Đô thị & học tập · Công việc & công dân</div>
+          <div class="syllabus-hint">Xem giáo án →</div>
         </div>
-      </div>
+      </a>
       <div class="row-price">
         <div class="per">7€/giờ</div>
         <div class="total">624€ <span class="vnd">(~18.720.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
@@ -240,13 +246,14 @@
     </div>
 
     <div class="row">
-      <div class="row-left">
+      <a class="row-left" href="programmes/programme-toan-dien-b2-vi.html">
         <span class="badge">B2</span>
         <div class="row-info">
           <div class="buoi">36 buổi</div>
           <div class="modules">Cá nhân & công nghệ · Lịch sử & truyền thông · Xã hội & nghệ thuật</div>
+          <div class="syllabus-hint">Xem giáo án →</div>
         </div>
-      </div>
+      </a>
       <div class="row-price">
         <div class="per">8€/giờ</div>
         <div class="total">778€ <span class="vnd">(~23.340.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
@@ -255,13 +262,14 @@
     </div>
 
     <div class="row">
-      <div class="row-left">
+      <a class="row-left" href="programmes/programme-toan-dien-c1-vi.html">
         <span class="badge">C1</span>
         <div class="row-info">
           <div class="buoi">39 buổi</div>
           <div class="modules">Xã hội & môi trường · Văn hóa & gia đình · Con người & tương lai</div>
+          <div class="syllabus-hint">Xem giáo án →</div>
         </div>
-      </div>
+      </a>
       <div class="row-price">
         <div class="per">9€/giờ</div>
         <div class="total">948€ <span class="vnd">(~28.440.000₫)</span> <span class="save">trọn cấp, −10%</span></div>
@@ -291,9 +299,9 @@
     <div class="single" style="margin-bottom:14px;">
       <div>
         <h3>Học riêng 1:1</h3>
-        <p>Mọi cấp độ, đồng giá 15€/giờ (~450.000₫/giờ).</p>
+        <p>Mọi cấp độ, đồng giá 15€ / buổi 45 phút (~450.000₫).</p>
       </div>
-      <div class="price">45€ <span class="vnd" style="display:block;">(~1.350.000₫)</span><span class="unit">/ buổi 3 giờ · 15€/giờ</span><button type="button" class="cart-add" data-cart-item='{"id":"td-private","name":"Học riêng 1:1 (Toàn Diện)","price":45,"unit":"buổi 3 giờ"}'>+ Giỏ hàng</button></div>
+      <div class="price">15€ <span class="vnd" style="display:block;">(~450.000₫)</span><span class="unit">/ buổi 45 phút</span><button type="button" class="cart-add" data-cart-item='{"id":"td-private","name":"Học riêng 1:1 (Toàn Diện)","price":15,"unit":"buổi 45 phút"}'>+ Giỏ hàng</button></div>
     </div>
 
     <div class="single">
