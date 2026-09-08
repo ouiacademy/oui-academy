@@ -71,6 +71,20 @@
   @media (max-width:760px){.step-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:460px){.step-grid{grid-template-columns:1fr;}}
 
+  .reward-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:22px;}
+  .reward-card{background:var(--paper); border:2px solid var(--ink); padding:22px 20px; transition:transform .15s ease, box-shadow .15s ease;}
+  .reward-card:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
+  .reward-card.top{border-left:6px solid var(--yellow);}
+  .reward-card .badge-num{font-family:'Space Grotesk'; font-weight:700; font-size:17px; background:var(--yellow); border:2px solid var(--ink); width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .reward-card h3{font-size:15.5px; margin-bottom:6px;}
+  .reward-card p{font-size:13px; color:var(--grey);}
+  .reward-card .prize{margin-top:12px; font-weight:700; font-size:14.5px; color:var(--ink);}
+  @media (max-width:760px){.reward-grid{grid-template-columns:1fr;}}
+
+  .month-prize{border:2px solid var(--ink); background:var(--paper); border-left:6px solid var(--yellow); padding:22px 24px; margin-bottom:22px;}
+  .month-prize h3{font-size:16px; margin-bottom:6px;}
+  .month-prize p{color:var(--grey); font-size:14px;}
+
   .tool{border:2px solid var(--ink); background:var(--paper); padding:28px; border-left:6px solid var(--yellow);}
   .tool label{font-size:13px; font-weight:700; display:block; margin-bottom:8px;}
   .tool-row{display:flex; gap:10px; flex-wrap:wrap;}
@@ -171,6 +185,7 @@
     <span>+1 free session / referral</span>
     <span>No limit on referrals</span>
     <span>Stacks up</span>
+    <a href="#content-reward"><span>Share your experience: up to 10 free sessions →</span></a>
   </div>
 
   <div class="ref-banner" id="refBanner">
@@ -243,6 +258,46 @@
       <li>The free session is credited to both sides once the referred friend completes their trial lesson <strong>and</strong> enrolls in at least one paid curriculum.</li>
       <li>No limit on referrals — refer as many friends as you like, each one earns another free session. Not redeemable for cash.</li>
       <li>When messaging to book, just mention <em>"I was referred by [name]"</em> so it gets credited correctly — the tool above fills this in for you automatically.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="content-reward">
+  <div class="wrap">
+    <div class="kicker">Share your learning experience — get rewarded</div>
+    <p style="color:var(--grey); font-size:15px; max-width:620px; margin-bottom:24px;">Already a student at Oui Academy and loving it? Post a video, photo, or write-up sharing your experience on your personal page — rewards scale with your contribution, up to <strong>10 free sessions</strong>.</p>
+
+    <div class="reward-grid">
+      <div class="reward-card">
+        <div class="badge-num">1</div>
+        <h3>Post / story</h3>
+        <p>A public post or story tagging @ouiacademy with the hashtag #OuiAcademy.</p>
+        <p class="prize">+1 free session</p>
+      </div>
+      <div class="reward-card">
+        <div class="badge-num">2</div>
+        <h3>Experience video</h3>
+        <p>A short video (Reels/TikTok, at least 15 seconds) about your journey at Oui Academy, kept public for at least 30 days.</p>
+        <p class="prize">+3 free sessions</p>
+      </div>
+      <div class="reward-card top">
+        <div class="badge-num">★</div>
+        <h3>Featured by us</h3>
+        <p>Your content gets reposted by Oui Academy on our official page/channel.</p>
+        <p class="prize">Up to a total of 10 free sessions</p>
+      </div>
+    </div>
+
+    <div class="month-prize">
+      <h3>🏆 Content of the month award</h3>
+      <p>Every month, Oui Academy picks the single best post or video and awards <strong>10 free sessions</strong> — no need to wait for a repost.</p>
+    </div>
+
+    <ul class="terms">
+      <li>Applies to currently enrolled, paying students at Oui Academy.</li>
+      <li>Content must be public (not private/friends-only), tag/hashtag Oui Academy, and stay up for at least 30 days.</li>
+      <li>Free sessions are not redeemable for cash and are credited directly to your current curriculum.</li>
+      <li>Send the post link via WhatsApp/Zalo so Oui Academy can record and review it for the reward.</li>
     </ul>
   </div>
 </section>

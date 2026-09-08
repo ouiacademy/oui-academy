@@ -72,6 +72,20 @@
   @media (max-width:760px){.step-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:460px){.step-grid{grid-template-columns:1fr;}}
 
+  .reward-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:22px;}
+  .reward-card{background:var(--paper); border:2px solid var(--ink); padding:22px 20px; transition:transform .15s ease, box-shadow .15s ease;}
+  .reward-card:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--yellow);}
+  .reward-card.top{border-left:6px solid var(--yellow);}
+  .reward-card .badge-num{font-family:'Space Grotesk'; font-weight:700; font-size:17px; background:var(--yellow); border:2px solid var(--ink); width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px;}
+  .reward-card h3{font-size:15.5px; margin-bottom:6px;}
+  .reward-card p{font-size:13px; color:var(--grey);}
+  .reward-card .prize{margin-top:12px; font-weight:700; font-size:14.5px; color:var(--ink);}
+  @media (max-width:760px){.reward-grid{grid-template-columns:1fr;}}
+
+  .month-prize{border:2px solid var(--ink); background:var(--paper); border-left:6px solid var(--yellow); padding:22px 24px; margin-bottom:22px;}
+  .month-prize h3{font-size:16px; margin-bottom:6px;}
+  .month-prize p{color:var(--grey); font-size:14px;}
+
   .tool{border:2px solid var(--ink); background:var(--paper); padding:28px; border-left:6px solid var(--yellow);}
   .tool label{font-size:13px; font-weight:700; display:block; margin-bottom:8px;}
   .tool-row{display:flex; gap:10px; flex-wrap:wrap;}
@@ -172,6 +186,7 @@
     <span>+1 buổi miễn phí / lượt giới thiệu</span>
     <span>Không giới hạn số lượt</span>
     <span>Cộng dồn được</span>
+    <a href="#content-reward"><span>Chia sẻ trải nghiệm: đến 10 buổi miễn phí →</span></a>
   </div>
 
   <div class="ref-banner" id="refBanner">
@@ -244,6 +259,46 @@
       <li>Buổi miễn phí được cộng cho cả hai bên sau khi người được giới thiệu hoàn tất buổi học thử <strong>và</strong> đăng ký ít nhất một lộ trình trả phí.</li>
       <li>Không giới hạn số lượt giới thiệu — giới thiệu càng nhiều người, nhận càng nhiều buổi miễn phí. Không quy đổi thành tiền mặt.</li>
       <li>Khi nhắn tin đặt lịch, nhớ nói rõ <em>"mình được [tên] giới thiệu"</em> để được ghi nhận đúng — công cụ ở trên tự động điền phần này giúp bạn.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="content-reward">
+  <div class="wrap">
+    <div class="kicker">Chia sẻ trải nghiệm học — nhận thưởng</div>
+    <p style="color:var(--grey); font-size:15px; max-width:620px; margin-bottom:24px;">Đang học ở Oui Academy và thấy hiệu quả? Đăng video, ảnh hoặc bài viết chia sẻ trải nghiệm học lên trang cá nhân — thưởng theo mức độ đóng góp, tối đa <strong>10 buổi học miễn phí</strong>.</p>
+
+    <div class="reward-grid">
+      <div class="reward-card">
+        <div class="badge-num">1</div>
+        <h3>Đăng bài / story</h3>
+        <p>Bài viết hoặc story công khai, có tag @ouiacademy và hashtag #OuiAcademy.</p>
+        <p class="prize">+1 buổi miễn phí</p>
+      </div>
+      <div class="reward-card">
+        <div class="badge-num">2</div>
+        <h3>Video trải nghiệm</h3>
+        <p>Video ngắn (Reels/TikTok, tối thiểu 15 giây) kể về quá trình học tại Oui Academy, giữ công khai tối thiểu 30 ngày.</p>
+        <p class="prize">+3 buổi miễn phí</p>
+      </div>
+      <div class="reward-card top">
+        <div class="badge-num">★</div>
+        <h3>Được chọn đăng lại</h3>
+        <p>Nội dung được Oui Academy chọn đăng lại trên fanpage / kênh chính thức.</p>
+        <p class="prize">Cộng đến tổng 10 buổi miễn phí</p>
+      </div>
+    </div>
+
+    <div class="month-prize">
+      <h3>🏆 Giải nội dung xuất sắc nhất tháng</h3>
+      <p>Mỗi tháng, Oui Academy chọn 1 bài viết/video nổi bật nhất để trao thưởng <strong>10 buổi học miễn phí</strong> — không cần chờ được đăng lại.</p>
+    </div>
+
+    <ul class="terms">
+      <li>Áp dụng cho học viên đang học (đã đóng học phí) tại Oui Academy.</li>
+      <li>Nội dung phải công khai (không ở chế độ riêng tư), có tag/hashtag Oui Academy, và giữ tối thiểu 30 ngày.</li>
+      <li>Buổi miễn phí không quy đổi thành tiền mặt, được cộng trực tiếp vào lộ trình đang học.</li>
+      <li>Gửi link bài đăng qua WhatsApp/Zalo để Oui Academy ghi nhận và xét thưởng.</li>
     </ul>
   </div>
 </section>
