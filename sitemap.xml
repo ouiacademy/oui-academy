@@ -65,6 +65,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ouiacademy.net/doi-tac-gioi-thieu</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/doi-tac-gioi-thieu-en</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ouiacademy.net/ve-chung-toi</loc>
     <priority>0.6</priority>
   </url>
