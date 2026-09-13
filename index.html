@@ -257,6 +257,26 @@
     100%{box-shadow:6px 6px 0 var(--yellow);}
   }
 
+  /* ===== AI Tools ===== */
+  .tools{padding:100px 0; border-top:1px solid var(--line);}
+  .tools-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .tool-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:28px 24px; display:flex; flex-direction:column; gap:12px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .tool-card:hover{transform:translateY(-4px); box-shadow:6px 6px 0 var(--yellow);}
+  .tool-icon{
+    width:44px; height:44px; border:2px solid var(--ink); background:var(--yellow);
+    display:flex; align-items:center; justify-content:center;
+    font-size:19px; flex-shrink:0;
+  }
+  .tool-card h3{font-size:19px;}
+  .tool-skill{font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--grey);}
+  .tool-card p.desc{color:var(--grey); font-size:14.5px; flex:1;}
+  .tool-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
+  .tool-card:hover .tool-link{color:var(--grey);}
+
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
   .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:start;}
@@ -408,9 +428,10 @@
     .stat:last-child{border-bottom:none;}
     .course-grid{grid-template-columns:1fr;}
     .level-grid{grid-template-columns:1fr;}
+    .tools-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .hero{padding:56px 0 70px;}
-    .about,.courses,.teacher,.results{padding:70px 0;}
+    .about,.courses,.teacher,.results,.tools{padding:70px 0;}
     .cta{padding:80px 0;}
   }
 
@@ -455,6 +476,7 @@
       <a href="#about">Giới thiệu</a>
       <a href="#courses">Khóa học</a>
       <a href="#programs">Lộ trình A1–C2</a>
+      <a href="#ai-tools">Công cụ AI</a>
       <a href="hoc-phi.html">Lộ trình Nói</a>
       <a href="loc-trinh-toan-dien.html">Lộ trình Toàn Diện</a>
       <a href="muc-tieu.html">Theo mục tiêu</a>
@@ -606,6 +628,60 @@
         <p class="desc">Chuẩn bị cho phần thi nói DALF C2: tóm tắt, phát triển quan điểm cá nhân và tranh luận với ban giám khảo.</p>
         <span class="level-link">Xem chương trình →</span>
         <a class="level-ask" href="https://wa.me/84631823901?text=Ch%C3%A0o%20Oui%20Academy%2C%20m%C3%ACnh%20mu%E1%BB%91n%20h%E1%BB%8Fi%20v%E1%BB%81%20l%E1%BB%99%20tr%C3%ACnh%20C2." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Hỏi về lộ trình C2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tools" id="ai-tools">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Công cụ AI</span>
+      <h2>Bộ trợ lý AI luyện tiếng Pháp cùng Oui Academy</h2>
+      <p>6 chatbot AI hỗ trợ luyện Nói, Viết, Từ vựng và Ngữ pháp mọi lúc — miễn phí dùng thử trên Poe.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="tool-icon">✍️</span>
+        <span class="tool-skill">Chấm bài Viết</span>
+        <h3>OUI-ChamWriting</h3>
+        <p class="desc">Nộp bài luận DELF, DALF hoặc TCF Canada và nhận chấm điểm, sửa lỗi chi tiết như giám khảo thật.</p>
+        <a class="tool-link" href="https://poe.com/OUI-ChamWriting" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🎤</span>
+        <span class="tool-skill">Đánh giá Speaking</span>
+        <h3>OUI-Speaking</h3>
+        <p class="desc">Luyện nói tiếng Pháp và nhận phản hồi tức thì về phát âm, ngữ pháp và cách triển khai lập luận.</p>
+        <a class="tool-link" href="https://poe.com/OUI-Speaking" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🔤</span>
+        <span class="tool-skill">Dựng câu Việt → Pháp</span>
+        <h3>OUI-DungCau</h3>
+        <p class="desc">Gõ một câu tiếng Việt, nhận ngay câu tiếng Pháp chuẩn ngữ pháp để luyện phản xạ dịch và đặt câu.</p>
+        <a class="tool-link" href="https://poe.com/OUI-DungCau" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📚</span>
+        <span class="tool-skill">Huấn luyện từ vựng</span>
+        <h3>OUI-VocabCoach</h3>
+        <p class="desc">Ôn từ vựng mỗi ngày theo chủ đề, ghi nhớ lâu dài nhờ luyện tập lặp lại và kiểm tra liên tục.</p>
+        <a class="tool-link" href="https://poe.com/OUI-VocabCoach" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📖</span>
+        <span class="tool-skill">Từ điển chuyên sâu</span>
+        <h3>OUI-VocabExpert</h3>
+        <p class="desc">Tra cứu nghĩa, sắc thái, ví dụ minh hoạ và cách dùng chính xác cho từng từ vựng tiếng Pháp.</p>
+        <a class="tool-link" href="https://poe.com/OUI-VocabExpert" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🧩</span>
+        <span class="tool-skill">Ngữ pháp mỗi ngày</span>
+        <h3>OUI-GrammarCoach</h3>
+        <p class="desc">Luyện ngữ pháp tiếng Pháp mỗi ngày với bài tập, ví dụ và giải thích rõ ràng, dễ hiểu.</p>
+        <a class="tool-link" href="https://poe.com/OUI-GrammarCoach" target="_blank" rel="noopener">Dùng thử trên Poe →</a>
       </div>
     </div>
   </div>
@@ -889,6 +965,7 @@
       <a href="muc-tieu.html">Theo mục tiêu</a>
       <a href="#faq">Câu hỏi thường gặp</a>
       <a href="gioi-thieu-ban-be.html">Giới thiệu bạn bè</a>
+      <a href="#ai-tools">Công cụ AI</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>

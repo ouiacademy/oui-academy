@@ -219,6 +219,26 @@
   .level-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
   .level-card:hover .level-link{color:var(--grey);}
 
+  /* ===== AI Tools ===== */
+  .tools{padding:100px 0; border-top:1px solid var(--line);}
+  .tools-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .tool-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:28px 24px; display:flex; flex-direction:column; gap:12px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .tool-card:hover{transform:translateY(-4px); box-shadow:6px 6px 0 var(--yellow);}
+  .tool-icon{
+    width:44px; height:44px; border:2px solid var(--ink); background:var(--yellow);
+    display:flex; align-items:center; justify-content:center;
+    font-size:19px; flex-shrink:0;
+  }
+  .tool-card h3{font-size:19px;}
+  .tool-skill{font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--grey);}
+  .tool-card p.desc{color:var(--grey); font-size:14.5px; flex:1;}
+  .tool-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
+  .tool-card:hover .tool-link{color:var(--grey);}
+
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
   .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:start;}
@@ -355,9 +375,10 @@
     .stat:last-child{border-bottom:none;}
     .course-grid{grid-template-columns:1fr;}
     .level-grid{grid-template-columns:1fr;}
+    .tools-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .hero{padding:56px 0 70px;}
-    .about,.courses,.teacher,.results{padding:70px 0;}
+    .about,.courses,.teacher,.results,.tools{padding:70px 0;}
     .cta{padding:80px 0;}
   }
 
@@ -402,6 +423,7 @@
       <a href="#about">About</a>
       <a href="#courses">Courses</a>
       <a href="#programs">A1–C2 Programs</a>
+      <a href="#ai-tools">AI Tools</a>
       <a href="hoc-phi-en.html">Speaking Curriculum</a>
       <a href="loc-trinh-toan-dien-en.html">Complete Curriculum</a>
       <a href="muc-tieu-en.html">By Goal</a>
@@ -528,6 +550,60 @@
         <p class="desc">Preparing for the DALF C2 speaking exam: summarizing, developing your own viewpoint, and debating the examining board.</p>
         <span class="level-link">View program →</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="tools" id="ai-tools">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">AI Tools</span>
+      <h2>AI assistants that practice French with you</h2>
+      <p>6 AI chatbots for Speaking, Writing, Vocabulary, and Grammar practice, any time — free to try on Poe.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="tool-icon">✍️</span>
+        <span class="tool-skill">Writing feedback</span>
+        <h3>OUI-ChamWriting</h3>
+        <p class="desc">Submit a DELF, DALF, or TCF Canada essay and get a detailed grade and corrections, like a real examiner.</p>
+        <a class="tool-link" href="https://poe.com/OUI-ChamWriting" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🎤</span>
+        <span class="tool-skill">Speaking assessment</span>
+        <h3>OUI-Speaking</h3>
+        <p class="desc">Practice speaking French and get instant feedback on pronunciation, grammar, and how you build your argument.</p>
+        <a class="tool-link" href="https://poe.com/OUI-Speaking" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🔤</span>
+        <span class="tool-skill">Vietnamese → French sentences</span>
+        <h3>OUI-DungCau</h3>
+        <p class="desc">Type a sentence in Vietnamese and get the correct French sentence instantly, to build translation and sentence-building reflexes.</p>
+        <a class="tool-link" href="https://poe.com/OUI-DungCau" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📚</span>
+        <span class="tool-skill">Vocabulary coaching</span>
+        <h3>OUI-VocabCoach</h3>
+        <p class="desc">Review vocabulary by topic every day and retain it long-term through spaced repetition and quizzing.</p>
+        <a class="tool-link" href="https://poe.com/OUI-VocabCoach" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📖</span>
+        <span class="tool-skill">In-depth dictionary</span>
+        <h3>OUI-VocabExpert</h3>
+        <p class="desc">Look up precise meanings, nuances, example sentences, and correct usage for any French word.</p>
+        <a class="tool-link" href="https://poe.com/OUI-VocabExpert" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🧩</span>
+        <span class="tool-skill">Daily grammar</span>
+        <h3>OUI-GrammarCoach</h3>
+        <p class="desc">Practice French grammar every day with exercises, examples, and clear, easy-to-follow explanations.</p>
+        <a class="tool-link" href="https://poe.com/OUI-GrammarCoach" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -810,6 +886,7 @@
       <a href="muc-tieu-en.html">By Goal</a>
       <a href="#faq">FAQ</a>
       <a href="gioi-thieu-ban-be-en.html">Refer a Friend</a>
+      <a href="#ai-tools">AI Tools</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>
