@@ -239,6 +239,53 @@
   .tool-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
   .tool-card:hover .tool-link{color:var(--grey);}
 
+  /* ===== Wellbeing / Pomodoro ===== */
+  .wellbeing{padding:100px 0; border-top:1px solid var(--line);}
+  .wellbeing-grid{display:grid; grid-template-columns:minmax(300px,380px) 1fr; gap:40px; align-items:start;}
+
+  .pomodoro-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:36px 30px; display:flex; flex-direction:column; align-items:center; gap:26px;
+  }
+  .pomodoro-mode{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+  .pomodoro-mode-btn{
+    border:2px solid var(--ink); background:var(--paper); color:var(--ink);
+    font-family:'Space Grotesk'; font-weight:700; font-size:13px;
+    padding:7px 14px; cursor:pointer; transition:background .12s ease, color .12s ease;
+  }
+  .pomodoro-mode-btn:hover{background:var(--yellow);}
+  .pomodoro-mode-btn.active{background:var(--ink); color:var(--yellow);}
+  .pomodoro-ring-wrap{position:relative; width:180px; height:180px; display:flex; align-items:center; justify-content:center;}
+  .pomodoro-ring{transform:rotate(-90deg);}
+  .pomodoro-ring-bg{fill:none; stroke:var(--line); stroke-width:8;}
+  .pomodoro-ring-fg{
+    fill:none; stroke:var(--ink); stroke-width:8; stroke-linecap:round;
+    stroke-dasharray:339.292; stroke-dashoffset:0;
+    transition:stroke-dashoffset 1s linear;
+  }
+  .pomodoro-time-wrap{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;}
+  .pomodoro-time{font-family:'Space Grotesk'; font-weight:700; font-size:38px; letter-spacing:-0.02em;}
+  .pomodoro-sessions{font-size:12.5px; color:var(--grey); text-align:center;}
+  .pomodoro-controls{display:flex; gap:12px;}
+  .pomodoro-controls .btn{padding:12px 24px; font-size:14px;}
+
+  .sound-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; align-content:start;}
+  .sound-card{
+    border:2px solid var(--ink); background:var(--paper);
+    padding:22px 20px; display:flex; flex-direction:column; align-items:center; gap:10px;
+    text-align:center; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .sound-card.active{transform:translateY(-4px); box-shadow:6px 6px 0 var(--yellow);}
+  .sound-icon{font-size:28px; line-height:1;}
+  .sound-name{font-family:'Space Grotesk'; font-weight:700; font-size:15px;}
+  .sound-toggle{
+    width:44px; height:44px; border-radius:50%; border:2px solid var(--ink);
+    background:var(--paper); color:var(--ink); font-size:14px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; transition:background .12s ease, color .12s ease;
+  }
+  .sound-card.active .sound-toggle{background:var(--ink); color:var(--yellow);}
+  .sound-volume{width:100%; accent-color:var(--ink);}
+
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
   .teacher-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:start;}
@@ -376,9 +423,10 @@
     .course-grid{grid-template-columns:1fr;}
     .level-grid{grid-template-columns:1fr;}
     .tools-grid{grid-template-columns:1fr;}
+    .wellbeing-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .hero{padding:56px 0 70px;}
-    .about,.courses,.teacher,.results,.tools{padding:70px 0;}
+    .about,.courses,.teacher,.results,.tools,.wellbeing{padding:70px 0;}
     .cta{padding:80px 0;}
   }
 
@@ -424,6 +472,7 @@
       <a href="#courses">Courses</a>
       <a href="#programs">A1–C2 Programs</a>
       <a href="#ai-tools">AI Tools</a>
+      <a href="#wellbeing">Wellbeing</a>
       <a href="hoc-phi-en.html">Speaking Curriculum</a>
       <a href="loc-trinh-toan-dien-en.html">Complete Curriculum</a>
       <a href="muc-tieu-en.html">By Goal</a>
@@ -603,6 +652,66 @@
         <h3>OUI-GrammarCoach</h3>
         <p class="desc">Practice French grammar every day with exercises, examples, and clear, easy-to-follow explanations.</p>
         <a class="tool-link" href="https://poe.com/OUI-GrammarCoach" target="_blank" rel="noopener">Try it on Poe →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wellbeing" id="wellbeing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Wellbeing & Focus</span>
+      <h2>A calmer space to study</h2>
+      <p>Turn on background sounds to focus more easily, and use the Pomodoro timer to break your French study sessions into focused chunks.</p>
+    </div>
+    <div class="wellbeing-grid">
+      <div class="pomodoro-card" id="pomodoro">
+        <div class="pomodoro-mode" role="group" aria-label="Choose Pomodoro mode">
+          <button type="button" class="pomodoro-mode-btn active" data-mode="work">Focus</button>
+          <button type="button" class="pomodoro-mode-btn" data-mode="short">Short break</button>
+          <button type="button" class="pomodoro-mode-btn" data-mode="long">Long break</button>
+        </div>
+        <div class="pomodoro-ring-wrap">
+          <svg class="pomodoro-ring" viewBox="0 0 120 120" width="180" height="180">
+            <circle class="pomodoro-ring-bg" cx="60" cy="60" r="54"></circle>
+            <circle class="pomodoro-ring-fg" id="pomodoroRingFg" cx="60" cy="60" r="54"></circle>
+          </svg>
+          <div class="pomodoro-time-wrap">
+            <span class="pomodoro-time" id="pomodoroTime">25:00</span>
+            <span class="pomodoro-sessions" id="pomodoroSessions">0 sessions completed</span>
+          </div>
+        </div>
+        <div class="pomodoro-controls">
+          <button type="button" class="btn btn-primary" id="pomodoroStart">Start</button>
+          <button type="button" class="btn btn-secondary" id="pomodoroReset">Reset</button>
+        </div>
+      </div>
+
+      <div class="sound-grid">
+        <div class="sound-card" data-sound="rain">
+          <span class="sound-icon">🌧️</span>
+          <span class="sound-name">Rain</span>
+          <button type="button" class="sound-toggle" aria-label="Play Rain sound">▶</button>
+          <input type="range" class="sound-volume" min="0" max="100" value="55" aria-label="Rain volume">
+        </div>
+        <div class="sound-card" data-sound="waves">
+          <span class="sound-icon">🌊</span>
+          <span class="sound-name">Ocean waves</span>
+          <button type="button" class="sound-toggle" aria-label="Play Ocean waves sound">▶</button>
+          <input type="range" class="sound-volume" min="0" max="100" value="55" aria-label="Ocean waves volume">
+        </div>
+        <div class="sound-card" data-sound="wind">
+          <span class="sound-icon">🍃</span>
+          <span class="sound-name">Forest wind</span>
+          <button type="button" class="sound-toggle" aria-label="Play Forest wind sound">▶</button>
+          <input type="range" class="sound-volume" min="0" max="100" value="50" aria-label="Forest wind volume">
+        </div>
+        <div class="sound-card" data-sound="white">
+          <span class="sound-icon">📻</span>
+          <span class="sound-name">White noise</span>
+          <button type="button" class="sound-toggle" aria-label="Play White noise sound">▶</button>
+          <input type="range" class="sound-volume" min="0" max="100" value="35" aria-label="White noise volume">
+        </div>
       </div>
     </div>
   </div>
@@ -887,6 +996,7 @@
       <a href="#faq">FAQ</a>
       <a href="gioi-thieu-ban-be-en.html">Refer a Friend</a>
       <a href="#ai-tools">AI Tools</a>
+      <a href="#wellbeing">Wellbeing & Pomodoro</a>
       <a href="mailto:ouiacademy.contact@gmail.com">ouiacademy.contact@gmail.com</a>
     </div>
     <div class="foot-copy">© 2026 Oui Academy</div>
@@ -910,6 +1020,208 @@
       });
     });
   }
+</script>
+
+<script>
+(function () {
+  // Ambient background sounds, synthesised with the Web Audio API — no audio files to load.
+  var AudioCtx = window.AudioContext || window.webkitAudioContext;
+  var actx = null;
+  var activeSounds = {};
+
+  function ctx() {
+    if (!AudioCtx) return null;
+    if (!actx) actx = new AudioCtx();
+    if (actx.state === 'suspended') actx.resume();
+    return actx;
+  }
+
+  function makeNoiseBuffer(c) {
+    var bufferSize = 2 * c.sampleRate;
+    var buffer = c.createBuffer(1, bufferSize, c.sampleRate);
+    var data = buffer.getChannelData(0);
+    for (var i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+    return buffer;
+  }
+
+  function startSound(key, gainValue) {
+    var c = ctx();
+    if (!c) return null;
+    var noise = c.createBufferSource();
+    noise.buffer = makeNoiseBuffer(c);
+    noise.loop = true;
+
+    var filter = c.createBiquadFilter();
+    var gain = c.createGain();
+    gain.gain.value = gainValue;
+    var lfo = null, lfoGain = null;
+
+    if (key === 'rain') {
+      filter.type = 'lowpass';
+      filter.frequency.value = 1000;
+    } else if (key === 'waves') {
+      filter.type = 'lowpass';
+      filter.frequency.value = 450;
+      lfo = c.createOscillator();
+      lfo.frequency.value = 0.15;
+      lfoGain = c.createGain();
+      lfoGain.gain.value = gainValue * 0.6;
+      lfo.connect(lfoGain);
+      lfoGain.connect(gain.gain);
+      lfo.start();
+    } else if (key === 'wind') {
+      filter.type = 'bandpass';
+      filter.frequency.value = 600;
+      filter.Q.value = 0.5;
+      lfo = c.createOscillator();
+      lfo.frequency.value = 0.07;
+      lfoGain = c.createGain();
+      lfoGain.gain.value = 250;
+      lfo.connect(lfoGain);
+      lfoGain.connect(filter.frequency);
+      lfo.start();
+    } else {
+      filter.type = 'allpass';
+    }
+
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(c.destination);
+    noise.start();
+
+    return { noise: noise, gain: gain, lfo: lfo };
+  }
+
+  function stopSound(key) {
+    var s = activeSounds[key];
+    if (!s) return;
+    try { s.noise.stop(); } catch (e) {}
+    if (s.lfo) { try { s.lfo.stop(); } catch (e) {} }
+    delete activeSounds[key];
+  }
+
+  document.querySelectorAll('.sound-card').forEach(function (card) {
+    var key = card.getAttribute('data-sound');
+    var toggle = card.querySelector('.sound-toggle');
+    var slider = card.querySelector('.sound-volume');
+
+    toggle.addEventListener('click', function () {
+      if (activeSounds[key]) {
+        stopSound(key);
+        card.classList.remove('active');
+        toggle.textContent = '▶';
+      } else {
+        var v = parseInt(slider.value, 10) / 100;
+        activeSounds[key] = startSound(key, v);
+        card.classList.add('active');
+        toggle.textContent = '⏸';
+      }
+    });
+
+    slider.addEventListener('input', function () {
+      var v = parseInt(slider.value, 10) / 100;
+      if (activeSounds[key]) activeSounds[key].gain.gain.value = v;
+    });
+  });
+
+  // Pomodoro timer
+  var pomodoro = document.getElementById('pomodoro');
+  if (!pomodoro) return;
+
+  var display = document.getElementById('pomodoroTime');
+  var sessionsEl = document.getElementById('pomodoroSessions');
+  var ringFg = document.getElementById('pomodoroRingFg');
+  var startBtn = document.getElementById('pomodoroStart');
+  var resetBtn = document.getElementById('pomodoroReset');
+  var modeBtns = pomodoro.querySelectorAll('.pomodoro-mode-btn');
+
+  var DURATIONS = { work: 25 * 60, short: 5 * 60, long: 15 * 60 };
+  var RING_CIRC = 339.292;
+  var mode = 'work';
+  var remaining = DURATIONS.work;
+  var running = false;
+  var timerId = null;
+  var sessions = 0;
+  var pageTitle = document.title;
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function render() {
+    display.textContent = pad(Math.floor(remaining / 60)) + ':' + pad(remaining % 60);
+    var pct = remaining / DURATIONS[mode];
+    ringFg.style.strokeDashoffset = String(RING_CIRC * (1 - pct));
+    if (running) document.title = display.textContent + ' · ' + pageTitle;
+  }
+
+  function setMode(next) {
+    mode = next;
+    remaining = DURATIONS[mode];
+    modeBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-mode') === mode); });
+    render();
+  }
+
+  function chime() {
+    var c = ctx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    o.frequency.value = 880;
+    g.gain.value = 0.0001;
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    g.gain.exponentialRampToValueAtTime(0.25, c.currentTime + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 1.4);
+    o.stop(c.currentTime + 1.5);
+  }
+
+  function stop() {
+    running = false;
+    clearInterval(timerId);
+    startBtn.textContent = 'Start';
+    document.title = pageTitle;
+  }
+
+  function tick() {
+    remaining--;
+    if (remaining <= 0) {
+      chime();
+      if (mode === 'work') {
+        sessions++;
+        sessionsEl.textContent = sessions + ' sessions completed';
+      }
+      setMode(mode === 'work' ? (sessions % 4 === 0 ? 'long' : 'short') : 'work');
+      stop();
+      return;
+    }
+    render();
+  }
+
+  startBtn.addEventListener('click', function () {
+    if (running) {
+      stop();
+    } else {
+      running = true;
+      startBtn.textContent = 'Pause';
+      timerId = setInterval(tick, 1000);
+    }
+  });
+
+  resetBtn.addEventListener('click', function () {
+    stop();
+    remaining = DURATIONS[mode];
+    render();
+  });
+
+  modeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      stop();
+      setMode(btn.getAttribute('data-mode'));
+    });
+  });
+
+  render();
+})();
 </script>
 
 
