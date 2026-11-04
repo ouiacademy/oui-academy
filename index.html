@@ -305,6 +305,31 @@
   .teacher-facts{list-style:none; display:flex; flex-direction:column; gap:11px; max-width:560px;}
   .teacher-facts li{font-size:15.5px; color:#2c2a26; line-height:1.5; padding-left:2px;}
 
+  /* ===== Teacher intro + journey timeline ===== */
+  .teacher p.teacher-hello{font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:600; color:var(--ink); margin-bottom:14px;}
+  .timeline{list-style:none; border-left:2px solid var(--ink); margin:4px 0 0 7px; padding:0 0 0 26px; display:flex; flex-direction:column; gap:20px; max-width:560px;}
+  .timeline li{position:relative;}
+  .timeline li::before{
+    content:''; position:absolute; left:-35px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--yellow); border:2px solid var(--ink);
+  }
+  .timeline .t-year{display:block; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15px; margin-bottom:2px;}
+  .timeline .t-desc{display:block; font-size:15.5px; color:#2c2a26; line-height:1.5;}
+  .teacher-linkedin{
+    display:inline-flex; align-items:center; gap:8px; margin-top:28px;
+    font-weight:600; font-size:15.5px;
+    text-decoration:underline; text-decoration-color:var(--yellow); text-decoration-thickness:3px; text-underline-offset:4px;
+  }
+  .teacher-linkedin svg{width:18px; height:18px; flex-shrink:0;}
+  .teacher-linkedin:hover{color:var(--grey);}
+
+  /* ===== Teaching method ===== */
+  .method{padding:100px 0; background:var(--paper); border-top:1px solid var(--line);}
+  .method .course-card{cursor:default;}
+  .method .course-card:hover{transform:none; box-shadow:none;}
+  .method-note{margin-top:32px; max-width:760px; font-size:14.5px; color:var(--grey); line-height:1.6;}
+
   /* ===== Results ===== */
   .results{padding:100px 0; border-top:1px solid var(--line);}
   .results-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px;}
@@ -403,7 +428,7 @@
   footer{padding:44px 0; border-top:1px solid var(--line);}
   .footer-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding-bottom:28px; margin-bottom:28px; border-bottom:1px solid var(--line);}
   .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
-  .foot-links{display:flex; gap:28px; font-size:14px; color:var(--grey);}
+  .foot-links{display:flex; flex-wrap:wrap; gap:12px 28px; font-size:14px; color:var(--grey);}
   .foot-links a:hover{color:var(--ink);}
   .foot-copy{font-size:13px; color:var(--grey);}
 
@@ -431,7 +456,7 @@
     .tools-grid{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .hero{padding:56px 0 70px;}
-    .about,.courses,.teacher,.results,.tools{padding:70px 0;}
+    .about,.courses,.teacher,.method,.results,.tools{padding:70px 0;}
     .cta{padding:80px 0;}
   }
 
@@ -527,7 +552,7 @@
       <div class="stat"><div class="num">300+</div><div class="label">Học viên tại Việt Nam, Canada, Anh, Mỹ, Mali, Guinée</div></div>
       <div class="stat"><div class="num">A0 → C2</div><div class="label">Mọi trình độ, mọi mục tiêu</div></div>
       <div class="stat"><div class="num">Online & Paris</div><div class="label">Học theo lịch của bạn</div></div>
-      <div class="stat"><div class="num">Nói & Viết</div><div class="label">Trọng tâm luyện thi</div></div>
+      <div class="stat"><div class="num">121</div><div class="label">Học viên đã thi đỗ DELF, DALF, TCF cùng Oui Academy</div></div>
     </div>
   </div>
 </section>
@@ -706,6 +731,7 @@
     <div>
       <span class="kicker">Giáo viên</span>
       <h2>Người trực tiếp hướng dẫn bạn: anh Hải</h2>
+      <p class="teacher-hello">Salut 👋 Mình là Hải — giáo viên tiếng Pháp, đang sống và học Thạc sĩ Giảng dạy tiếng Pháp tại Paris.</p>
       <p>Anh Hải đạt <strong>50/50 điểm phần Nói</strong> trong kỳ thi DALF C2 — một kết quả hiếm gặp ngay cả với người học lâu năm.</p>
       <p>Với kinh nghiệm luyện thi chuyên sâu, anh trực tiếp hướng dẫn học viên chiến lược làm bài Nói và Viết: từ cách triển khai ý, tổ chức bài thi, đến cách diễn đạt tự nhiên, thuyết phục như người bản xứ.</p>
 
@@ -721,7 +747,49 @@
         <li>✨ Thường xuyên chia sẻ kiến thức tiếng Pháp miễn phí trên kênh @ouiacademytiengphap</li>
         <li>✨ Sống tại Pháp nhiều năm — phát âm và phản xạ gần như bản ngữ, hiểu chính xác lỗi sai của người Việt và cách sửa nhanh nhất</li>
       </ul>
+
+      <h3>Hành trình của Hải</h3>
+      <ol class="timeline" aria-label="Hành trình của Hải">
+        <li><span class="t-year">2016 – 2019</span><span class="t-desc">Hệ song ngữ Pháp-Anh, THPT Chuyên Chu Văn An, Hà Nội</span></li>
+        <li><span class="t-year">2018</span><span class="t-desc">Giải Nhì tiếng Pháp kỳ thi học sinh giỏi Thành phố Hà Nội</span></li>
+        <li><span class="t-year">2019 – 2021</span><span class="t-desc">Sang Pháp du học — DUT Techniques de commercialisation, Université de Lille</span></li>
+        <li><span class="t-year">2022</span><span class="t-desc">DALF C1 với điểm Nói tuyệt đối 25/25</span></li>
+        <li><span class="t-year">2022 – 2023</span><span class="t-desc">Licence Information-Communication, Université Toulouse III Paul Sabatier</span></li>
+        <li><span class="t-year">06/2023</span><span class="t-desc">Bắt đầu giảng dạy tại Oui Academy — đến nay 300+ học viên, 121 bạn thi đỗ</span></li>
+        <li><span class="t-year">09/2025</span><span class="t-desc">Thạc sĩ Didactique des langues (FLE), Université Sorbonne Nouvelle, Paris</span></li>
+        <li><span class="t-year">03 – 05/2026</span><span class="t-desc">Giảng viên thực tập tại Université Sorbonne Nouvelle, dạy sinh viên quốc tế theo đường hướng hành động</span></li>
+        <li><span class="t-year">2026</span><span class="t-desc">DALF C2 lần thứ ba, điểm Nghe-Nói tuyệt đối 50/50</span></li>
+      </ol>
+      <a class="teacher-linkedin" href="https://www.linkedin.com/in/haibuiworks/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg><span>Xem hồ sơ LinkedIn của anh Hải →</span></a>
     </div>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Phương pháp giảng dạy</span>
+      <h2>Học tiếng Pháp để làm được việc thật</h2>
+      <p>Oui Academy dạy theo <em>perspective actionnelle</em> (đường hướng hành động) — phương pháp mà khung tham chiếu CECR và các kỳ thi DELF, DALF, TCF được xây dựng dựa trên.</p>
+    </div>
+    <div class="course-grid">
+      <div class="course-card">
+        <span class="course-tag">01 · Người hành động</span>
+        <h3>Bạn là “acteur social”</h3>
+        <p>Bạn không chỉ là học sinh ngồi chép ngữ pháp, mà là người dùng tiếng Pháp để giải quyết việc thật: đi khám bệnh, xin việc, tranh luận, thuyết phục.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-tag">02 · Nhiệm vụ thực tế</span>
+        <h3>Mỗi buổi học là một nhiệm vụ</h3>
+        <p>Ngữ pháp, từ vựng, phát âm được học để phục vụ một nhiệm vụ cụ thể — đúng như cách đề thi Nói và Viết yêu cầu bạn hành động.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-tag">03 · Phản hồi như giám khảo</span>
+        <h3>Sửa đúng lỗi của người Việt</h3>
+        <p>Sau mỗi nhiệm vụ, bạn được nhận xét theo đúng tiêu chí chấm thi và sửa những lỗi người Việt hay mắc nhất — để tiến bộ nhanh, không học lan man.</p>
+      </div>
+    </div>
+    <p class="method-note"><em>La perspective actionnelle</em> coi người học là một chủ thể xã hội: mục tiêu không phải học ngôn ngữ cho riêng nó, mà là dùng ngôn ngữ để hoàn thành những nhiệm vụ có ý nghĩa trong đời sống, khi tương tác và hợp tác với người khác.</p>
   </div>
 </section>
 
@@ -730,7 +798,7 @@
     <div class="section-head">
       <span class="kicker">Học viên</span>
       <h2>Bảng vàng vinh danh</h2>
-      <p>Những gương mặt đã chinh phục kỳ thi cùng Oui Academy.</p>
+      <p><strong>121 học viên</strong> đã thi đỗ DELF, DALF, TCF cùng Oui Academy — dưới đây là một vài gương mặt tiêu biểu.</p>
     </div>
     <div class="results-grid">
       <div class="result-pair">
@@ -930,6 +998,9 @@
         <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
         </a>
+        <a href="https://www.linkedin.com/in/haibuiworks/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -955,6 +1026,9 @@
       </a>
       <a href="https://www.youtube.com/@OuiAcademy" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.1 5 12 5 12 5s-6.1 0-7.8.5c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8C5.9 19 12 19 12 19s6.1 0 7.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/haibuiworks/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg>
       </a>
     </div>
   </div>
