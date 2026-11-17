@@ -33,3 +33,20 @@ All of its facts (pricing, teacher bio, contact info) live in one place:
 the `SYSTEM_PROMPT` constant at the top of `api/chat.js`. It's instructed
 to say "not sure, contact us directly" for anything not listed there
 rather than guess — keep that instruction when editing.
+
+## TCF Task 2 AI examiner (`api/tcf-examiner.js`)
+
+Backend for the standalone exam room `/luyen-thi-tcf-task-2` (+ `-en`),
+introduced on `/giam-khao-ai-tcf` (+ `-en`). It uses the same `AI` binding
+as the chat widget, so there's no extra setup.
+
+- `GET /api/tcf-examiner`: the list of sujets (no AI call).
+- `POST {mode:"turn", scenarioId, history}`: the examiner's next line.
+- `POST {mode:"feedback", scenarioId, history, lang}`: the end-of-exam evaluation.
+
+The sujets, plus the private role brief the examiner plays for each one, live in
+`api/_tcf-scenarios.js` (the leading `_` keeps Pages from routing it). To add a
+sujet, copy an entry there. The frontend picks it up automatically. The page
+itself is `tcf-task2.js` + `tcf-task2.css` at the site root. Voice input and
+the examiner's voice use the browser's built-in speech APIs, so they're free
+and don't use any Workers AI quota.

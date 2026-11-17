@@ -548,4 +548,20 @@
     <loc>https://ouiacademy.net/programmes/programme-toan-dien-c1-en</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://ouiacademy.net/giam-khao-ai-tcf</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/giam-khao-ai-tcf-en</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/luyen-thi-tcf-task-2</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouiacademy.net/luyen-thi-tcf-task-2-en</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

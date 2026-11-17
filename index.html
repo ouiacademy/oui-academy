@@ -276,6 +276,11 @@
   .tool-card p.desc{color:var(--grey); font-size:14.5px; flex:1;}
   .tool-link{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px;}
   .tool-card:hover .tool-link{color:var(--grey);}
+  .tool-card.featured{grid-column:1/-1; background:var(--yellow); flex-direction:row; flex-wrap:wrap; align-items:center; gap:14px 24px;}
+  .tool-card.featured .tool-main{flex:1; min-width:240px; display:flex; flex-direction:column; gap:8px;}
+  .tool-card.featured p.desc{color:var(--ink);}
+  .tool-card.featured .tool-link{background:var(--ink); color:var(--yellow); padding:12px 20px;}
+  .tool-card.featured:hover .tool-link{color:var(--yellow);}
 
   /* ===== Teacher ===== */
   .teacher{padding:100px 0; border-top:1px solid var(--line);}
@@ -666,6 +671,15 @@
       <p>6 chatbot AI hỗ trợ luyện Nói, Viết, Từ vựng và Ngữ pháp mọi lúc — miễn phí dùng thử trên Poe.</p>
     </div>
     <div class="tools-grid">
+      <div class="tool-card featured">
+        <span class="tool-icon">🎙️</span>
+        <div class="tool-main">
+          <span class="tool-skill">Mới · TCF Canada · Nói Task 2</span>
+          <h3>Giám khảo AI — Phòng thi Task 2</h3>
+          <p class="desc">Nói chuyện 1-1 với giám khảo AI ngay trên website, như thi thật: bốc đề, 2 phút chuẩn bị, 3 phút 30 tương tác, nói bằng micro, nhận xét và trình độ ước lượng khi hết giờ.</p>
+        </div>
+        <a class="tool-link" href="giam-khao-ai-tcf.html">Vào luyện ngay →</a>
+      </div>
       <div class="tool-card">
         <span class="tool-icon">✍️</span>
         <span class="tool-skill">Chấm bài Viết</span>
